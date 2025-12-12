@@ -7,7 +7,7 @@ const Navigation = () => {
     <header className="flex flex-1 fixed top-0 z-20 justify-end max-sm:hidden w-full py-10 sm:px-40 px-5 items-center">
 
         <nav className="flex gap-80 my-5 text-md">
-          <NavLink to="/" className={({ isActive }) =>
+          <NavLink to="/portfolio" className={({ isActive }) =>
               `relative inline-block px-1
               ${isActive ? 'text-amber-400' : 'text-black'}
               after:content-[''] after:absolute after:left-0 after:-bottom-2
@@ -19,7 +19,7 @@ const Navigation = () => {
             >
               HOME
           </NavLink>
-          <NavLink to="/Work" className={({ isActive }) =>
+          <NavLink to="/work" className={({ isActive }) =>
               `relative inline-block px-1
               ${isActive ? 'text-amber-400' : 'text-black'}
               after:content-[''] after:absolute after:left-0 after:-bottom-2
@@ -33,7 +33,7 @@ const Navigation = () => {
           </NavLink>
 
           <NavLink
-            to="/About" className={({ isActive }) =>
+            to="/about" className={({ isActive }) =>
               `relative inline-block px-1
               ${isActive ? 'text-amber-400' : 'text-black'}
               after:content-[''] after:absolute after:left-0 after:-bottom-2
