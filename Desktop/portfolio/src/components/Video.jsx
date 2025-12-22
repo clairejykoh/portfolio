@@ -14,7 +14,10 @@ const messages = [
   [
     { text: "and a ", variant: "base" },
     { text: "MULTIMEDIA DESIGNER ", variant: "accent" },
-    { text: "proficient in \n 3D Modeling and Rendering, and Motion Graphics", variant: "base" },
+    { text: "proficient in \n", variant: "base" },
+    { text: "3D MODELING, RENDERING, ", variant: "accent" },
+    { text: "and \n", variant: "base" },
+    { text: "MOTION GRAPHICS", variant: "accent" },    
   ],
   [
     { text: "I like to combine my knowledge in ", variant: "base" },
@@ -263,7 +266,7 @@ const Video = () => {
               key={i}
               ref={(el) => (boxesRef.current[i] = el)}
               style={{ transform: 'translateY(150vh)' }} // initial off-screen
-              className="text-right shadow-card backdrop-blur-3xl absolute w-[610px] left-[180px] px-5 py-3 text-[27px]"
+              className="text-right shadow-card backdrop-blur-3xl absolute w-[630px] left-[180px] px-5 py-3 text-[27px]"
             >
               <p className="leading-snug">
                 {chunks.map((chunk, idx) => (
