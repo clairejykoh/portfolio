@@ -12,7 +12,7 @@ import woodworking from '../assets/woodworking.jpg';
 import steam from '../assets/steam.jpg';
 import cartography from '../assets/cartography.jpg';
 import shape from '../assets/shape.gif';
-import language from '../assets/language.jpg';
+import language from '../assets/lla.jpg';
 
 
 
@@ -27,8 +27,7 @@ const items = [
       subtitle: "Industrial Design Meets Architecture",
       keywords: "3D Modeling, 3D Printing, Digital Fabrication, Industrial Design",
     },
-
-        { image: shape, 
+    { image: shape, 
       title: "Play (p5.js)",
       subtitle: "Spatial Data and Representation",
       keywords: "Academic, Professional, GIS, ArchGIS, QGIS, Architecture, Urban Planning, Infrastructure Design"
@@ -36,7 +35,7 @@ const items = [
     { image: east_liberty, 
       title: "Porous City",
       subtitle: "Porous Architecture",
-      keywords: "Academic, Urban Planning, Architecture, Rhino 3D, Enscape, Digital Collage",
+      keywords: "Academic, Urban Planning, Architecture, Rhino 3D, Enscape, Digital Collage, Three.js",
     },
     { image: final_bench, 
       title: "Dusk",
@@ -53,21 +52,24 @@ const items = [
       subtitle: "Imagining Playful New Possibilities for the Geothermal Infrastructure in Olkaria, Kenya",
       keywords: "Academic, Renewable Energy, 3D Modeling, Architecture, Virtual Architecture, Storytelling"
     },
-    
     { image: homevideo, 
       title: "Homepage Video",
       subtitle: "Introducing Myself",
       keywords: "3D Modeling, Rendering, Motion Graphics, After Effects, Premiere Pro, 3DS MAX"
     },
-    
     { image: museum, 
       title: "Memorials of Forgotten Names",
       subtitle: "Anthropocene Museum 5.0: What is a Museum Anyways?",
       keywords: "Academic, Geography, Architecture, Landscape Design, Urban Planning, Anthropocene, Settler Colonialism, Museum"
     },
+    { image: language, 
+      title: "Language, Landscape, Architecture",
+      subtitle: "Final Thesis Portfolio, Columbia University",
+      keywords: "Academic, Portfolio, Architecture, Planning, PDF, InDesign, Linguistics, Toponym, Storytelling"
+    },
     { image: penn, 
       title: "Penn Station Reconstruction",
-      subtitle: "Anthropocene Museum 5.0: What is a Museum Anyways?",
+      subtitle: "For the Busiest Station in the World",
       keywords: "Professional, Transit, Infrastructure, Federal Project, NYC, Three.js"
     },
     { image: woodworking, 
@@ -85,11 +87,7 @@ const items = [
       subtitle: "Spatial Data and Representation",
       keywords: "Academic, Professional, GIS, ArchGIS, QGIS, Architecture, Urban Planning, Infrastructure Design"
     },
-    { image: language, 
-      title: "Language, Landscape, Architecture",
-      subtitle: "Final Thesis Portfolio, Columbia University",
-      keywords: "Academic, Professional, GIS, ArchGIS, QGIS, Architecture, Urban Planning, Infrastructure Design"
-    },
+
 
 ];
 

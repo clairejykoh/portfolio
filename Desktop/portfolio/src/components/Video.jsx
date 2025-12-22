@@ -29,7 +29,9 @@ const messages = [
   ],
   [
     { text: "I experiment with building materials through various methods of ", variant: "base" },
-    { text: "FABRICATION.", variant: "accent" },
+    { text: "FABRICATION ", variant: "accent" },
+    { text: "and \n", variant: "base" },
+    { text: "INDUSTRIAL DESIGN.", variant: "accent" },
   ],
   [
     { text: "and with digital information through \n", variant: "base" },
