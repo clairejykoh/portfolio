@@ -74,12 +74,12 @@ const items = [
   },
   { image: woodworking, 
     title: "Woodworking", 
-    subtitle: "Anthropocene Museum 5.0: What is a Museum Anyways?", 
-    keywords: "Professional, Transit, Infrastructure, Federal Project, NYC" 
+    subtitle: "Woodworking", 
+    keywords: "Academic, Personal, Architecture, Fabrication, Modeling, Prototyping" 
   },
   { image: interior, 
     title: "Interior Renderings", 
-    subtitle: "Helping Designers and Clients Visualize Their Homes", 
+    subtitle: "Helping Designers & Clients Visualize Their Homes", 
     keywords: "Professional, Freelance, Interior Design, Photorealistic Renderings" 
   },
   { image: cartography, 

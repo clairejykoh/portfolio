@@ -35,7 +35,7 @@ const messages = [
   ],
   [
     { text: "and with digital information through \n", variant: "base" },
-    { text: " GRAPHIC DESIGN AND PROGRAMMING,", variant: "accent" },
+    { text: " INTERACTION DESIGN AND PROGRAMMING,", variant: "accent" },
   ],
   [
     { text: "and bring the best of both worlds through", variant: "base" },
