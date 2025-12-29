@@ -63,8 +63,8 @@ const items = [
     keywords: "Academic, Geography, Architecture, Landscape Design, Urban Planning, Anthropocene, Settler Colonialism, Museum" 
   },
   { image: language, 
-    title: "Final Thesis Prtfolio, Columbia University", 
-    subtitle: "Exploring ", 
+    title: "Final Thesis Prtfolio", 
+    subtitle: "Exploring Three-way Intersetion of Linguistis, Environments and Built Space", 
     keywords: "Academic, Portfolio, Architecture, Planning, PDF, InDesign, Linguistics, Toponym, Storytelling" 
   },
   { image: 
