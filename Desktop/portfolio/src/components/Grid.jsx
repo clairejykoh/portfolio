@@ -19,12 +19,12 @@ import language from '../assets/lla.jpg'
 const items = [
   { image: workstation, 
     title: "Workstation", 
-    subtitle: "Modeled in AutoCAD, Animated in 3DS MAX", 
+    subtitle: "My First 3D Animation", 
     keywords: "3DS MAX, AutoCAD, 3D Modeling, 3D Animation, Motion Graphics" 
   },
   { image: concrete_key, 
     title: "Concrete Keycaps", 
-    subtitle: "Industrial Design Meets Architecture", 
+    subtitle: "Architecture Meets Industrial Design", 
     keywords: "3D Modeling, 3D Printing, Digital Fabrication, Industrial Design" 
   },
   { image: shape, 
@@ -34,13 +34,13 @@ const items = [
   },
   { image: east_liberty, 
     title: "Porous City", 
-    subtitle: "Porous Architecture", 
+    subtitle: "Building Design Based on Pedestrian Traffic and User Flow", 
     keywords: "Academic, Urban Planning, Architecture, Rhino 3D, Enscape, Digital Collage, Three.js" 
   },
   { image: final_bench, 
     title: "Dusk", 
-    subtitle: "Nostalgic for What, I Can't Tell", 
-    keywords: "Rhinoceros 3D, 3DS MAX, Blender, Rendering" 
+    subtitle: "A Relaxing Animiation You Can Rest At", 
+    keywords: "Personal, Rhinoceros 3D, 3DS MAX, Blender, Rendering" 
   },
   { image: huguenot, 
     title: "Huguenot Station ADA Upgrade", 
@@ -55,7 +55,7 @@ const items = [
   { image: homevideo, 
     title: "Homepage Video", 
     subtitle: "Introducing Myself", 
-    keywords: "3D Modeling, Rendering, Motion Graphics, After Effects, Premiere Pro, 3DS MAX" 
+    keywords: "Personal, 3D Modeling, Rendering, Motion Graphics, After Effects, Premiere Pro, 3DS MAX" 
   },
   { image: museum, 
     title: "Memorials of Forgotten Names", 
@@ -63,8 +63,8 @@ const items = [
     keywords: "Academic, Geography, Architecture, Landscape Design, Urban Planning, Anthropocene, Settler Colonialism, Museum" 
   },
   { image: language, 
-    title: "Language, Landscape, Architecture", 
-    subtitle: "Final Thesis Portfolio, Columbia University", 
+    title: "Final Thesis Prtfolio, Columbia University", 
+    subtitle: "Exploring ", 
     keywords: "Academic, Portfolio, Architecture, Planning, PDF, InDesign, Linguistics, Toponym, Storytelling" 
   },
   { image: 
