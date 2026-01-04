@@ -47,6 +47,21 @@ canvas {
   font-style: normal;
 }
 
+.image-column {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.image-item {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 
 @layer components {
   .serif {

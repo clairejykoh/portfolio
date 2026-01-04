@@ -1,4 +1,5 @@
 import React, { useRef, useState, useLayoutEffect, useCallback } from 'react'
+import { Link } from 'react-router-dom'
 import { gsap } from 'gsap'
 
 import workstation from '../assets/workstation.jpg'
@@ -65,7 +66,8 @@ const items = [
   { image: language, 
     title: "Final Thesis Prtfolio", 
     subtitle: "Exploring Three-way Intersetion of Linguistis, Environments and Built Space", 
-    keywords: "Academic, Portfolio, Architecture, Planning, PDF, InDesign, Linguistics, Toponym, Storytelling" 
+    keywords: "Academic, Portfolio, Architecture, Planning, PDF, InDesign, Linguistics, Toponym, Storytelling",
+    path: "/work/language"
   },
   { image: 
     penn, title: "Penn Station Reconstruction", 
@@ -134,7 +136,7 @@ const Grid = () => {
   }, [allLoaded])
 
   return (
-    <div className="mix-blend-multiply mt-50 mx-40 columns-1 md:columns-2 lg:columns-3 gap-14 space-y-14 px-4">
+    <div className="mix-blend-multiply mt-10 mx-40 columns-1 md:columns-2 lg:columns-3 gap-14 space-y-14 px-4">
       {items.map((item, index) => (
         <div
           key={index}
@@ -153,6 +155,7 @@ const Grid = () => {
 
           {/* Card */}
           <div className="relative group overflow-hidden shadow-md">
+            <Link to={item.path} className="block">
             <img
               src={item.image}
               alt={item.keywords || `Image ${index + 1}`}
@@ -179,6 +182,7 @@ const Grid = () => {
                 )}
               </div>
             )}
+            </Link>
           </div>
         </div>
       ))}
