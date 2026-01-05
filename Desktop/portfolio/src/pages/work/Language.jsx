@@ -67,17 +67,25 @@ const images = [
 
 const Language = () => {
   return (
-<div className="image-column mix-blend-multiply">
-      {images.map((src, i) => (
-        <img
-          key={i}
-          src={src}
-          alt={`AAD-${i + 1}`}
-          className="image-item"
-          loading="lazy"
-        />
-      ))}
+  <>
+    <div className="mt-20">
+      <div className="image-column mix-blend-multiply">
+        <p className="text-3xl/1 font-italiana">Final Thesis Portfolio</p>
+        <p className="text-2xl/1 font-italiana"><br></br>Exploring Three-way Intersetion of Linguistis, Environments and Built Space</p>
+        <p className="text xl/1">Academic, Portfolio, Architecture, Planning, PDF, InDesign, Linguistics, Toponym, Storytelling</p>
+
+        {images.map((src, i) => (
+          <img
+            key={i}
+            src={src}
+            alt={`AAD-${i + 1}`}
+            className="image-item"
+            loading="lazy"
+          />
+        ))}
+      </div>
     </div>
+  </>
   )
 }
 

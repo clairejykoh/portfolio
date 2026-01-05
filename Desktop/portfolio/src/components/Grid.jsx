@@ -21,7 +21,8 @@ const items = [
   { image: workstation, 
     title: "Workstation", 
     subtitle: "My First 3D Animation", 
-    keywords: "3DS MAX, AutoCAD, 3D Modeling, 3D Animation, Motion Graphics" 
+    keywords: "Academic, 3DS MAX, AutoCAD, 3D Modeling, 3D Animation, Motion Graphics",
+    path: "/work/workstation"
   },
   { image: concrete_key, 
     title: "Concrete Keycaps", 
@@ -146,7 +147,7 @@ const Grid = () => {
           // keep hidden until we run the GSAP reveal after all images load.
           style={{ opacity: 0, transform: 'translateY(40px)' }}
         >
-          {/* Caption below the card */}
+          {/* Caption above the card */}
           {item.title && (
             <div className="font-italiana text-3xl mt-1 text-gray-700 px-1">
               {item.title}
