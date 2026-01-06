@@ -4,6 +4,8 @@ import Navigation from './components/Navigation';
 import { Home, About, Work } from './pages';
 import Language from './pages/work/Language';
 import Workstation from './pages/work/Workstation';
+import Huguenot from './pages/work/Huguenot';
+
  
 const App = () => {
   return (
@@ -19,6 +21,7 @@ const App = () => {
           {/* Project detail pages */}
           <Route path="/work/language" element={<Language />} />
           <Route path="/work/workstation" element={<Workstation />} />
+          <Route path="/work/huguenot" element={<Huguenot />} />
         </Routes>
     </Router>
   </main>

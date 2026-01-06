@@ -19,6 +19,7 @@ html {
 
 body {
   color: rgb(30, 30, 30);
+  font-family:'Segoe UI', sans-serif;
   width: 100dvw;
   overflow-x: hidden;
   height: 100%;
@@ -50,7 +51,6 @@ canvas {
 .image-column {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
   max-width: 1000px;
   margin: 0 auto;
   padding: 0 1rem;
@@ -60,6 +60,7 @@ canvas {
   width: 100%;
   height: auto;
   display: block;
+  margin-bottom: 2rem;
 }
 
 

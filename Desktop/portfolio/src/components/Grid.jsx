@@ -47,7 +47,8 @@ const items = [
   { image: huguenot, 
     title: "Huguenot Station ADA Upgrade", 
     subtitle: "Accessibility Upgrade in Huguenot Station, Staten Island", 
-    keywords: "Professional, Infrastructure, Transit, Architecture, ADA, Design-Build" 
+    keywords: "Professional, Infrastructure, Transit, Architecture, ADA, Design-Build",
+    path: "/work/huguenot"
   },
   { image: steam, 
     title: "Hacking the Steam", 
@@ -72,8 +73,8 @@ const items = [
   },
   { image: 
     penn, title: "Penn Station Reconstruction", 
-    subtitle: "For the Busiest Station in the World", 
-    keywords: "Professional, Transit, Infrastructure, Federal Project, NYC, Three.js" 
+    subtitle: "Reconstructing the Busiest Station in the World", 
+    keywords: "Professional, Transit, Infrastructure, Federal Project, NYC, Three.js, Rhino 3D, Grasshopper, Parametric Design" 
   },
   { image: woodworking, 
     title: "Woodworking", 

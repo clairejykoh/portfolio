@@ -1,6 +1,8 @@
 import React, { useRef, useState, useLayoutEffect, useCallback } from 'react'
 import { gsap } from 'gsap'
 
+import Gallery from "../../components/Gallery"
+
 import AAD1 from '../../assets/lla/AAD-1.jpg'
 import AAD2 from '../../assets/lla/AAD-2.jpg'
 import AAD3 from '../../assets/lla/AAD-3.jpg'
@@ -66,27 +68,16 @@ const images = [
 ]
 
 const Language = () => {
-  return (
-  <>
-    <div className="mt-20">
-      <div className="image-column mix-blend-multiply">
-        <p className="text-3xl/1 font-italiana">Final Thesis Portfolio</p>
-        <p className="text-2xl/1 font-italiana"><br></br>Exploring Three-way Intersetion of Linguistis, Environments and Built Space</p>
-        <p className="text xl/1">Academic, Portfolio, Architecture, Planning, PDF, InDesign, Linguistics, Toponym, Storytelling</p>
-
-        {images.map((src, i) => (
-          <img
-            key={i}
-            src={src}
-            alt={`AAD-${i + 1}`}
-            className="image-item"
-            loading="lazy"
+    return (
+      <>
+        <Gallery
+          title="Final Thesis Portfolio"
+          subtitle="Exploring Three-Way Intersection of Linguistics, Environments, and Built Space"
+          meta="Academic, Portfolio, Architecture, Planning, InDesign, Linguistics, Toponym, Storytelling"
+          images={images}
           />
-        ))}
-      </div>
-    </div>
-  </>
-  )
+      </>
+    )
 }
 
 export default Language

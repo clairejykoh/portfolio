@@ -1,4 +1,5 @@
 import React from 'react'
+import Gallery from "../../components/Gallery"
 
 import ws1 from '../../assets/workstation/ws1.png'
 import ws2 from '../../assets/workstation/ws2.png'
@@ -18,22 +19,12 @@ const images = [ ws1, ws2, ws3, ws4, ws5, ws6 ,ws7, ws8, ws9, ws10 ];
 const Workstation = () => {
   return (
     <>
-    <div className="mt-20">
-        <div className="image-column mix-blend-multiply">
-            <p className="text-3xl/1 font-italiana">Workstation</p>
-            <p className="text-2xl/1 font-italiana"><br></br>My First Animation</p>
-            <p className="text xl/1">Academic, 3DS MAX, AutoCAD, 3D Modeling, 3D Animation, Motion Graphics</p>
-            {images.map((src, i) => (
-                <img
-                key={i}
-                src={src}
-                alt={`ws-${i + 1}`}
-                className="image-item"
-                loading="lazy"
-                />
-            ))}
-        </div>
-    </div>
+      <Gallery
+        title="Workstation"
+        subtitle="My First Animation"
+        meta="Academic, 3DS MAX, AutoCAD, 3D Modeling, 3D Animation, Motion Graphics"
+        images={images}
+        />
     </>
   )
 }
