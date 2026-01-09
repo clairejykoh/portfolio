@@ -16,6 +16,7 @@ import steam from '../assets/steam.jpg'
 import cartography from '../assets/cartography.jpg'
 import shape from '../assets/shape.gif'
 import language from '../assets/lla.jpg'
+import gymnastics from '../assets/gymnastics.jpg'
 
 const items = [
   { image: workstation, 
@@ -29,11 +30,13 @@ const items = [
     subtitle: "Architecture Meets Industrial Design", 
     keywords: "3D Modeling, 3D Printing, Digital Fabrication, Industrial Design" 
   },
+
   { image: shape, 
     title: "Play (p5.js)", 
     subtitle: "Creative Coding using p5.js", 
     keywords: "Academic, Programming, Javascript, p5.js" 
   },
+
   { image: east_liberty, 
     title: "Porous City", 
     subtitle: "Building Design Based on Pedestrian Traffic and User Flow", 
@@ -44,53 +47,71 @@ const items = [
     subtitle: "A Relaxing Animiation You Can Rest At", 
     keywords: "Personal, Rhinoceros 3D, 3DS MAX, Blender, Rendering" 
   },
+
   { image: huguenot, 
     title: "Huguenot Station ADA Upgrade", 
     subtitle: "Accessibility Upgrade in Huguenot Station, Staten Island", 
     keywords: "Professional, Infrastructure, Transit, Architecture, ADA, Design-Build",
     path: "/work/huguenot"
   },
+
   { image: steam, 
     title: "Hacking the Steam", 
     subtitle: "Imagining Playful New Possibilities for the Geothermal Infrastructure in Olkaria, Kenya", 
     keywords: "Academic, Renewable Energy, 3D Modeling, Architecture, Virtual Architecture, Storytelling" 
+  },
+    { image: penn,
+    penn, title: "Penn Station Reconstruction", 
+    subtitle: "Reconstructing the Busiest Station in the World", 
+    keywords: "Professional, Transit, Infrastructure, Federal Project, NYC, Three.js, Rhino 3D, Grasshopper, Parametric Design" 
   },
   { image: homevideo, 
     title: "Homepage Video", 
     subtitle: "Introducing Myself", 
     keywords: "Personal, 3D Modeling, Rendering, Motion Graphics, After Effects, Premiere Pro, 3DS MAX" 
   },
+
+  
   { image: museum, 
     title: "Memorials of Forgotten Names", 
     subtitle: "Anthropocene Museum 5.0: What is a Museum Anyways?", 
     keywords: "Academic, Geography, Architecture, Landscape Design, Urban Planning, Anthropocene, Settler Colonialism, Museum" 
   },
-  { image: language, 
-    title: "Final Thesis Prtfolio", 
+
+
+
+    { image: language, 
+    title: "Final Thesis Portfolio", 
     subtitle: "Exploring Three-way Intersetion of Linguistis, Environments and Built Space", 
     keywords: "Academic, Portfolio, Architecture, Planning, PDF, InDesign, Linguistics, Toponym, Storytelling",
     path: "/work/language"
   },
-  { image: 
-    penn, title: "Penn Station Reconstruction", 
-    subtitle: "Reconstructing the Busiest Station in the World", 
-    keywords: "Professional, Transit, Infrastructure, Federal Project, NYC, Three.js, Rhino 3D, Grasshopper, Parametric Design" 
-  },
+    { image: gymnastics, 
+    title: "US Gymnastics Development Center", 
+    subtitle: "Redesigning Digital Experience and Communication for the Gymnastics Facility", 
+    keywords: "Professional, UX/UI, Website, Web Design, Concept Design",
+    path: "/work/gymnastics" 
+  },  
   { image: woodworking, 
     title: "Woodworking", 
-    subtitle: "Woodworking", 
-    keywords: "Academic, Personal, Architecture, Fabrication, Modeling, Prototyping" 
+    subtitle: "Fabricating with the Most Versatile Material", 
+    keywords: "Academic, Personal, Architecture, Fabrication, Modeling, Prototyping",
+    path: "/work/woodworking" 
   },
+
   { image: interior, 
     title: "Interior Renderings", 
     subtitle: "Helping Designers & Clients Visualize Their Homes", 
     keywords: "Professional, Freelance, Interior Design, Photorealistic Renderings" 
   },
+  
   { image: cartography, 
     title: "Cartography and GIS", 
     subtitle: "Spatial Data and Representation", 
     keywords: "Academic, Professional, GIS, ArchGIS, QGIS, Architecture, Urban Planning, Infrastructure Design" 
   },
+
+
 ]
 
 const Grid = () => {

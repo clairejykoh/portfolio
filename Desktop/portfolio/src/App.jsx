@@ -5,6 +5,8 @@ import { Home, About, Work } from './pages';
 import Language from './pages/work/Language';
 import Workstation from './pages/work/Workstation';
 import Huguenot from './pages/work/Huguenot';
+import Woodworking from './pages/work/Woodworking';
+import Gymnastics from './pages/work/Gymnastics';
 
  
 const App = () => {
@@ -22,6 +24,8 @@ const App = () => {
           <Route path="/work/language" element={<Language />} />
           <Route path="/work/workstation" element={<Workstation />} />
           <Route path="/work/huguenot" element={<Huguenot />} />
+          <Route path="/work/woodworking" element={<Woodworking />} />
+          <Route path="/work/gymnastics" element={<Gymnastics />} />          
         </Routes>
     </Router>
   </main>
