@@ -25,6 +25,7 @@ const items = [
     keywords: "Academic, 3DS MAX, AutoCAD, 3D Modeling, 3D Animation, Motion Graphics",
     path: "/work/workstation"
   },
+
   { image: concrete_key, 
     title: "Concrete Keycaps", 
     subtitle: "Architecture Meets Industrial Design", 
@@ -42,6 +43,7 @@ const items = [
     subtitle: "Building Design Based on Pedestrian Traffic and User Flow", 
     keywords: "Academic, Urban Planning, Architecture, Rhino 3D, Enscape, Digital Collage, Three.js" 
   },
+
   { image: final_bench, 
     title: "Dusk", 
     subtitle: "A Relaxing Animiation You Can Rest At", 
@@ -60,38 +62,39 @@ const items = [
     subtitle: "Imagining Playful New Possibilities for the Geothermal Infrastructure in Olkaria, Kenya", 
     keywords: "Academic, Renewable Energy, 3D Modeling, Architecture, Virtual Architecture, Storytelling" 
   },
-    { image: penn,
+
+  { image: penn,
     penn, title: "Penn Station Reconstruction", 
     subtitle: "Reconstructing the Busiest Station in the World", 
     keywords: "Professional, Transit, Infrastructure, Federal Project, NYC, Three.js, Rhino 3D, Grasshopper, Parametric Design" 
   },
+
   { image: homevideo, 
     title: "Homepage Video", 
     subtitle: "Introducing Myself", 
     keywords: "Personal, 3D Modeling, Rendering, Motion Graphics, After Effects, Premiere Pro, 3DS MAX" 
   },
 
-  
   { image: museum, 
     title: "Memorials of Forgotten Names", 
     subtitle: "Anthropocene Museum 5.0: What is a Museum Anyways?", 
     keywords: "Academic, Geography, Architecture, Landscape Design, Urban Planning, Anthropocene, Settler Colonialism, Museum" 
   },
 
-
-
-    { image: language, 
+  { image: language, 
     title: "Final Thesis Portfolio", 
     subtitle: "Exploring Three-way Intersetion of Linguistis, Environments and Built Space", 
     keywords: "Academic, Portfolio, Architecture, Planning, PDF, InDesign, Linguistics, Toponym, Storytelling",
     path: "/work/language"
   },
-    { image: gymnastics, 
+  
+  { image: gymnastics, 
     title: "US Gymnastics Development Center", 
-    subtitle: "Redesigning Digital Experience and Communication for the Gymnastics Facility", 
+    subtitle: "Redesigning Digital Experience and Communication System for the Gymnastics Facility", 
     keywords: "Professional, UX/UI, Website, Web Design, Concept Design",
     path: "/work/gymnastics" 
   },  
+
   { image: woodworking, 
     title: "Woodworking", 
     subtitle: "Fabricating with the Most Versatile Material", 
@@ -104,14 +107,13 @@ const items = [
     subtitle: "Helping Designers & Clients Visualize Their Homes", 
     keywords: "Professional, Freelance, Interior Design, Photorealistic Renderings" 
   },
-  
+
   { image: cartography, 
     title: "Cartography and GIS", 
     subtitle: "Spatial Data and Representation", 
-    keywords: "Academic, Professional, GIS, ArchGIS, QGIS, Architecture, Urban Planning, Infrastructure Design" 
+    keywords: "Academic, Professional, GIS, ArchGIS, QGIS, Architecture, Urban Planning, Infrastructure Design",
+    path: "/work/cartography" 
   },
-
-
 ]
 
 const Grid = () => {

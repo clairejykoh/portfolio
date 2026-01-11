@@ -63,6 +63,12 @@ canvas {
   margin-bottom: 2rem;
 }
 
+.image-item-continuous {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 
 @layer components {
   .serif {
