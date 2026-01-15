@@ -35,7 +35,8 @@ const items = [
   { image: shape, 
     title: "Play (p5.js)", 
     subtitle: "Creative Coding using p5.js", 
-    keywords: "Academic, Programming, Javascript, p5.js" 
+    keywords: "Academic, Programming, Javascript, p5.js",
+    path: "/work/p5js"
   },
 
   { image: east_liberty, 
@@ -46,8 +47,9 @@ const items = [
 
   { image: final_bench, 
     title: "Dusk", 
-    subtitle: "A Relaxing Animiation You Can Rest At", 
-    keywords: "Personal, Rhinoceros 3D, 3DS MAX, Blender, Rendering" 
+    subtitle: "A Relaxing Memory", 
+    keywords: "Personal, Rhinoceros 3D, 3DS MAX, Blender, Rendering",
+    path: "/work/dusk" 
   },
 
   { image: huguenot, 
