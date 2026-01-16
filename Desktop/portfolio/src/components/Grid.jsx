@@ -74,7 +74,8 @@ const items = [
   { image: homevideo, 
     title: "Homepage Video", 
     subtitle: "Introducing Myself", 
-    keywords: "Personal, 3D Modeling, Rendering, Motion Graphics, After Effects, Premiere Pro, 3DS MAX" 
+    keywords: "Personal, 3D Modeling, Rendering, Motion Graphics, After Effects, Premiere Pro, 3DS MAX",
+    path: "/work/homepagevideo" 
   },
 
   { image: museum, 

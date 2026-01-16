@@ -30,7 +30,7 @@ export default function WebsiteEmbed({
 
   return (
     <div
-      className={`relative flex items-center justify-center overflow-hidden rounded-2xl border border-gray-200 bg-white ${className}`}
+      className={`relative flex items-center mx-20 justify-center overflow-hidden rounded-2xl border border-gray-200 bg-white ${className}`}
       style={{ width: toCss(width), height: toCss(height) }}
     >
       <iframe

@@ -10,6 +10,7 @@ import Gymnastics from './pages/work/Gymnastics';
 import Cartography from './pages/work/Cartography';
 import Dusk from './pages/work/Dusk';
 import P5JS from './pages/work/P5JS';
+import HomepageVideo from './pages/work/HomepageVideo';
 
  
 const App = () => {
@@ -31,7 +32,8 @@ const App = () => {
           <Route path="/work/gymnastics" element={<Gymnastics />} /> 
           <Route path="/work/cartography" element={<Cartography />} />
           <Route path="/work/dusk" element={<Dusk />} />
-          <Route path="work/p5js" element={<P5JS />} />
+          <Route path="/work/p5js" element={<P5JS />} />
+          <Route path="/work/homepagevideo" element={<HomepageVideo />} />
         </Routes>
     </Router>
   </main>
