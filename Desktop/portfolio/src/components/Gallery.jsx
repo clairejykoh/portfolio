@@ -14,7 +14,7 @@ import { gsap } from "gsap";
  * - imageClassName: extra classes for each img (optional)
  * - children: optional extra JSX inserted under meta, before images
  */
-export default function ProjectGallery({
+export default function Gallery({
   title,
   subtitle,
   meta,

@@ -62,7 +62,8 @@ const items = [
   { image: steam, 
     title: "Hacking the Steam", 
     subtitle: "Imagining Playful New Possibilities for the Geothermal Infrastructure in Olkaria, Kenya", 
-    keywords: "Academic, Renewable Energy, 3D Modeling, Architecture, Virtual Architecture, Storytelling" 
+    keywords: "Academic, Renewable Energy, 3D Modeling, Architecture, Virtual Architecture, Storytelling",
+    path: "/work/olkaria" 
   },
 
   { image: penn,
@@ -107,7 +108,7 @@ const items = [
 
   { image: interior, 
     title: "Interior Renderings", 
-    subtitle: "Helping Designers & Clients Visualize Their Homes", 
+    subtitle: "Helping Designers & Clients Visualize", 
     keywords: "Professional, Freelance, Interior Design, Photorealistic Renderings" 
   },
 

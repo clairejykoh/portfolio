@@ -11,6 +11,7 @@ import Cartography from './pages/work/Cartography';
 import Dusk from './pages/work/Dusk';
 import P5JS from './pages/work/P5JS';
 import HomepageVideo from './pages/work/HomepageVideo';
+import Olkaria from './pages/work/Olkaria';
 
  
 const App = () => {
@@ -34,6 +35,7 @@ const App = () => {
           <Route path="/work/dusk" element={<Dusk />} />
           <Route path="/work/p5js" element={<P5JS />} />
           <Route path="/work/homepagevideo" element={<HomepageVideo />} />
+          <Route path="/work/olkaria" element={<Olkaria />} />
         </Routes>
     </Router>
   </main>
