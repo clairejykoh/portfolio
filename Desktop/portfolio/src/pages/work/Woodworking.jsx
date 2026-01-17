@@ -11,14 +11,10 @@ import cubehouse7 from '../../assets/woodworking/8.jpg'
 
 import fcd1 from '../../assets/woodworking/2-1.jpg'
 
-import section1 from '../../assets/woodworking/3-1.jpg'
-import section2 from '../../assets/woodworking/3-2.jpg'
-import section3 from '../../assets/woodworking/3-3.jpg'
 
 const images = [
     cubehouse1, cubehouse2, cubehouse3, cubehouse4, cubehouse5, cubehouse6, cubehouse7,
-    fcd1,
-    section1, section2, section3
+    fcd1
 ]
 
 

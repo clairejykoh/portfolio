@@ -1,27 +1,28 @@
 import React from 'react'
 import Gallery from '../../components/Gallery'
+import OverlappingImage from '../../components/OverlappingImage'
 
 import homevideo from '../../assets/homevideo/homevideo.jpg'
-import homevideo01 from '../../assets/homevideo/homevideo01.jpg'
-import homevideo02 from '../../assets/homevideo/homevideo02.jpg'
-import homevideo03 from '../../assets/homevideo/homevideo03.jpg'
-import homevideo04 from '../../assets/homevideo/homevideo04.jpg'
-import homevideo05 from '../../assets/homevideo/homevideo05.jpg'
-import homevideo06 from '../../assets/homevideo/homevideo06.jpg'
+import homevideoUnderlay from '../../assets/homevideo/homevideo_underlay.png'
+import homevideoOverlay from '../../assets/homevideo/homevideo_overlay.png'
+
 
 const images = [
-    homevideo
+    homevideoUnderlay, homevideoOverlay
 ]
 
 const HomepageVideo = () => {
   return (
     <>
-    <Gallery
+      <Gallery
         title="Homepage Video"
         subtitle="Introducing Myself"
         meta="Personal, 3D Modeling, Rendering, Motion Graphics, After Effects, Premiere Pro, 3DS MAX"
+      />
+      <OverlappingImage
         images={images}
-        />
+        className="items-center mb-20"
+      />  
     </>
   )
 }

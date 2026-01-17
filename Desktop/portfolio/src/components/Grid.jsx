@@ -109,7 +109,8 @@ const items = [
   { image: interior, 
     title: "Interior Renderings", 
     subtitle: "Helping Designers & Clients Visualize", 
-    keywords: "Professional, Freelance, Interior Design, Photorealistic Renderings" 
+    keywords: "Professional, Freelance, Interior Design, Photorealistic Renderings",
+    path: "/work/interior" 
   },
 
   { image: cartography, 

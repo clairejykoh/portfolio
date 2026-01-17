@@ -1,74 +1,93 @@
-import React, { useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 
 /**
- * ImageSlideshow
- *
- * Props:
- * - images: array of image src strings OR { src, alt }
- * - width: number|string (px or %)
- * - height: number|string
- * - className: wrapper classes
+ * Slideshow (crossfade)
+ * - Uses stacked images + opacity transitions
+ * - Uses inline transitionDuration (no Tailwind dynamic class issues)
+ * - Disables transitions on first paint to prevent “blink”
  */
 export default function Slideshow({
   images = [],
   width = 600,
   height = 400,
   className = "",
+  durationMs = 300,
 }) {
   const [index, setIndex] = useState(0);
+  const [ready, setReady] = useState(false);
 
-  const normalized = images.map((img, i) =>
-    typeof img === "string"
-      ? { src: img, alt: `slide-${i + 1}` }
-      : img
+  const normalized = useMemo(
+    () =>
+      images.map((img, i) =>
+        typeof img === "string" ? { src: img, alt: `slide-${i + 1}` } : img
+      ),
+    [images]
   );
-
-  const prev = () =>
-    setIndex((i) => (i === 0 ? normalized.length - 1 : i - 1));
-
-  const next = () =>
-    setIndex((i) => (i === normalized.length - 1 ? 0 : i + 1));
 
   const toCss = (v) => (typeof v === "number" ? `${v}px` : v);
 
+  useEffect(() => {
+    // Enable transitions after first paint to avoid initial blink/fade
+    const id = requestAnimationFrame(() => setReady(true));
+    return () => cancelAnimationFrame(id);
+  }, []);
+
+  const prev = () => {
+    if (normalized.length <= 1) return;
+    setIndex((i) => (i === 0 ? normalized.length - 1 : i - 1));
+  };
+
+  const next = () => {
+    if (normalized.length <= 1) return;
+    setIndex((i) => (i === normalized.length - 1 ? 0 : i + 1));
+  };
+
+  if (!normalized.length) return null;
+
   return (
     <div
-      className={`relative overflow-hidden flex flex-col items-center ${className}`}
+      className={`relative overflow-hidden ${className}`}
       style={{ width: toCss(width), height: toCss(height) }}
     >
-      {/* Slides */}
-      <div
-        className="flex h-full transition-transform duration-500 ease-out mix-blend-multiply"
-        style={{ transform: `translateX(-${index * 100}%)` }}
-      >
+      {/* Slides (stacked) */}
+      <div className="relative h-full w-full mix-blend-multiply">
         {normalized.map(({ src, alt }, i) => (
           <img
             key={i}
             src={src}
             alt={alt}
-            className="h-full w-full object-contain flex-shrink-0"
             draggable={false}
+            className={[
+              "absolute inset-0 h-full w-full object-contain",
+              "select-none pointer-events-none",
+              ready ? "transition-opacity ease-out" : "",
+              i === index ? "opacity-100" : "opacity-0",
+            ].join(" ")}
+            style={ready ? { transitionDuration: `${durationMs}ms` } : undefined}
           />
         ))}
       </div>
 
-      {/* Left arrow */}
-      <button
-        onClick={prev}
-        aria-label="Previous image"
-        className="absolute left-3 top-1/2 -translate-y-1/2 rounded-full px-4 py-1 text-lg hover:bg-black hover:text-white border-1"
-      >
-        ‹
-      </button>
+      {/* Controls */}
+      {normalized.length > 1 && (
+        <>
+          <button
+            onClick={prev}
+            aria-label="Previous image"
+            className="absolute left-3 top-1/2 -translate-y-1/2 rounded-full px-4 py-1 text-lg hover:bg-black hover:text-white border"
+          >
+            ‹
+          </button>
 
-      {/* Right arrow */}
-      <button
-        onClick={next}
-        aria-label="Next image"
-        className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full justify-center items-center px-4 py-1 text-lg hover:bg-black hover:text-white border-1"
-      >
-        ›
-      </button>
+          <button
+            onClick={next}
+            aria-label="Next image"
+            className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full px-4 py-1 text-lg hover:bg-black hover:text-white border"
+          >
+            ›
+          </button>
+        </>
+      )}
     </div>
   );
 }
