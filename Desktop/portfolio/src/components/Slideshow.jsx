@@ -11,7 +11,7 @@ export default function Slideshow({
   width = 600,
   height = 400,
   className = "",
-  durationMs = 300,
+  durationMs = 700,
 }) {
   const [index, setIndex] = useState(0);
   const [ready, setReady] = useState(false);
@@ -46,7 +46,7 @@ export default function Slideshow({
 
   return (
     <div
-      className={`relative overflow-hidden ${className}`}
+      className={`relative overflow-hidden my-10 ${className}`}
       style={{ width: toCss(width), height: toCss(height) }}
     >
       {/* Slides (stacked) */}

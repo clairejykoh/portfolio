@@ -16,9 +16,9 @@ import React, { useMemo } from "react";
  */
 export default function Marquee({
   images = [],
-  height = 120,
-  speed = 18,
-  gap = 24,
+  height = 600,
+  speed = 50,
+  gap = 0,
   className = "",
   pauseOnHover = true,
   fadeEdges = false,
@@ -54,7 +54,7 @@ export default function Marquee({
 
   return (
     <div
-      className={`w-full overflow-hidden ${className}`}
+      className={`w-full overflow-hidden my-20 mix-blend-multiply ${className}`}
       style={maskStyle}
       aria-label="Scrolling image band"
     >
