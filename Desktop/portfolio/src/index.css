@@ -63,12 +63,19 @@ canvas {
   margin-bottom: 2rem;
 }
 
+.images-item-flex {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 0rem;
+}
+
 .image-item-overlap {
   width: 100%;
   height: auto;
   margin-bottom: 2rem;
   max-width: 1000px;
-  margin-bottom: 2rem;
+
 }
 
 .image-item-continuous {
@@ -83,7 +90,6 @@ canvas {
     @apply font-serif italic text-3xl
   }
 }
-
 
 
 @layer utilities {

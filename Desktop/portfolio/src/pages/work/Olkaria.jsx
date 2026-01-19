@@ -2,9 +2,14 @@ import React from 'react'
 import Gallery from '../../components/Gallery'
 import Slideshow from '../../components/Slideshow'
 import Marquee from '../../components/Marquee'
+import FlexGallery from '../../components/FlexGallery'
+import CaptionGallery from '../../components/CaptionGallery'
+import Title from '../../components/Title'
 
 import bookcover01 from '../../assets/olkaria/bookcover1.jpg'
 import bookcover02 from '../../assets/olkaria/bookcover2.jpg'
+
+import analyses from '../../assets/olkaria/analyses.jpg'
 
 import action01 from '../../assets/olkaria/action01.jpg'
 import action02 from '../../assets/olkaria/action02.jpg'
@@ -40,8 +45,55 @@ import booklet10 from '../../assets/olkaria/booklet10.jpg'
 import booklet11 from '../../assets/olkaria/booklet11.jpg'
 import booklet12 from '../../assets/olkaria/booklet12.jpg'
 import booklet13 from '../../assets/olkaria/booklet13.jpg'
+import booklet14 from '../../assets/olkaria/booklet14.jpg'
+import booklet15 from '../../assets/olkaria/booklet15.jpg'
+import booklet16 from '../../assets/olkaria/booklet16.jpg'
+import booklet17 from '../../assets/olkaria/booklet17.jpg'
+import booklet18 from '../../assets/olkaria/booklet18.jpg'
+import booklet19 from '../../assets/olkaria/booklet19.jpg'
+import booklet20 from '../../assets/olkaria/booklet20.jpg'
+import booklet21 from '../../assets/olkaria/booklet21.jpg'
+import booklet22 from '../../assets/olkaria/booklet22.jpg'
+import booklet23 from '../../assets/olkaria/booklet23.jpg'
+import booklet24 from '../../assets/olkaria/booklet24.jpg'
+import booklet25 from '../../assets/olkaria/booklet25.jpg'
+import booklet26 from '../../assets/olkaria/booklet26.jpg'
+import booklet27 from '../../assets/olkaria/booklet27.jpg'
+import booklet28 from '../../assets/olkaria/booklet28.jpg'
+import booklet29 from '../../assets/olkaria/booklet29.jpg'
+import booklet30 from '../../assets/olkaria/booklet30.jpg'
+import booklet31 from '../../assets/olkaria/booklet31.jpg'
+import booklet32 from '../../assets/olkaria/booklet32.jpg'
+import booklet33 from '../../assets/olkaria/booklet33.jpg'
+import booklet34 from '../../assets/olkaria/booklet34.jpg'
+import booklet35 from '../../assets/olkaria/booklet35.jpg'
+import booklet36 from '../../assets/olkaria/booklet36.jpg'
+import booklet37 from '../../assets/olkaria/booklet37.jpg'
+import booklet38 from '../../assets/olkaria/booklet38.jpg'
+import booklet39 from '../../assets/olkaria/booklet39.jpg'
+import booklet40 from '../../assets/olkaria/booklet40.jpg'
+import booklet41 from '../../assets/olkaria/booklet41.jpg'
+import booklet42 from '../../assets/olkaria/booklet42.jpg'
+import booklet43 from '../../assets/olkaria/booklet43.jpg'
+import booklet44 from '../../assets/olkaria/booklet44.jpg'
+import booklet45 from '../../assets/olkaria/booklet45.jpg'
+import booklet46 from '../../assets/olkaria/booklet46.jpg'
+import booklet47 from '../../assets/olkaria/booklet47.jpg'
+import booklet48 from '../../assets/olkaria/booklet48.jpg'
+import booklet49 from '../../assets/olkaria/booklet49.jpg'
+import booklet50 from '../../assets/olkaria/booklet50.jpg'
+import booklet51 from '../../assets/olkaria/booklet51.jpg'
+import booklet52 from '../../assets/olkaria/booklet52.jpg'
 
+import cosmogram from '../../assets/olkaria/cosmogram.jpg'
 
+import axon from '../../assets/olkaria/axon.jpg'
+
+import section from '../../assets/olkaria/section.jpg'
+
+const axons = [
+  axon
+]
 
 const bookcovers = [
   bookcover01, bookcover02
@@ -60,39 +112,153 @@ const TOO = [
 ]
 
 const booklets = [
-  booklet01, booklet02, booklet03, booklet04, booklet05, booklet06, booklet07, booklet08, booklet09, booklet10, booklet11, booklet12, booklet13
+  booklet01, booklet02, booklet03, booklet04, booklet05, booklet06, booklet07, booklet08, booklet09, booklet10, booklet11, booklet12, booklet13,
+  booklet14, booklet15, booklet16, booklet17, booklet18, booklet19, booklet20, booklet21, booklet22, booklet23, booklet24, booklet25, booklet26,
+  booklet27, booklet28, booklet29, booklet30, booklet31, booklet32, booklet33, booklet34, booklet35, booklet36, booklet37, booklet38, booklet39,
+  booklet40, booklet41, booklet42, booklet43, booklet44, booklet45, booklet46, booklet47, booklet48, booklet49, booklet50, booklet51, booklet52
 ]
+
+const chapter = [ analyses ]
+
+const cosmograms = [
+  {
+    src: cosmogram,
+    alt: "A",
+    caption: "DRAWING ONE (1): COSMOGRAM",
+    captionSide: "left"
+  }
+]
+
 
 const Olkaria = () => {
   return (
     <> 
+
       <Gallery
         title="Hacking the Steam"
         subtitle="Imagining Playful New Possibilities for the Geothermal Infrastructure in Olkaria, Kenya"
         meta="Academic, Renewable Energy, 3D Modeling, Architecture, Virtual Architecture, Storytelling"
         caption="Advanced VI Studio: Capitalocene Energetic Landscapes | Columbia University GSAPP | Instructors: Mireia Luzarraga, Alejandro Muino, Andrea Molina. 
         Collaborator: Carley Pasqualotto, Yifei Yuan"
-        images={bookcovers}
       />
-      <Marquee 
-        images={booklets}
+<div className="mt-14 mb-2">
+      <FlexGallery
+        title=""
+        columns={4}
+        gap={18}
+        images={[
+          { src: bookcover01, span: 2 },
+          { src: bookcover02, span: 2 },
+        ]}
       />
-      <div className="flex flex-col items-center justify-center my-20">
-        <Slideshow
-          images={TOO} 
-          width={900}
-          height={900}
+</div>
+
+
+      <div className="flex flex-col items-center justify-center">
+        <Marquee 
+          images={booklets}
         />
-        <Slideshow
-          images={actions}
-          width={900}
-          height={900}
+        <p></p>
+        <Gallery 
+          caption="Our project focuses on the controversy of the Geothermal Power Plants in Olkaria, Kenya and a design that hacks the geothermal energy to give back to the community and promote environmental justice. 
+          In the Eastern Region of Africa resides the Great Rift Valley, a 2,000-mile-long volcanic trench that is slowly drifting the continent apart. 
+          It holds one of Africa’s biggest concentrations of wildlife, consisting of over 900 species of biodiverse migratory birds and animal species.
+          Within this region resides Hell’s Gate National Park, situated in Olkaria, Kenya, a small town that is two hours west of the capital of Nairobi.
+          Established in 1984, this park is home to over 103 species of migratory birds, some both endangered and extinct, and numerous varieties of wildlife. 
+          However in this region, this continental drift is creating copious amounts of geothermal energy right below the soil of Olkaria and is being exploited 
+          by the government, irregardless of the proximity of conservation efforts and has led to habitat fragmentation, mass clearances of indigenous communities, and demolition of renowned landscapes. 
+          What was once known for its thriving landscapes, The Hell’s Gate National Park has now been turned into an industrial park, becoming more known for its geothermal capacities than valiant ecosystems that reside within its boundaries.
+          Although KenGen, a government enterprise that owns and operates 70% of Kenya’s power plants, has a responsibility to counteract and mitigate the negative impacts caused to the environment, little has been done since the construction of the first geothermal power plant. "
         />
 
+              </div>
+
+
+        <div className="flex flex-row justify-center mt-15">
+          <div className="mx-auto max-w-[1000px]">
+            <div className="grid grid-cols-5 items-center">
+              <div className="text-xs text-justify col-span-2 mr-12">
+                <p className="text-xl font-italiana">
+                  DRAWING 1 - COSMOGRAM
+                  </p>
+                  <br />
+                  <br />
+                Vast landscapes of vegetation for nearby ecosystems have been cleared to make way for geothermal pipes. 
+                Native East African pastoral communities, such as the Maasai, that have thrived in this region for many years have been displaced by KenGen to make way for power plants, forcing the Maasai community to leave their pastoral beliefs behind for survival. 
+                Lake Naivasha, the main freshwater source in Olkaria is now a cesspit for the pollution of geothermal brine waste. 
+                The Oserian Flower Farm which was once a proud family owned business has now partnered with KenGen to use the geothermal steam to produce over 380 million roses that could not be economically viable without the steam. 
+                Experts say that The Great Rift Valley is capable of producing up to 10,000 MW of energy, enough to power 7.5 million homes, where The Olkaria Geothermal Power Plant will harness 1/5th of that energy and is on track to become the largest geothermal power plant to date. 
+                Financial Investors such as The World Bank, The European Bank, Japan International Cooperation Agency, and numerous others plan to exploit The Great Rift Valley of its geothermal resources with the hope of no ramifications. 
+                In order to expand electrical services and power its rapidly growing economy, KenGen is determined to meet their projected goals for geothermal expansion by continuing to drill for wells and deploy pipes despite the fragility of the environment.
+              </div>
+            <Gallery
+              images={cosmograms} 
+              className="col-span-3"
+            />
+            </div>
+          </div>
+        </div>
+
+        <div className="flex flex-row justify-center">
+          <div className="mx-auto max-w-[1000px]">
+            <div className="grid grid-cols-5 items-center">
+              <div className="text-xs text-justify col-span-2 mr-12">
+                <p className="text-xl font-italiana">
+                  DRAWING 2 - THEATER OF OPERATIONS
+
+                  </p>
+                  <br />
+                  <br />
+                  Looking at the ramifications of the Olkaria Geothermal Power Plant 
+                  on a scalar level; local, regional,  ational, and global, we started to have conversations about our design 
+                  and how it could impact these different scales, especially as the potential for geothermal energy expands. 
+                  After much consideration, we decided to intervene at the major source of the problem, the geothermal steam.
+              </div>
+            <Slideshow
+              images={TOO} 
+              width={600}
+              height={680}
+              className="col-span-3"
+            />
+            </div>
+          </div>
+        </div>
+
+        <div className="flex flex-row justify-center">
+          <div className="mx-auto max-w-[1000px]">
+            <div className="grid grid-cols-5 items-center">
+              <div className="text-xs text-justify col-span-2 mr-12">
+                <p className="text-xl font-italiana">
+                  DRAWING 3 - ACTION DIAGRAMS
+
+                  </p>
+                  <br />
+                  <br />
+                  Altogether, noise, air pollution and habitat fragmentation are decreasing or completely wiping out a number of important animal species at the park, 
+                  including the birds and vultures that are extremely sensitive to noise and vibration, and other animals that hunt by sound. 
+                  To target the challenges caused by these, we’re going to place our intervention in two different parts: one at the wellhead, and then the other four along the pipe.. 
+                  To target the challenges caused by these, we’re going to place our intervention in two different parts: one at the wellhead, and then the other four along the pipe.
+                  The permanent wellhead silencer + water filter will mitigate the noise created by the wellheads and will filter the steam and condense it to potable water. 
+                  It will reduce the range of air and noise pollution that were eradicating the birds, vultures, and land animal species that hunt by sound.
+                  This would then widen the extent of undisturbed environments. And then the individual trains can provide a space of safe cohabitation for the agents affected by the development.
+                  Allowing them physical corridors to freely travel through the site.
+              </div>
+                <Slideshow
+                  images={actions}
+                  width={600}
+                  height={680}
+                />
+            </div>
+          </div>
+        </div>
+      <Gallery
+        caption=" "
+        images = {axons}
+      />
         <Gallery
-          images= {perspectives}
+          images = {perspectives}
         />
-      </div>
+
     </>
   )
 }

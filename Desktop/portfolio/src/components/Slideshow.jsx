@@ -74,7 +74,7 @@ export default function Slideshow({
           <button
             onClick={prev}
             aria-label="Previous image"
-            className="absolute left-3 top-1/2 -translate-y-1/2 rounded-full px-4 py-1 text-lg hover:bg-black hover:text-white border"
+            className="absolute left-0 top-1/2 -translate-y-1/2 px-4 py-1 text-lg hover:bg-black hover:text-white border"
           >
             ‹
           </button>
@@ -82,7 +82,7 @@ export default function Slideshow({
           <button
             onClick={next}
             aria-label="Next image"
-            className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full px-4 py-1 text-lg hover:bg-black hover:text-white border"
+            className="absolute right-0 top-1/2 -translate-y-1/2 px-4 py-1 text-lg hover:bg-black hover:text-white border"
           >
             ›
           </button>

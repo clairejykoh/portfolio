@@ -2,7 +2,6 @@ import React from 'react'
 import Gallery from '../../components/Gallery'
 import OverlappingImage from '../../components/OverlappingImage'
 
-import homevideo from '../../assets/homevideo/homevideo.jpg'
 import homevideoUnderlay from '../../assets/homevideo/homevideo_underlay.png'
 import homevideoOverlay from '../../assets/homevideo/homevideo_overlay.png'
 
