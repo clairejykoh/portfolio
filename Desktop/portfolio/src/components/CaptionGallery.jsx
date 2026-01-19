@@ -110,7 +110,7 @@ export default function CaptionGallery({
 
   return (
     <div ref={rootRef} className={className}>
-      <div className="my-20 w-250 mix-blend-multiply">
+      <div className="mt-15 w-250 mix-blend-multiply">
         <div
           style={{
             display: "flex",
@@ -140,7 +140,7 @@ export default function CaptionGallery({
                   {/* Only the caption itself gets shadow-card */}
               
                   <div className="text-justify text-gray-700 py-3 mr-8">
-                    <div className="shadow-card text-sm py-3 mr-2">
+                    <div className="font-italiana text-xl py-3 mr-2">
                       {title}
                     </div>
                     <div className="my-6 text-xs">

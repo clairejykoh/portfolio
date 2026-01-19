@@ -23,6 +23,12 @@ import perspective01 from '../../assets/olkaria/perspective01.jpg'
 import perspective02 from '../../assets/olkaria/perspective02.jpg'
 import perspective03 from '../../assets/olkaria/perspective03.jpg'
 
+import render01 from '../../assets/olkaria/render01.jpg'
+import render02 from '../../assets/olkaria/render02.jpg'
+import render03 from '../../assets/olkaria/render03.jpg'
+import render04 from '../../assets/olkaria/render04.jpg'
+import render05 from '../../assets/olkaria/render05.jpg'
+
 import TOO00 from '../../assets/olkaria/TOO.webp'
 import TOO01 from '../../assets/olkaria/TOO01.webp'
 import TOO02 from '../../assets/olkaria/TOO02.webp'
@@ -87,12 +93,25 @@ import booklet52 from '../../assets/olkaria/booklet52.jpg'
 
 import cosmogram from '../../assets/olkaria/cosmogram.jpg'
 
+import timelocation01 from '../../assets/olkaria/timelocation.jpg'
+import timelocation02 from '../../assets/olkaria/timelocation2.jpg'
+
+import intermediate from '../../assets/olkaria/intermediate.jpg'
+
 import axon from '../../assets/olkaria/axon.jpg'
 
 import section from '../../assets/olkaria/section.jpg'
 
 const axons = [
   axon
+]
+
+const timelocations = [
+  timelocation01, timelocation02
+]
+
+const sections = [
+  section
 ]
 
 const bookcovers = [
@@ -103,8 +122,16 @@ const actions = [
   action01, action02, action03, action04, action05, action06, action07
 ]
 
+const intermediates = [
+  intermediate
+]
+
 const perspectives = [
   perspective01, perspective02, perspective03
+]
+
+const renders = [
+  render01, render02, render03, render04, render05
 ]
 
 const TOO = [
@@ -133,7 +160,6 @@ const cosmograms = [
 const Olkaria = () => {
   return (
     <> 
-
       <Gallery
         title="Hacking the Steam"
         subtitle="Imagining Playful New Possibilities for the Geothermal Infrastructure in Olkaria, Kenya"
@@ -141,17 +167,17 @@ const Olkaria = () => {
         caption="Advanced VI Studio: Capitalocene Energetic Landscapes | Columbia University GSAPP | Instructors: Mireia Luzarraga, Alejandro Muino, Andrea Molina. 
         Collaborator: Carley Pasqualotto, Yifei Yuan"
       />
-<div className="mt-14 mb-2">
-      <FlexGallery
-        title=""
-        columns={4}
-        gap={18}
-        images={[
-          { src: bookcover01, span: 2 },
-          { src: bookcover02, span: 2 },
-        ]}
-      />
-</div>
+      <div className="mt-14 mb-2">
+        <FlexGallery
+          title=""
+          columns={4}
+          gap={18}
+          images={[
+            { src: bookcover01, span: 2 },
+            { src: bookcover02, span: 2 },
+          ]}
+        />
+      </div>
 
 
       <div className="flex flex-col items-center justify-center">
@@ -172,8 +198,26 @@ const Olkaria = () => {
         />
 
               </div>
+              <Gallery
+        subtitle="Hacking the Steam: Story Told Through Mapping"
+      />
+
+      <div className="flex flex-col items-center">
+      <iframe
+        src="https://storymaps.arcgis.com/stories/ccbf383e36e940d89a4b043367b36f38"
+        width="100%"
+        height="720"
+        className="my-10 flex flex-col items-center justify-center">
+
+      </iframe>
 
 
+      </div>
+
+
+      <Gallery
+        subtitle="Hacking the Steam: Story Told Through Seven Drawings"
+      />
         <div className="flex flex-row justify-center mt-15">
           <div className="mx-auto max-w-[1000px]">
             <div className="grid grid-cols-5 items-center">
@@ -229,7 +273,33 @@ const Olkaria = () => {
             <div className="grid grid-cols-5 items-center">
               <div className="text-xs text-justify col-span-2 mr-12">
                 <p className="text-xl font-italiana">
-                  DRAWING 3 - ACTION DIAGRAMS
+                  DRAWING 3 - TIME AND LOCATION
+
+                  </p>
+                  <br />
+                  <br />
+                    Since geothermal potential was found in the 1950s, 
+                    over 300 wells have been drilled to date both inside and around Hell’s Gate National Park to harness the geothermal energy underground. 
+                    These wells are left open to the air for monitoring, allowing steam with traces of hydrogen sulfide, carbon dioxide, boron, arsenic, mercury, and more to linger in the air. 
+                    At certain ranges, these traces are dangerous to local wildlife and the community.
+                    Residents of Olkaria and fieldworkers of KenGen often complain of respiratory illnesses due to the air pollution from the geothermal steam. 
+                    What is described to be a deafening 24-hour noise, these wells also produce immense amounts of noise pollution which seeps out and disturbs animal habitats and migratory patterns. 
+              </div>
+                <Slideshow
+                  images={timelocations}
+                  width={600}
+                  height={680}
+                />
+            </div>
+          </div>
+        </div>
+
+        <div className="flex flex-row justify-center">
+          <div className="mx-auto max-w-[1000px]">
+            <div className="grid grid-cols-5 items-center">
+              <div className="text-xs text-justify col-span-2 mr-12">
+                <p className="text-xl font-italiana">
+                  DRAWING 4 - ACTION DIAGRAMS
 
                   </p>
                   <br />
@@ -243,22 +313,169 @@ const Olkaria = () => {
                   This would then widen the extent of undisturbed environments. And then the individual trains can provide a space of safe cohabitation for the agents affected by the development.
                   Allowing them physical corridors to freely travel through the site.
               </div>
-                <Slideshow
-                  images={actions}
-                  width={600}
-                  height={680}
-                />
+            <Slideshow
+              images={actions} 
+              width={600}
+              height={680}
+              className="col-span-3"
+            />
             </div>
           </div>
+        </div>
+
+
+
+        <div className="flex flex-row justify-center">
+          <div className="mx-auto max-w-[1000px]">
+            <div className="grid grid-cols-5 items-center">
+              <div className="text-xs text-justify col-span-2 mr-12">
+                <p className="text-xl font-italiana">
+                  DRAWING 5 - INTERMEDIATE CONTEXT
+                  </p>
+                  <br />
+                  <br />
+                    On the right side you can see how these abstract relationships and programs can translate to the physical forms. 
+                    This is a small part of the Olkaria development located near Well 907A showing potential placement and configurations of the 
+                    intervention in relation to their surroundings. 
+              </div>
+            <Slideshow
+              images={intermediates} 
+              width={600}
+              height={680}
+              className="col-span-3"
+            />
+            </div>
+          </div>
+        </div>
+
+
+          <div className="mx-auto max-w-[1000px]">
+            <div className="items-center">
+              <div className="text-xs text-left items-baseline col-span-5 mr-12">
+                <p className="text-xl font-italiana">
+                  DRAWING 6 - AXON
+                  </p>
+                  <br />
+                  <br />
+              </div>
+            </div>
         </div>
       <Gallery
         caption=" "
         images = {axons}
       />
-        <Gallery
-          images = {perspectives}
-        />
+      
+          <div className="mt-15 mx-auto max-w-[1000px]">
+            <div className="items-center">
+              <div className="text-xs text-justify items-baseline col-span-5 ">
+                <p className="text-xl font-italiana">
+                  DRAWING 7 - SITE SECTION
+                  </p>
+                  <br />
+                  <br />
+                  To combat habitat fragmentation and promote environmental justice, our design is strategically devised to live and move upon the existing and future expansions of the geothermal pipes,  harnessing the energy that will be used to benefit the local ecosystems of Hell’s Gate National Park.
+The section shows the inside secrets of the geothermal steam hacking system and how our intervention is situated in the vast landscape of Olkaria. The existing geothermal pipes that are strategically carrying steam waste are drilled with holes at regular intervals where a valve is placed that connect 
+and disconnect to the structure disconnect on demand, clipping into receiving pipes in the trains floor plates for easy access.
+Each design cart is chained together to form a longer system of continuous steam hacking programs such as steam kitchen and portable water station.  
+It leaves traces of life as it leaves water flash and fall-over plants along where it moves. It will also disperse living trash from the steam kitchen and bird sanctuary into the near surroundings, creating a map of liveliness and recombination. 
+              </div>
+            </div>
+        </div>
+      <Gallery
+        caption=" "
+        images = {[section]}
+      />
 
+      <Gallery
+        subtitle="Hacking the Steam: Story Told Through Perspectives"
+      />
+
+        <div className="mt-10 flex flex-row justify-center">
+          <div className="mx-auto max-w-[1000px]">
+            <div className="grid grid-cols-5 items-center">
+              <Gallery
+                images={[render01]} 
+                className="col-span-3"
+              />
+              <div className="ml-10 text-xs text-justify col-span-2">
+                <p className="text-xl font-italiana">
+                  A STORY: THROUGHOUT THE DAY
+                  <br />
+                  <br />
+                  1
+                  <br />
+                  </p>
+                  <br />
+                  <br />
+                    As the wells have excreted steam throughout the night, 
+                    the wellhead towers have been able to convert enough 
+                    steam into potable water to be consumed by the local 
+                    ecosystems residing in the environment and stored 
+                    at the water station for activities that will happen throughout the day 
+              </div>
+              <Gallery
+                images={[render02]} 
+                className="col-span-3"
+              />
+              <div className="ml-10 text-xs text-justify col-span-2">
+                <p className="text-xl font-italiana">
+                  2
+                  </p>
+                  <br />
+                  <br />
+                    As the wells have excreted steam throughout the night, 
+                    the wellhead towers have been able to convert enough 
+                    steam into potable water to be consumed by the local 
+                    ecosystems residing in the environment and stored 
+                    at the water station for activities that will happen throughout the day 
+              </div>
+              <Gallery 
+              images={[render03]}
+              className="col-span-3"
+              />
+            <div className="ml-10 text-xs text-justify col-span-2">
+              <p className="text-xl font-italiana">
+                3
+              </p>
+                <br />
+                <br />
+                    The greenhouse strategically hacks the steam to 
+                    remain set at a temperature of 82 degrees Fahrenheit, ensuring the local crops, such as baby corn, pak choi, 
+                    courgettes, and more are ready to be eaten during the gathering ceremony for the local Maasai Tribe. 
+                    Ruppell’s vultures know this time of day as they await in the bird sanctuary for their scraps they will receive from composted meals from the community. 
+            </div>
+                          <Gallery 
+              images={[render04]}
+              className="col-span-3"
+              />
+            <div className="ml-10 text-xs text-justify col-span-2">
+              <p className="text-xl font-italiana">
+                4
+              </p>
+                <br />
+                <br />
+                    After nourishing themselves, local community members plan to travel down the landscape to depart back to their homes, 
+                    where they observe the vast Olkaria landscapes, interacting with local fauna who are feeding off of the facade. 
+            </div>
+                          <Gallery 
+              images={[render05]}
+              className="col-span-3"
+              />
+            <div className="ml-10 text-xs text-justify col-span-2">
+              <p className="text-xl font-italiana">
+                5
+              </p>
+                <br />
+                <br />
+                    As the local animals begin their nightly rituals, the wellness cart travels around the valley 
+                    to ensure the environment and its ecosystems are well nourished, looking forward to interacting with 
+                    these interventions the very next day.”
+            </div>
+
+            </div>
+          </div>
+        </div>
+        
     </>
   )
 }
