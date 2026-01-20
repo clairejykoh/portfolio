@@ -14,6 +14,7 @@ import P5JS from './pages/work/P5JS';
 import HomepageVideo from './pages/work/HomepageVideo';
 import Olkaria from './pages/work/Olkaria';
 import Interior from './pages/work/Interior';
+import Penn from './pages/work/Penn';
 
  
 const App = () => {
@@ -39,6 +40,7 @@ const App = () => {
           <Route path="/work/homepagevideo" element={<HomepageVideo />} />
           <Route path="/work/olkaria" element={<Olkaria />} />
           <Route path="/work/interior" element={<Interior />} />
+          <Route path="/work/penn" element={<Penn />} />
         </Routes>
     </Router>
   </main>

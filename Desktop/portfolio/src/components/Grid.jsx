@@ -69,7 +69,8 @@ const items = [
   { image: penn,
     penn, title: "Penn Station Reconstruction", 
     subtitle: "Redesigning the Busiest Station in the World", 
-    keywords: "Professional, Transit, Infrastructure, Federal Project, NYC, Three.js, Rhino 3D, Grasshopper, Parametric Design" 
+    keywords: "Professional, Transit, Infrastructure, Federal Project, NYC, Three.js, Rhino 3D, Grasshopper, Parametric Design",
+    path: "/work/penn" 
   },
 
   { image: homevideo, 
