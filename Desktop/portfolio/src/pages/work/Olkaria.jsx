@@ -181,9 +181,7 @@ const Olkaria = () => {
 
 
       <div className="flex flex-col items-center justify-center">
-        <Marquee 
-          images={booklets}
-        />
+
         <p></p>
         <Gallery 
           caption="Our project focuses on the controversy of the Geothermal Power Plants in Olkaria, Kenya and a design that hacks the geothermal energy to give back to the community and promote environmental justice. 
@@ -201,7 +199,9 @@ const Olkaria = () => {
               <Gallery
         subtitle="Hacking the Steam: Story Told Through Mapping"
       />
-
+        <Marquee 
+          images={booklets}
+        />
       <div className="flex flex-col items-center">
       <iframe
         src="https://storymaps.arcgis.com/stories/ccbf383e36e940d89a4b043367b36f38"

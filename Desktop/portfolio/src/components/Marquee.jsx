@@ -54,7 +54,7 @@ export default function Marquee({
 
   return (
     <div
-      className={`w-250 overflow-hidden my-20 mix-blend-multiply ${className}`}
+      className={`w-full overflow-hidden mt-15 mix-blend-multiply ${className}`}
       style={maskStyle}
       aria-label="Scrolling image band"
     >
