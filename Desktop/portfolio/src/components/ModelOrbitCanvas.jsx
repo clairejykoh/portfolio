@@ -38,9 +38,9 @@ function Model({ url, onCentered }) {
 
 function ScrollOrbitRig({
   target,
-  initialAzimuth = Math.PI * 0.19,
-  initialPolar = Math.PI * 0.18,
-  radius = 10,
+  initialAzimuth = Math.PI * 0.10,
+  initialPolar = Math.PI * 0.25,
+  radius = 59,
   scrollSpeed = 0.0015,
   clampPolar = [0.15, Math.PI - 0.15],
 }) {
@@ -107,27 +107,27 @@ export default function ModelOrbitCanvas({
   url = `${import.meta.env.BASE_URL}models/penn.glb`,
   height = 700,
 }) {
-  const target = useMemo(() => new THREE.Vector3(0, 0, 0), []);
+  const target = useMemo(() => new THREE.Vector3(20, -20, 0), []);
   const [radius, setRadius] = useState(3);
 
   return (
     <div style={{ height, width: "100%" }}>
       <Canvas 
         camera={{ position: [10, 10, 10], fov: 45 }}
-  gl={{ antialias: true }}
-  onCreated={({ gl }) => {
-    gl.setClearColor(0x000000, 1);
-    gl.outputColorSpace = THREE.SRGBColorSpace;
-    gl.toneMapping = THREE.ACESFilmicToneMapping;
-    gl.toneMappingExposure = 1.0;
-  }}>
+        gl={{ antialias: true }}
+        onCreated={({ gl }) => {
+        gl.setClearColor(0x000000, 1);
+        gl.outputColorSpace = THREE.SRGBColorSpace;
+        gl.toneMapping = THREE.ACESFilmicToneMapping;
+        gl.toneMappingExposure = 1.0;
+        }}>
         <ambientLight intensity={2.0} />
         <directionalLight position={[-50, 100, 100]} intensity={1.2} />
 
         <Suspense fallback={<Html center>Loading…</Html>}>
           <Model
             url={url}
-            onCentered={({ size }) => setRadius(Math.max(1.5, size * 0.3))}
+            onCentered={({ size }) => setRadius(Math.max(1.5, size * 0.15))}
           />
         </Suspense>
 

@@ -29,7 +29,8 @@ const items = [
   { image: concrete_key, 
     title: "Concrete Keycaps", 
     subtitle: "Architecture Meets Industrial Design", 
-    keywords: "3D Modeling, 3D Printing, Digital Fabrication, Industrial Design" 
+    keywords: "Personal, 3D Modeling, 3D Printing, Digital Fabrication, Industrial Design",
+    path: "/work/concretekeys"
   },
 
   { image: shape, 

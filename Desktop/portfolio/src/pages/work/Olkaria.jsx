@@ -197,7 +197,7 @@ const Olkaria = () => {
 
               </div>
               <Gallery
-        subtitle="Hacking the Steam: Story Told Through Mapping"
+        subtitle="Story Told Through Mapping"
       />
         <Marquee 
           images={booklets}
@@ -216,7 +216,7 @@ const Olkaria = () => {
 
 
       <Gallery
-        subtitle="Hacking the Steam: Story Told Through Seven Drawings"
+        subtitle="Story Told Through Drawings"
       />
         <div className="flex flex-row justify-center mt-15">
           <div className="mx-auto max-w-[1000px]">
@@ -387,7 +387,7 @@ It leaves traces of life as it leaves water flash and fall-over plants along whe
       />
 
       <Gallery
-        subtitle="Hacking the Steam: Story Told Through Perspectives"
+        subtitle="Story Told Through Perspectives"
       />
 
         <div className="mt-10 flex flex-row justify-center">

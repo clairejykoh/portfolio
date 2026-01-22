@@ -1,4 +1,6 @@
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import ScrollToTop from "./components/ScrollToTop";
+
 import React from 'react';
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
@@ -15,12 +17,14 @@ import HomepageVideo from './pages/work/HomepageVideo';
 import Olkaria from './pages/work/Olkaria';
 import Interior from './pages/work/Interior';
 import Penn from './pages/work/Penn';
+import ConcreteKeys from './pages/work/ConcreteKeys';
 
  
 const App = () => {
   return (
   <main>
     <Router>
+      <ScrollToTop />
       <Navigation />
         <Routes>
           {/* Navigation */}          
@@ -35,6 +39,7 @@ const App = () => {
           <Route path="/work/woodworking" element={<Woodworking />} />
           <Route path="/work/gymnastics" element={<Gymnastics />} /> 
           <Route path="/work/cartography" element={<Cartography />} />
+          <Route path="/work/concretekeys" element={<ConcreteKeys />} />
           <Route path="/work/dusk" element={<Dusk />} />
           <Route path="/work/p5js" element={<P5JS />} />
           <Route path="/work/homepagevideo" element={<HomepageVideo />} />
