@@ -181,18 +181,15 @@ const Olkaria = () => {
 
 
       <div className="flex flex-col items-center justify-center">
-
-        <p></p>
+            <div className="mt-10 mb-8  max-w-[1000px]">
+        <p className="font-italiana text-2xl">
+This project examines geothermal power development in Olkaria, Kenya, and proposes a design strategy that redirects geothermal energy to support local communities and environmental justice.
+        </p>
+        </div>
         <Gallery 
-          caption="Our project focuses on the controversy of the Geothermal Power Plants in Olkaria, Kenya and a design that hacks the geothermal energy to give back to the community and promote environmental justice. 
-          In the Eastern Region of Africa resides the Great Rift Valley, a 2,000-mile-long volcanic trench that is slowly drifting the continent apart. 
-          It holds one of Africa’s biggest concentrations of wildlife, consisting of over 900 species of biodiverse migratory birds and animal species.
-          Within this region resides Hell’s Gate National Park, situated in Olkaria, Kenya, a small town that is two hours west of the capital of Nairobi.
-          Established in 1984, this park is home to over 103 species of migratory birds, some both endangered and extinct, and numerous varieties of wildlife. 
-          However in this region, this continental drift is creating copious amounts of geothermal energy right below the soil of Olkaria and is being exploited 
-          by the government, irregardless of the proximity of conservation efforts and has led to habitat fragmentation, mass clearances of indigenous communities, and demolition of renowned landscapes. 
-          What was once known for its thriving landscapes, The Hell’s Gate National Park has now been turned into an industrial park, becoming more known for its geothermal capacities than valiant ecosystems that reside within its boundaries.
-          Although KenGen, a government enterprise that owns and operates 70% of Kenya’s power plants, has a responsibility to counteract and mitigate the negative impacts caused to the environment, little has been done since the construction of the first geothermal power plant. "
+          caption="Olkaria lies within the Great Rift Valley, a tectonically active region of exceptional biodiversity. Within it, Hell’s Gate National Park was established in 1984 as a protected habitat for migratory birds and wildlife. Despite its conservation status, geothermal extraction near and within the park has transformed the area into an industrial energy zone, causing habitat fragmentation, displacement of Indigenous communities, and loss of significant landscapes.
+
+Although KenGen operates the majority of Kenya’s power plants and is responsible for environmental mitigation, meaningful remediation has remained limited since geothermal development began."
         />
 
               </div>
@@ -227,14 +224,7 @@ const Olkaria = () => {
                   </p>
                   <br />
                   <br />
-                Vast landscapes of vegetation for nearby ecosystems have been cleared to make way for geothermal pipes. 
-                Native East African pastoral communities, such as the Maasai, that have thrived in this region for many years have been displaced by KenGen to make way for power plants, forcing the Maasai community to leave their pastoral beliefs behind for survival. 
-                Lake Naivasha, the main freshwater source in Olkaria is now a cesspit for the pollution of geothermal brine waste. 
-                The Oserian Flower Farm which was once a proud family owned business has now partnered with KenGen to use the geothermal steam to produce over 380 million roses that could not be economically viable without the steam. 
-                Experts say that The Great Rift Valley is capable of producing up to 10,000 MW of energy, enough to power 7.5 million homes, where The Olkaria Geothermal Power Plant will harness 1/5th of that energy and is on track to become the largest geothermal power plant to date. 
-                Financial Investors such as The World Bank, The European Bank, Japan International Cooperation Agency, and numerous others plan to exploit The Great Rift Valley of its geothermal resources with the hope of no ramifications. 
-                In order to expand electrical services and power its rapidly growing economy, KenGen is determined to meet their projected goals for geothermal expansion by continuing to drill for wells and deploy pipes despite the fragility of the environment.
-              </div>
+Vegetation clearance for geothermal pipelines has displaced Indigenous pastoral communities, including the Maasai, while geothermal brine pollution has contaminated Lake Naivasha, Olkaria’s primary freshwater source. Industrial partnerships—such as the Oserian Flower Farm’s reliance on geothermal steam for large-scale rose production—have tied local land to extractive energy systems. With the Great Rift Valley holding an estimated 10,000 MW of geothermal potential, the Olkaria Geothermal Power Plant alone targets one-fifth of this capacity. Backed by international financiers, KenGen continues expansion despite the region’s environmental fragility.              </div>
             <Gallery
               images={cosmograms} 
               className="col-span-3"
@@ -278,12 +268,7 @@ const Olkaria = () => {
                   </p>
                   <br />
                   <br />
-                    Since geothermal potential was found in the 1950s, 
-                    over 300 wells have been drilled to date both inside and around Hell’s Gate National Park to harness the geothermal energy underground. 
-                    These wells are left open to the air for monitoring, allowing steam with traces of hydrogen sulfide, carbon dioxide, boron, arsenic, mercury, and more to linger in the air. 
-                    At certain ranges, these traces are dangerous to local wildlife and the community.
-                    Residents of Olkaria and fieldworkers of KenGen often complain of respiratory illnesses due to the air pollution from the geothermal steam. 
-                    What is described to be a deafening 24-hour noise, these wells also produce immense amounts of noise pollution which seeps out and disturbs animal habitats and migratory patterns. 
+Since geothermal potential was identified in the 1950s, more than 300 wells have been drilled in and around Hell’s Gate National Park. Many wells remain vented for monitoring, releasing steam containing hydrogen sulfide, carbon dioxide, and trace heavy metals that pose risks to wildlife and nearby communities. Residents of Olkaria and workers employed by KenGen report respiratory illnesses linked to air exposure, while continuous high-decibel noise from the wells disrupts animal habitats and migratory patterns. 
               </div>
                 <Slideshow
                   images={timelocations}
