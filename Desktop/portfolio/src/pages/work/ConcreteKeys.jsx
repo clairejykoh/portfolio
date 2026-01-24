@@ -5,7 +5,7 @@ import ConcreteIntro from '../../components/ConcreteIntro'
 import ScrollGallery from '../../components/ScrollGallery'
 
 
-import concrete from '../../assets/concrete_keys/concrete.jpg'
+import concrete from '../../assets/concrete_keys/concretewall.jpg'
 import obsidian from '../../assets/concrete_keys/obsidian.jpg'
 
 import frame01 from '../../assets/penn_station/frame01.jpg'
@@ -16,6 +16,7 @@ import frame05 from '../../assets/penn_station/frame05.jpg'
 import frame06 from '../../assets/penn_station/frame06.jpg'
 import frame07 from '../../assets/penn_station/frame07.jpg'
 
+import cover from '../../assets/concrete_keys/samples.jpg'
 import GalleryFull from '../../components/GalleryFull'
 
 
@@ -46,6 +47,14 @@ const ConcreteKeys = () => {
         muted={true}
         className="w-full h-auto mix blend-multiply brightness-130"
       />
+      <div className="flex flex-center items-center">
+      <div className="max-w-[600px]">
+      <Gallery 
+        images={[cover]}
+        className="my-25"       
+      />
+      </div>
+</div>
     </>
   )
 }

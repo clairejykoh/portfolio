@@ -17,6 +17,7 @@ const HomepageVideo = () => {
         title="Homepage Video"
         subtitle="Introducing Myself"
         meta="Personal, 3D Modeling, Rendering, Motion Graphics, After Effects, Premiere Pro, 3DS MAX"
+        caption="Planning and execution of the landing page video."
       />
       <OverlappingImage
         images={images}

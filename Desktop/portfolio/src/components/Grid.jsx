@@ -19,20 +19,18 @@ import language from '../assets/lla.jpg'
 import gymnastics from '../assets/gymnastics.jpg'
 
 const items = [
-  { image: workstation, 
-    title: "Workstation", 
-    subtitle: "My First 3D Animation", 
-    keywords: "Academic, 3DS MAX, AutoCAD, 3D Modeling, 3D Animation, Motion Graphics",
-    path: "/work/workstation"
-  },
-
   { image: concrete_key, 
     title: "Concrete Keycaps", 
     subtitle: "Architecture Meets Industrial Design", 
     keywords: "Personal, 3D Modeling, 3D Printing, Digital Fabrication, Industrial Design",
     path: "/work/concretekeys"
   },
-
+  { image: workstation, 
+    title: "Workstation", 
+    subtitle: "My First 3D Animation", 
+    keywords: "Academic, 3DS MAX, AutoCAD, 3D Modeling, 3D Animation, Motion Graphics",
+    path: "/work/workstation"
+  },
   { image: shape, 
     title: "Play (p5.js)", 
     subtitle: "Creative Coding using p5.js", 
