@@ -38,11 +38,14 @@ function Model({ url, onCentered }) {
 
 function ScrollOrbitRig({
   target,
-  initialAzimuth = Math.PI * 0.10,
+  initialAzimuth = Math.PI * 0.1,
   initialPolar = Math.PI * 0.25,
   radius = 59,
-  scrollSpeed = 0.0015,
-  clampPolar = [0.15, Math.PI - 0.15],
+
+  // NEW: mouse mapping
+  azimuthRange = Math.PI * 1.2, // total swing left↔right (e.g., 1.2π = 216°)
+  hoverOnly = true,            // only update while pointer is over canvas
+  smoothing = 0.12,            // lerp for camera
 }) {
   const controlsRef = useRef(null);
   const { camera, gl } = useThree();
@@ -51,6 +54,8 @@ function ScrollOrbitRig({
     azimuth: initialAzimuth,
     polar: initialPolar,
     radius,
+    mouseNormX: 0,    // -1..+1
+    isHovering: false,
   });
 
   // keep radius in sync if it changes after load
@@ -65,30 +70,53 @@ function ScrollOrbitRig({
   useEffect(() => {
     const el = gl.domElement;
 
-    const onWheel = (e) => {
-      e.preventDefault();
-      state.current.azimuth += e.deltaY * scrollSpeed;
-      state.current.polar = THREE.MathUtils.clamp(
-        state.current.polar,
-        clampPolar[0],
-        clampPolar[1]
-      );
+    const getNormX = (clientX) => {
+      const r = el.getBoundingClientRect();
+      const x01 = (clientX - r.left) / r.width;      // 0..1
+      return THREE.MathUtils.clamp(x01 * 2 - 1, -1, 1); // -1..1
     };
 
-    el.addEventListener("wheel", onWheel, { passive: false });
-    return () => el.removeEventListener("wheel", onWheel);
-  }, [gl, scrollSpeed, clampPolar]);
+    const onMove = (e) => {
+      if (hoverOnly && !state.current.isHovering) return;
+      state.current.mouseNormX = getNormX(e.clientX);
+    };
+
+    const onEnter = () => {
+      state.current.isHovering = true;
+    };
+
+    const onLeave = () => {
+      state.current.isHovering = false;
+    };
+
+    // Use pointer events for consistency
+    el.addEventListener("pointermove", onMove);
+    el.addEventListener("pointerenter", onEnter);
+    el.addEventListener("pointerleave", onLeave);
+
+    return () => {
+      el.removeEventListener("pointermove", onMove);
+      el.removeEventListener("pointerenter", onEnter);
+      el.removeEventListener("pointerleave", onLeave);
+    };
+  }, [gl, hoverOnly]);
 
   useFrame(() => {
     const c = controlsRef.current;
     if (!c) return;
 
-    const { azimuth, polar, radius: r } = state.current;
+    const s = state.current;
 
-    spherical.set(r, polar, azimuth);
+    // Map mouse x (-1..1) to azimuth around initialAzimuth
+    const desiredAzimuth = initialAzimuth + s.mouseNormX * (azimuthRange / 2);
+
+    // Smooth the azimuth itself (prevents jitter)
+    s.azimuth = THREE.MathUtils.lerp(s.azimuth, desiredAzimuth, 0.08);
+
+    spherical.set(s.radius, s.polar, s.azimuth);
     pos.setFromSpherical(spherical).add(targetVec);
 
-    camera.position.lerp(pos, 0.12);
+    camera.position.lerp(pos, smoothing);
     c.target.copy(targetVec);
     c.update();
   });
@@ -131,7 +159,14 @@ export default function ModelOrbitCanvas({
           />
         </Suspense>
 
-        <ScrollOrbitRig target={target} radius={radius} scrollSpeed={0.0015} />
+<ScrollOrbitRig
+  target={target}
+  radius={radius}
+  initialAzimuth={Math.PI * 0.10}
+  initialPolar={Math.PI * 0.25}
+  azimuthRange={Math.PI * 1.2} // adjust: bigger = more rotation across screen
+  hoverOnly={true}
+/>
       </Canvas>
     </div>
   );

@@ -35,7 +35,7 @@ import concretekeycaps from '../../assets/concrete_keys/concretekeycaps.jpg'
 import GalleryFull from '../../components/GalleryFull'
 
 const finishes = [ cover, concretekeycaps ]
-const architecture = [ architecture01, architecture03, architecture02, architecture04, architecture05, architecture06, architecture07,
+const architecture = [ architecture01, architecture02, architecture03, architecture04, architecture05, architecture06, architecture07,
                       architecture08, architecture09, architecture10 ]
 
 
@@ -64,12 +64,30 @@ const ConcreteKeys = () => {
           className="mix-blend-multiply"
       />
 
-      <div className="w-full h-200 my-20 bg-[#303030]">
+      <div className="w-full h-260 my-20 bg-[#303030]">
+        <div className="flex flex-center items-center">
+          <div className="max-w-[1000px]">
         <TypeAnimation 
           text="Typing is a Multisensory Experience"
-          className="flex flex-center items-center justify-center font-italiana text-5xl text-white py-100"
+          className="flex justify-baseline font-italiana text-5xl text-white pt-90 my-0"
         />
+        <TypeAnimation 
+          text="It's visual"
+          className="flex justify-baseline mt-75 font-italiana text-2xl text-white"
+        />
+               <TypeAnimation 
+          text="It's auditory"
+          className="flex justify-baseline mt-8 font-italiana text-2xl text-white"
+        />
+               <TypeAnimation 
+          text="It's tactile"
+          className="flex justify-baseline mt-8 font-italiana text-2xl text-white"
+        />
+</div>
+</div>
         </div>
+
+        
 
       <ScrollAutoplayVideo
         src="/portfolio/videos/sequence1.mp4"
@@ -84,7 +102,7 @@ const ConcreteKeys = () => {
         className="w-full h-auto mix blend-multiply brightness-130"
       />
       <div className="flex flex-center items-center">
-      <div className="max-w-[600px]">
+      <div className="max-w-[700px]">
 
       <Gallery 
         images={finishes}
@@ -94,7 +112,7 @@ const ConcreteKeys = () => {
 
 </div>
         <div className="flex flex-row justify-center">
-          <div className="mx-auto max-w-[600px]">
+          <div className="mx-auto max-w-[700px]">
             <div className="grid grid-cols-4 items-center">
               <Gallery
                 images={[progress01]} 

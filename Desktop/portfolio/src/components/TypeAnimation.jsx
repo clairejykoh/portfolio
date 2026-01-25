@@ -1,5 +1,18 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 
+/**
+ * TypeAnimation
+ * - Starts typing when visible (IntersectionObserver).
+ * - Caret is absolutely positioned (no layout shift / sideways wiggle).
+ * - justify: "left" | "center" | "right" controls alignment of the rendered line.
+ *
+ * Usage:
+ * <TypeAnimation
+ *   text="Architecture Meets Industrial Design"
+ *   className="font-italiana text-3xl w-full"
+ *   justify="center"
+ * />
+ */
 export default function TypeAnimation({
   text = "",
   as: Tag = "div",
@@ -7,26 +20,33 @@ export default function TypeAnimation({
   typeMs = 35,
   startDelayMs = 0,
 
+  // Visibility trigger tuning
   threshold = 0.25,
   rootMargin = "0px 0px -10% 0px",
 
+  // Behavior
   once = true,
   replayOnReenter = false,
 
+  // Caret
   showCaret = true,
   caret = "|",
   caretBlinkMs = 500,
 
+  // Alignment
+  justify = "left", // "left" | "center" | "right"
+
+  // Accessibility
   respectReducedMotion = true,
 }) {
   const elRef = useRef(null);
   const timerRef = useRef(null);
   const blinkRef = useRef(null);
 
-  // NEW: measure + caret positioning
+  // Measure + caret positioning
   const measureRef = useRef(null);
   const [caretX, setCaretX] = useState(0);
-  const caretWidth = useMemo(() => "1ch", []); // stable reserved caret width
+  const caretWidth = useMemo(() => "1ch", []);
 
   const [isInView, setIsInView] = useState(false);
   const [hasPlayed, setHasPlayed] = useState(false);
@@ -38,6 +58,20 @@ export default function TypeAnimation({
     if (typeof window === "undefined") return false;
     return window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches ?? false;
   }, [respectReducedMotion]);
+
+  const justifyClass =
+    justify === "center"
+      ? "text-center"
+      : justify === "right"
+      ? "text-right"
+      : "text-left";
+
+  const wrapperJustify =
+    justify === "center"
+      ? "justify-center"
+      : justify === "right"
+      ? "justify-end"
+      : "justify-start";
 
   // Observe visibility
   useEffect(() => {
@@ -153,44 +187,51 @@ export default function TypeAnimation({
 
   const visibleText = text.slice(0, i);
 
-  // NEW: measure visible text width to position caret (no layout shift)
+  // Measure visible text width to position caret
   useEffect(() => {
     if (!showCaret) return;
     const m = measureRef.current;
     if (!m) return;
+
+    // width of typed substring
     const w = m.getBoundingClientRect().width;
+
+    // For right-aligned caret: place caret at end of rendered substring,
+    // but our caret is anchored to the substring start inside an inline-block,
+    // so `left: w` is always correct regardless of overall justification.
     setCaretX(w);
   }, [visibleText, showCaret]);
 
   return (
-    <Tag ref={elRef} className={className} aria-label={text}>
-      {/* relative wrapper so caret can be absolutely positioned */}
-      <span className="relative inline-block" aria-hidden="true">
-        {/* visible text */}
-        <span>{visibleText}</span>
+    <Tag ref={elRef} className={`${className} ${justifyClass}`} aria-label={text}>
+      {/* Make alignment robust even when Tag isn't full width */}
+      <div className={`flex ${wrapperJustify}`}>
+        <span className="relative inline-block" aria-hidden="true">
+          <span>{visibleText}</span>
 
-        {/* hidden measurer: same font/size, measures visibleText width */}
-        <span
-          ref={measureRef}
-          className="absolute left-0 top-0 opacity-0 pointer-events-none"
-        >
-          {visibleText}
-        </span>
-
-        {/* overlay caret: does not affect layout */}
-        {showCaret && (
+          {/* Hidden measurer: same font/size, measures visibleText width */}
           <span
-            className="absolute top-0"
-            style={{
-              left: caretX,
-              width: caretWidth,
-              opacity: caretOn ? 1 : 0,
-            }}
+            ref={measureRef}
+            className="absolute left-0 top-0 opacity-0 pointer-events-none"
           >
-            {caret}
+            {visibleText}
           </span>
-        )}
-      </span>
+
+          {/* Caret overlay: no layout shift */}
+          {showCaret && (
+            <span
+              className="absolute top-0"
+              style={{
+                left: caretX,
+                width: caretWidth,
+                opacity: caretOn ? 1 : 0,
+              }}
+            >
+              {caret}
+            </span>
+          )}
+        </span>
+      </div>
     </Tag>
   );
 }
