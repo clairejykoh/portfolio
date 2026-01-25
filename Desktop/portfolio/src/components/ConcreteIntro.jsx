@@ -1,129 +1,183 @@
-import React, { useLayoutEffect, useRef } from "react";
+import React, { useLayoutEffect, useMemo, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-/**
- * FullBleedScrollReveal
- *
- * Requirements implemented:
- * - Full-bleed: no margins/padding, edge-to-edge
- * - Initial state: each image visible at ~10% width (via clip-path)
- * - Top reveals from left, bottom reveals from right
- * - Center text fades/slides in with font-italiana text-3xl
- */
-export default function FullBleedScrollReveal({
+export default function ConcreteIntro({
   imgTopSrc,
   imgBottomSrc,
   title = "Architecture Meets Industrial Design",
+
+  // How long the pin lasts (increase if you want slower reveal)
+  pinDistance = 1200, // px of scroll while pinned
+
+  // Cursor
+  showCaret = true,
+  caret = "|",
+  caretBlinkMs = 500,
 }) {
   const sectionRef = useRef(null);
+  const pinRef = useRef(null);
   const topWrapRef = useRef(null);
   const bottomWrapRef = useRef(null);
-  const textRef = useRef(null);
+
+  const textMeasureRef = useRef(null);
+
+  const [charCount, setCharCount] = useState(0);
+  const [caretOn, setCaretOn] = useState(true);
+  const [caretX, setCaretX] = useState(0);
+
+  const totalChars = title.length;
+
+  const caretWidth = useMemo(() => "1ch", []);
 
   useLayoutEffect(() => {
+    const TYPE_START_PROGRESS = 0.45; // 0–1, higher = later start
+    
     const ctx = gsap.context(() => {
-      // Initial: reveal ~10% width without distorting image
-      // Top: show left 10% => right inset 90%
-      // Bottom: show right 10% => left inset 90%
+      // Initial masks:
+      // Upper reveals FROM RIGHT (right 10% visible)
       gsap.set(topWrapRef.current, {
-        clipPath: "inset(0% 90% 0% 0%)",
-        willChange: "clip-path",
-      });
-
-      gsap.set(bottomWrapRef.current, {
         clipPath: "inset(0% 0% 0% 90%)",
         willChange: "clip-path",
       });
 
-      gsap.set(textRef.current, {
-        autoAlpha: 0,
-        x: 64,
-        willChange: "transform, opacity",
+      // Lower reveals FROM LEFT (left 10% visible)
+      gsap.set(bottomWrapRef.current, {
+        clipPath: "inset(0% 90% 0% 0%)",
+        willChange: "clip-path",
       });
 
-      // Reveal top image to full width
-      gsap.to(topWrapRef.current, {
-        clipPath: "inset(0% 0% 0% 0%)",
-        ease: "none",
+      // One pinned, scrubbed timeline controls everything.
+      const tl = gsap.timeline({
+        defaults: { ease: "none" },
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top-=10%  top",
-          end: "top+=60% top",
+          start: "top top",
+          end: `+=${pinDistance}`,     // pin releases when timeline ends
           scrub: true,
+          pin: pinRef.current,         // keeps the viewport sticky
+          pinSpacing: true,
+          anticipatePin: 1,
+          invalidateOnRefresh: true,
         },
       });
 
-      // Reveal bottom image to full width (slightly delayed)
-      gsap.to(bottomWrapRef.current, {
-        clipPath: "inset(0% 0% 0% 0%)",
-        ease: "none",
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top-=10% top",
-          end: "top+=60% top",
-          scrub: true,
-        },
+      // Images expand to full width across the pinned scroll.
+      // If you want bottom to finish later, stagger its start slightly.
+      tl.to(
+        topWrapRef.current,
+        { clipPath: "inset(0% 0% 0% 0%)", duration: 1 },
+        0
+      );
+
+      tl.to(
+        bottomWrapRef.current,
+        { clipPath: "inset(0% 0% 0% 0%)", duration: 1 },
+        0 // slight delay so it feels sequential; set to 0 for perfectly in-sync
+      );
+
+      // Scrubbed typing tied to timeline progress (no separate ScrollTrigger).
+      // Map timeline progress (0..1) to char count.
+      tl.eventCallback("onUpdate", () => {
+        const st = tl.scrollTrigger;
+        if (!st) return;
+        
+const p = st.progress;
+
+if (p <= TYPE_START_PROGRESS) {
+  setCharCount(0);
+  return;
+}
+
+const localProgress =
+  (p - TYPE_START_PROGRESS) / (1 - TYPE_START_PROGRESS);
+
+const n = Math.round(localProgress * totalChars);
+setCharCount((prev) => (prev === n ? prev : n));
       });
 
-      // Text reveal when section is around mid-viewport (proxy for “images occupy ~half page”)
-      gsap.to(textRef.current, {
-        autoAlpha: 1,
-        x: 0,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top -40%",
-          end: "top -80%",
-          scrub: true,
-        },
-      });
-
-      // If anything changes layout after mount (fonts/images/route transitions), refresh triggers
       ScrollTrigger.refresh();
     }, sectionRef);
 
     return () => ctx.revert();
-  }, []);
+  }, [pinDistance, totalChars]);
+
+  // caret blink (visual only)
+  useLayoutEffect(() => {
+    if (!showCaret) return;
+    const id = window.setInterval(
+      () => setCaretOn((v) => !v),
+      Math.max(120, caretBlinkMs)
+    );
+    return () => window.clearInterval(id);
+  }, [showCaret, caretBlinkMs]);
+
+  // caret positioning by measuring revealed substring width
+  useLayoutEffect(() => {
+    const measurer = textMeasureRef.current;
+    if (!measurer) return;
+    const w = measurer.getBoundingClientRect().width;
+    setCaretX(w);
+  }, [charCount, title]);
+
+  const visibleText = title.slice(0, charCount);
 
   return (
     <section ref={sectionRef} className="relative w-screen">
-      {/* Scroll space */}
-      <div className="relative min-h-[200vh]">
-        {/* Sticky viewport */}
-        <div className="sticky top-0 h-screen w-screen overflow-hidden">
-          <div className="relative h-full w-full">
-            {/* Top image (full-bleed) */}
-            <div ref={topWrapRef} className="h-1/2 w-full overflow-hidden">
-              <img
-                src={imgTopSrc}
-                alt=""
-                className="h-full w-full object-cover"
-                draggable={false}
-              />
-            </div>
+      {/* This element gets pinned */}
+      <div ref={pinRef} className="h-screen w-screen overflow-hidden">
+        <div className="relative h-full w-full">
+          <div ref={topWrapRef} className="h-1/2 w-full overflow-hidden">
+            <img
+              src={imgTopSrc}
+              alt=""
+              className="h-full w-full object-cover"
+              draggable={false}
+            />
+          </div>
 
-            {/* Bottom image (full-bleed) */}
-            <div ref={bottomWrapRef} className="h-1/2 w-full overflow-hidden">
-              <img
-                src={imgBottomSrc}
-                alt=""
-                className="h-full w-full object-cover"
-                draggable={false}
-              />
-            </div>
+          <div ref={bottomWrapRef} className="h-1/2 w-full overflow-hidden">
+            <img
+              src={imgBottomSrc}
+              alt=""
+              className="h-full w-full object-cover"
+              draggable={false}
+            />
+          </div>
 
-            {/* Center text overlay */}
-            <div className="pointer-events-none absolute inset-0 flex items-center justify-center pb-6">
-              <div ref={textRef} className="font-italiana text-4xl text-black">
-                {title}
-              </div>
+          <div className="pointer-events-none absolute inset-0 flex items-center justify-center pb-7">
+            <div className="relative font-italiana text-5xl text-black" aria-label={title}>
+              <span>{visibleText}</span>
+
+              <span
+                ref={textMeasureRef}
+                className="absolute left-0 top-0 opacity-0 pointer-events-none"
+                aria-hidden="true"
+              >
+                {visibleText}
+              </span>
+
+              {showCaret && (
+                <span
+                  aria-hidden="true"
+                  className="absolute top-0"
+                  style={{
+                    left: caretX,
+                    width: caretWidth,
+                    opacity: caretOn && (charCount > 0 || visibleText.length === 0) ? 1 : 0,
+                  }}
+                >
+                  {caret}
+                </span>
+              )}
             </div>
           </div>
         </div>
       </div>
+
+      {/* Extra scroll after unpin (optional). Remove if you want it to end immediately. */}
     </section>
   );
 }
