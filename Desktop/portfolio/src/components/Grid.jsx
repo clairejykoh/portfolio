@@ -22,7 +22,7 @@ const items = [
   { image: concrete_key, 
     title: "Concrete Keycaps", 
     subtitle: "Architecture Meets Industrial Design", 
-    keywords: "Personal, 3D Modeling, 3D Printing, Digital Fabrication, Industrial Design",
+    keywords: "Personal, 3D Modeling, 3D Printing, Digital Fabrication, Industrial Design, Brand Design, Advertising",
     path: "/work/concretekeys"
   },
   { image: workstation, 
@@ -51,6 +51,13 @@ const items = [
     path: "/work/dusk" 
   },
 
+  { image: gymnastics, 
+    title: "US Gymnastics Development Center", 
+    subtitle: "Redesigning the Digital Experience for the Gymnastics Facility", 
+    keywords: "Professional, UX/UI, Website, Web Design, Concept Design",
+    path: "/work/gymnastics" 
+  },  
+  
   { image: huguenot, 
     title: "Huguenot Station ADA Upgrade", 
     subtitle: "Accessibility Upgrade in Huguenot Station, Staten Island", 
@@ -58,12 +65,7 @@ const items = [
     path: "/work/huguenot"
   },
 
-  { image: steam, 
-    title: "Hacking the Steam", 
-    subtitle: "Imagining Playful New Possibilities for the Geothermal Infrastructure in Olkaria, Kenya", 
-    keywords: "Academic, Renewable Energy, 3D Modeling, Architecture, Virtual Architecture, Storytelling",
-    path: "/work/olkaria" 
-  },
+
 
   { image: penn,
     penn, title: "Penn Station Reconstruction", 
@@ -75,7 +77,7 @@ const items = [
   { image: homevideo, 
     title: "Homepage Video", 
     subtitle: "Introducing Myself", 
-    keywords: "Personal, 3D Modeling, Rendering, Motion Graphics, After Effects, Premiere Pro, 3DS MAX",
+    keywords: "Personal, 3D Modeling, Rendering, Motion Graphics, Visual Storytelling, After Effects, Premiere Pro, 3DS MAX",
     path: "/work/homepagevideo" 
   },
 
@@ -92,12 +94,12 @@ const items = [
     path: "/work/language"
   },
   
-  { image: gymnastics, 
-    title: "US Gymnastics Development Center", 
-    subtitle: "Redesigning Digital Experience and Communication System for the Gymnastics Facility", 
-    keywords: "Professional, UX/UI, Website, Web Design, Concept Design",
-    path: "/work/gymnastics" 
-  },  
+  { image: steam, 
+    title: "Hacking the Steam", 
+    subtitle: "Imagining Playful New Possibilities for the Geothermal Infrastructure in Olkaria, Kenya", 
+    keywords: "Academic, Renewable Energy, 3D Modeling, Architecture, Virtual Architecture, Storytelling",
+    path: "/work/olkaria" 
+  },
 
   { image: woodworking, 
     title: "Woodworking", 

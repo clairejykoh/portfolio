@@ -44,11 +44,6 @@ const Interior = () => {
         title="Interior Renderings"
         subtitle="Helping Designers & Clients Visualize"
         meta="Professional, Freelance, Interior Design, Photorealistic Renderings"
-        caption="35 Chestnut Living Room"
-        images={chestnuts}
-      />
-
-      <Gallery
         caption="Ellsworth Residence Kitchen"
         images={ellsworths}
       />
@@ -56,6 +51,11 @@ const Interior = () => {
       <Gallery
         caption="Finke Residence Primary Bath Renders"
         images={primarybaths}
+      /> 
+
+      <Gallery
+        caption="35 Chestnut Living Room"
+        images={chestnuts}
       /> 
 
       <Gallery

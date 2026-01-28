@@ -148,29 +148,34 @@ setCharCount((prev) => (prev === n ? prev : n));
           </div>
 
           <div className="pointer-events-none absolute inset-0 flex items-center justify-center pb-7">
-            <div className="relative font-italiana text-5xl text-black" aria-label={title}>
-              <span>{visibleText}</span>
+          <div
+            className="relative inline-block font-italiana text-5xl leading-none text-black"
+            aria-label={title}
+          >
+            <span>{visibleText}</span>
 
-              <span
-                ref={textMeasureRef}
-                className="absolute left-0 top-0 opacity-0 pointer-events-none"
-                aria-hidden="true"
-              >
-                {visibleText}
-              </span>
+            <span
+              ref={textMeasureRef}
+              className="absolute left-0 top-0 opacity-0 pointer-events-none whitespace-pre"
+              aria-hidden="true"
+            >
+              {visibleText}
+            </span>
 
               {showCaret && (
-                <span
-                  aria-hidden="true"
-                  className="absolute top-0"
-                  style={{
-                    left: caretX,
-                    width: caretWidth,
-                    opacity: caretOn && (charCount > 0 || visibleText.length === 0) ? 1 : 0,
-                  }}
-                >
-                  {caret}
-                </span>
+            <span
+              aria-hidden="true"
+              className="absolute"
+              style={{
+                left: caretX,
+                top: "50%",
+                transform: "translateY(-50%)",
+                width: caretWidth,
+                opacity: caretOn && (charCount > 0 || visibleText.length === 0) ? 1 : 0,
+              }}
+            >
+              {caret}
+            </span>
               )}
             </div>
           </div>

@@ -9,7 +9,7 @@ const messages = [
   [
     { text: "Hi! I'm a ", variant: "base" },
     { text: "REGISTERED ARCHITECT ", variant: "accent" },
-    { text: "working in Transit and Infrastructure", variant: "base" },
+    { text: "specializing in Transit and Infrastructure", variant: "base" },
   ],
   [
     { text: "and a ", variant: "base" },
