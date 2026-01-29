@@ -92,17 +92,17 @@ const ConcreteKeys = () => {
               <TypeAnimationMultiline
                 lines={[
                   "That's why I wanted to try this unconventional material to give keycaps the new look, sound and feel,",
-                  "and to let us experience the beauty of raw material, and expand how we interact with an everyday object.",
+                  "and to let us experience the beauty of raw material, and expand how we interact with everyday object.",
                 ]}
                 className="font-italiana text-2xl w-full text-[#f5f5f5] pt-100"
                 justify="center"
-                typeMs={28}
+                typeMs={70}
                 scrollBoostMax={6}
               />
             </div>
           </div>
         </div>
-        <div className="w-full h-100 mb-20 bg-linear-to-b from-[#010101] to-[#f5f5f5]"></div>
+        <div className="w-full h-100 mb-20 bg-linear-to-b from-[rgb(1,1,1)] to-[#f5f5f5]"></div>
         <ScrollAutoplayVideo
           src="/portfolio/videos/sequence1.mp4"
           muted={true}

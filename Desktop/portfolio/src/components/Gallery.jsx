@@ -62,7 +62,7 @@ export default function Gallery({
           duration: 1,
           stagger: 0.1,
         },
-        "-=0.85"
+        "-=0.85",
       );
     }, rootRef);
 
@@ -92,7 +92,10 @@ export default function Gallery({
         )}
 
         {caption && (
-          <p data-pg-text className="text-justify mt-3 mb-5 text-sm text-gray-700">
+          <p
+            data-pg-text
+            className="text-justify mt-3 mb-5 text-sm text-gray-700"
+          >
             {caption}
           </p>
         )}
