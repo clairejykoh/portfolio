@@ -159,7 +159,7 @@ export default function Video({
 
     if (!track || !canvas || !stage || !bar) return;
 
-    const ctx = canvas.getContext("2d", { alpha: false });
+    const ctx = canvas.getContext("2d", { alpha: true });
     const dpr = Math.max(1, Math.min(2, window.devicePixelRatio || 1));
 
     const resize = () => {
@@ -198,7 +198,8 @@ export default function Video({
       const dx = (w - dw) / 2;
       const dy = (h - dh) / 2;
 
-      ctx.clearRect(0, 0, w, h);
+      ctx.fillStyle = "#fff"; // or your intended background
+      ctx.fillRect(0, 0, w, h);
       ctx.drawImage(asset, dx, dy, dw, dh);
     };
 
@@ -482,7 +483,10 @@ export default function Video({
 
       <div className="fixed inset-0 overflow-hidden bg-transparent mix-blend-multiply">
         <div ref={stageRef} className="absolute inset-0 will-change-transform">
-          <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
+          <canvas
+            ref={canvasRef}
+            className="absolute inset-0 w-full h-full bg-white"
+          />
         </div>
 
         {loadError ? (
@@ -500,7 +504,7 @@ export default function Video({
               key={i}
               ref={(el) => (boxesRef.current[i] = el)}
               style={{ opacity: 0 }}
-              className="text-right shadow-card backdrop-blur-3xl absolute w-[630px] left-[280px] px-5 py-3 text-[27px]"
+              className="text-right shadow-card backdrop-blur-3xl absolute w-[630px] left-[320px] px-5 py-3 text-[27px]"
             >
               <p className="leading-snug">
                 {chunks.map((chunk, idx) => (

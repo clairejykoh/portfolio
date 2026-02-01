@@ -18,7 +18,7 @@ const Home = () => {
         pxPerFrame={11} // slower/faster scrub
         windowSize={200} // preload range
         friction={0.01} // inertia feel
-        startFrame={1}
+        startFrame={0}
       />
 
       <ScrollPrompt className="text-neutral-400" />

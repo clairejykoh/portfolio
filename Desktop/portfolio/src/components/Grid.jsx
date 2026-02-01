@@ -99,10 +99,10 @@ const items = [
     image: lightandshadow,
     title: "Light and Shadow",
     subtitle:
-      "Questioning the Limits of Architecture in Virtual Realtiy Using Unreal Engine",
+      "Questioning the Limit of Architecture in Virtual Realtiy Using Unreal Engine",
     keywords:
       "Academic, Unreal Engine, 3D Design, Game Design, Level Design, Virtual Architecture, World Building, Optics, Caustics, Dramatic",
-    path: "/work/woodworking",
+    path: "/work/lightandshadow",
   },
   {
     image: museum,

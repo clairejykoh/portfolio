@@ -25,11 +25,11 @@ export default function ScrollPrompt({
         pointer-events-none
         fixed
         left-1/2
-        bottom-10
+        bottom-14
         -translate-x-1/2
         z-[100]
         transition-opacity
-        ${visible ? "opacity-80" : "opacity-0"}
+        ${visible ? "opacity-70" : "opacity-0"}
         ${className}
       `}
       style={{ transitionDuration: `${fadeMs}ms` }}
@@ -45,7 +45,8 @@ export default function ScrollPrompt({
           strokeLinecap="round"
           strokeLinejoin="round"
         >
-          <path d="M6 9l6 6 6-6" />
+          <path d="M4 8 L12 14 L20 8" />
+          <path d="M4 3 L12 9 L20 3" />
         </svg>
       </div>
     </div>

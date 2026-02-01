@@ -2,31 +2,34 @@ import React, { useLayoutEffect, useMemo, useRef } from "react";
 import { gsap } from "gsap";
 
 /**
- * FlexGallery
+ * Gallery (grid/flexbox)
  *
  * Props:
+ * - title: string
+ * - subtitle: string (optional)
+ * - meta: string or ReactNode (optional)
  * - caption: string or ReactNode (optional)
- * - captionSpan: number (optional; how many columns the caption occupies; default = columns)
  * - images:
  *    array of { src, alt?, span?, className? } OR array of src strings
  * - className: extra wrapper classes (optional)
  * - imageClassName: extra classes for each img (optional)
- * - children: optional extra JSX inserted as grid items (optional)
+ * - children: optional extra JSX inserted under meta, before images
  *
  * Layout props:
- * - columns: number
- * - gap: number (px)
- * - rowGap: number (px; defaults to gap)
- * - defaultSpan: number
+ * - columns: number (how many columns in the row)
+ * - gap: number (px gap)
+ * - rowGap: number (px row gap; defaults to gap)
+ * - defaultSpan: number (default columns each image takes if not provided)
  *
  * Notes:
- * - Caption is rendered as a flex item in the same flex-wrap grid as images.
- * - Caption text is centered within its box.
- * - Use your custom Tailwind class "shadow-card" on the caption box.
+ * - Uses a flexbox "wrapped columns" layout.
+ * - Images are width-controlled; height is auto by default.
  */
 export default function FlexGallery({
+  title,
+  subtitle,
+  meta,
   caption,
-  captionSpan,
   images = [],
   className = "",
   imageClassName = "",
@@ -39,55 +42,33 @@ export default function FlexGallery({
 }) {
   const rootRef = useRef(null);
 
-  const colCount = Math.max(1, Number(columns) || 1);
-  const g = Number(gap) || 0;
-  const rg = rowGap == null ? g : Number(rowGap) || 0;
+  const normalized = useMemo(() => {
+    const colCount = Math.max(1, Number(columns) || 1);
 
-  const normalizedImages = useMemo(() => {
     return images
       .map((img, i) => {
         if (typeof img === "string") {
           return {
-            kind: "image",
             src: img,
-            alt: `image-${i + 1}`,
+            alt: `${title ?? "image"}-${i + 1}`,
             span: defaultSpan,
             className: "",
           };
         }
 
         return {
-          kind: "image",
           src: img.src,
-          alt: img.alt ?? `image-${i + 1}`,
-          span: img.span ?? defaultSpan,
+          alt: img.alt ?? `${title ?? "image"}-${i + 1}`,
+          span: img.span ?? defaultSpan, // per-image column span
           className: img.className ?? "",
         };
       })
       .map((item) => {
+        // Clamp span to [1, columns]
         const span = Math.max(1, Math.min(colCount, Number(item.span) || 1));
         return { ...item, span };
       });
-  }, [images, colCount, defaultSpan]);
-
-  // Build one flat list of "grid items" so caption participates in the same flex-wrap grid
-  const items = useMemo(() => {
-    const out = [];
-
-    if (caption) {
-      const desired = captionSpan ?? colCount; // default: full width
-      const span = Math.max(1, Math.min(colCount, Number(desired) || 1));
-      out.push({ kind: "caption", span });
-    }
-
-    if (children) {
-      // Children behaves like a full-width grid item by default
-      out.push({ kind: "children", span: colCount });
-    }
-
-    out.push(...normalizedImages);
-    return out;
-  }, [caption, captionSpan, children, normalizedImages, colCount]);
+  }, [images, title, columns, defaultSpan]);
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
@@ -114,86 +95,85 @@ export default function FlexGallery({
           duration: 1,
           stagger: 0.1,
         },
-        "-=0.85"
+        "-=0.85",
       );
     }, rootRef);
 
     return () => ctx.revert();
-  }, [items.length, caption, captionSpan, children]);
+  }, [normalized.length, title, subtitle, meta, caption, children]);
 
-  const spanToWidth = (span) =>
-    `calc(${(100 / colCount) * span}% - ${g * (1 - span / colCount)}px)`;
+  const colCount = Math.max(1, Number(columns) || 1);
+  const colWidthPct = 100 / colCount;
+  const g = Number(gap) || 0;
+  const rg = rowGap == null ? g : Number(rowGap) || 0;
 
   return (
     <div ref={rootRef} className={className}>
       <div className="image-column mix-blend-multiply">
+        {title && (
+          <p data-pg-text className="text-3xl/2 font-italiana mt-20">
+            {title}
+          </p>
+        )}
+
+        {subtitle && (
+          <p data-pg-text className="text-2xl font-italiana">
+            <br />
+            {subtitle}
+          </p>
+        )}
+
+        {meta && (
+          <p data-pg-text className="mb-5 text-base text-gray-700">
+            {meta}
+          </p>
+        )}
+
+        {caption && (
+          <p data-pg-text className="mt-3 mb-5 text-sm text-gray-700">
+            {caption}
+          </p>
+        )}
+
+        {children && <div data-pg-text>{children}</div>}
+
         {/* Flexbox grid */}
         <div
+          data-pg-text
           style={{
             display: "flex",
             flexWrap: "wrap",
-            gap: `${rg}px ${g}px`,
+            gap: `${rg}px ${g}px`, // row-gap then column-gap
             alignItems: "flex-start",
           }}
         >
-          {items.map((item, idx) => {
-            const width = spanToWidth(item.span);
+          {normalized.map(({ src, alt, span, className: perItemClass }, i) => {
+            // width = (span columns) minus a proportional share of column gaps.
+            // We subtract gaps inside the row so items don't wrap unexpectedly.
+            const width = `calc(${colWidthPct * span}% - ${
+              g * (1 - span / colCount)
+            }px)`;
 
-            if (item.kind === "caption") {
-              return (
-                <div
-                  key={`caption-${idx}`}
-                  data-pg-text
-                  style={{ flex: `0 0 ${width}`, maxWidth: width }}
-                >
-                  <div
-                    className="shadow-card text-sm text-gray-700"
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      textAlign: "center",
-                      padding: "14px 16px",
-                    }}
-                  >
-                    {caption}
-                  </div>
-                </div>
-              );
-            }
-
-            if (item.kind === "children") {
-              return (
-                <div
-                  key={`children-${idx}`}
-                  data-pg-text
-                  style={{ flex: `0 0 ${width}`, maxWidth: width }}
-                >
-                  {children}
-                </div>
-              );
-            }
-
-            // image
             return (
               <div
-                key={`${item.alt}-${idx}`}
+                key={`${alt}-${i}`}
                 data-pg-image
-                style={{ flex: `0 0 ${width}`, maxWidth: width }}
+                style={{
+                  flex: `0 0 ${width}`,
+                  maxWidth: width,
+                }}
               >
                 <img
-                  src={item.src}
-                  alt={item.alt}
-                  className={`image-item-flex ${imageClassName} ${item.className}`}
+                  src={src}
+                  alt={alt}
+                  className={`image-item-flex ${imageClassName} ${perItemClass}`}
                   style={{
                     width: "100%",
                     height: "auto",
                     display: "block",
                   }}
                   loading="eager"
-                  fetchpriority={idx === 0 ? "high" : "auto"}
+                  fetchpriority={i === 0 ? "high" : "auto"}
                   decoding="async"
                 />
               </div>

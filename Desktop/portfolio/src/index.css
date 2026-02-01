@@ -26,7 +26,7 @@
 }
 
 .animate-scroll-float {
-  animation: scroll-float 2s ease-in-out infinite;
+  animation: scroll-float 1.8s ease-in-out infinite;
 }
 
 html {

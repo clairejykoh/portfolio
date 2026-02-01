@@ -22,19 +22,7 @@ import frame12 from "../../assets/penn_station/frame12.jpg";
 
 import ScrollGalleryNonSticky from "../../components/ScrollGalleryNonSticky";
 
-const images = [
-  frame01,
-  frame02,
-  frame03,
-  frame04,
-  frame05,
-  frame06,
-  frame07,
-  frame08,
-  frame10,
-  frame11,
-  frame12,
-];
+const images = [frame02, frame04, frame06, frame07, frame10, frame11, frame12];
 
 const Penn = ({ frames }) => {
   const { key } = useLocation();

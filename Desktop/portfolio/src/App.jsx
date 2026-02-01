@@ -1,43 +1,42 @@
-import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 
-import React from 'react';
-import Navigation from './components/Navigation';
-import Footer from './components/Footer';
-import { Home, About, Work } from './pages';
-import Language from './pages/work/Language';
-import Workstation from './pages/work/Workstation';
-import Huguenot from './pages/work/Huguenot';
-import Woodworking from './pages/work/Woodworking';
-import Gymnastics from './pages/work/Gymnastics';
-import Cartography from './pages/work/Cartography';
-import Dusk from './pages/work/Dusk';
-import P5JS from './pages/work/P5JS';
-import HomepageVideo from './pages/work/HomepageVideo';
-import Olkaria from './pages/work/Olkaria';
-import Interior from './pages/work/Interior';
-import Penn from './pages/work/Penn';
-import ConcreteKeys from './pages/work/ConcreteKeys';
+import React from "react";
+import Navigation from "./components/Navigation";
+import Footer from "./components/Footer";
+import { Home, About, Work } from "./pages";
+import Language from "./pages/work/Language";
+import Workstation from "./pages/work/Workstation";
+import Huguenot from "./pages/work/Huguenot";
+import Woodworking from "./pages/work/Woodworking";
+import Gymnastics from "./pages/work/Gymnastics";
+import Cartography from "./pages/work/Cartography";
+import Dusk from "./pages/work/Dusk";
+import P5JS from "./pages/work/P5JS";
+import HomepageVideo from "./pages/work/HomepageVideo";
+import Olkaria from "./pages/work/Olkaria";
+import Interior from "./pages/work/Interior";
+import Penn from "./pages/work/Penn";
+import ConcreteKeys from "./pages/work/ConcreteKeys";
+import LightandShadow from "./pages/work/LightandShadow";
 
- 
 const App = () => {
   return (
-  <main>
-    <Router>
-      <ScrollToTop />
-      <Navigation />
+    <main>
+      <Router>
+        <ScrollToTop />
+        <Navigation />
         <Routes>
-          {/* Navigation */}          
-          <Route path="/portfolio" element={<Home/>} />
-          <Route path="/about" element={<About/>} />
-          <Route path="/work" element={<Work/>} />
-
+          {/* Navigation */}
+          <Route path="/portfolio" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/work" element={<Work />} />
           {/* Project detail pages */}
           <Route path="/work/language" element={<Language />} />
           <Route path="/work/workstation" element={<Workstation />} />
           <Route path="/work/huguenot" element={<Huguenot />} />
           <Route path="/work/woodworking" element={<Woodworking />} />
-          <Route path="/work/gymnastics" element={<Gymnastics />} /> 
+          <Route path="/work/gymnastics" element={<Gymnastics />} />
           <Route path="/work/cartography" element={<Cartography />} />
           <Route path="/work/concretekeys" element={<ConcreteKeys />} />
           <Route path="/work/dusk" element={<Dusk />} />
@@ -46,10 +45,11 @@ const App = () => {
           <Route path="/work/olkaria" element={<Olkaria />} />
           <Route path="/work/interior" element={<Interior />} />
           <Route path="/work/penn" element={<Penn />} />
+          <Route path="work/lightandshadow" element={<LightandShadow />} />"
         </Routes>
-    </Router>
-  </main>
-  )
-}
+      </Router>
+    </main>
+  );
+};
 
-export default App
+export default App;
