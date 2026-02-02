@@ -7,7 +7,10 @@ const messages = [
   [
     { text: "Hi! I'm a ", variant: "base" },
     { text: "REGISTERED ARCHITECT ", variant: "accent" },
-    { text: "specializing in Transit and Infrastructure", variant: "base" },
+    {
+      text: "specializing in Urban Planning and Infrastructure Design",
+      variant: "base",
+    },
   ],
   [
     { text: "and a ", variant: "base" },
@@ -39,7 +42,10 @@ const messages = [
   ],
   [
     { text: "and with digital information through \n", variant: "base" },
-    { text: " INTERACTION DESIGN AND PROGRAMMING,", variant: "accent" },
+    {
+      text: "GRAPHIC DESIGN, INTERACTION DESIGN AND PROGRAMMING,",
+      variant: "accent",
+    },
   ],
   [
     { text: "and bring the best of both worlds through", variant: "base" },
@@ -149,7 +155,7 @@ export default function Video({
   }, [imagesBase, fileStart]);
 
   const getFontClass = (variant) =>
-    variant === "accent" ? "font-sans" : "font-italiana";
+    variant === "accent" ? "font-inter" : "font-italiana";
 
   useEffect(() => {
     const track = trackRef.current;

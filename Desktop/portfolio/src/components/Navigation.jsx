@@ -10,7 +10,7 @@ const Navigation = () => {
           to="/portfolio"
           className={({ isActive }) =>
             `relative inline-block px-1
-              ${isActive ? "text-amber-400" : "text-black"}
+              ${isActive ? "text-amber-400" : "text-gray-750"}
               after:content-[''] after:absolute after:left-0 after:-bottom-2
               after:h-[4px] after:w-full after:bg-amber-400
               after:origin-left after:scale-x-0
@@ -25,7 +25,7 @@ const Navigation = () => {
           end={false}
           className={({ isActive }) =>
             `relative inline-block px-1
-              ${isActive ? "text-amber-400" : "text-black"}
+              ${isActive ? "text-amber-400" : "text-gray-750"}
               after:content-[''] after:absolute after:left-0 after:-bottom-2
               after:h-[4px] after:w-full after:bg-amber-400
               after:origin-left after:scale-x-0
@@ -40,7 +40,7 @@ const Navigation = () => {
           to="/about"
           className={({ isActive }) =>
             `relative inline-block px-1
-              ${isActive ? "text-amber-400" : "text-black"}
+              ${isActive ? "text-amber-400" : "text-gray-750"}
               after:content-[''] after:absolute after:left-0 after:-bottom-2
               after:h-[4px] after:w-full after:bg-amber-400
               after:origin-left after:scale-x-0

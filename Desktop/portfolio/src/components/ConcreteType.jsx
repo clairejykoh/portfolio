@@ -24,16 +24,16 @@ export default function ConcreteType({
   lines = ["It's Visual", "It's Auditory", "It's Tactile"],
 
   // --- Overlay trigger + animation ---
-  overlayStartAt = 0.18,    // rest on raw video until this progress
-  overlaySlideMs = 650,     // duration of slide up/down (ms)
+  overlayStartAt = 0.18, // rest on raw video until this progress
+  overlaySlideMs = 650, // duration of slide up/down (ms)
   overlayBg = "rgba(0,0,0,0.65)",
 
   // --- Typing timing (0..1 section progress, after hold-scaling) ---
   // If null, derived as overlayStartAt + typeRestSpan (clamped)
   typeStartAt = null,
-  typeRestSpan = 0.10,      // rest after overlay triggers before typing starts
-  typeEndAt = 0.92,         // later = slower typing (more scroll distance), must be > start
-  postTypeHoldSpan = 0.08,  // extends section height for a hold after typing
+  typeRestSpan = 0.1, // rest after overlay triggers before typing starts
+  typeEndAt = 0.92, // later = slower typing (more scroll distance), must be > start
+  postTypeHoldSpan = 0.08, // extends section height for a hold after typing
 
   // Layout
   maxWidthClass = "max-w-4xl",
@@ -57,8 +57,9 @@ export default function ConcreteType({
     const el = sectionRef.current;
     if (!el) return;
 
-    const prefersReduced =
-      window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
+    const prefersReduced = window.matchMedia?.(
+      "(prefers-reduced-motion: reduce)",
+    )?.matches;
 
     let raf = 0;
     const onScroll = () => {
@@ -117,11 +118,11 @@ export default function ConcreteType({
   const stepFloat = useMemo(() => typingLocal * steps, [typingLocal, steps]);
   const activeStep = useMemo(
     () => clampInt(Math.floor(stepFloat), 0, steps - 1),
-    [stepFloat, steps]
+    [stepFloat, steps],
   );
   const activeT = useMemo(
     () => clamp01(stepFloat - activeStep),
-    [stepFloat, activeStep]
+    [stepFloat, activeStep],
   );
 
   const shown = useMemo(() => {
@@ -174,7 +175,7 @@ export default function ConcreteType({
           />
 
           {/* Text */}
-          <div className="absolute inset-0 px-6 pb-40">
+          <div className="absolute inset-0 px-6 pb-0">
             <div className="relative h-full w-full">
               {/* Headline */}
               <div
@@ -182,7 +183,7 @@ export default function ConcreteType({
                 style={{ transform: `translateY(${headlineOffsetY}px)` }}
               >
                 <div className={`flex w-full ${maxWidthClass} ${alignClass}`}>
-                  <h2 className="font-italiana text-3xl md:text-5xl leading-tight text-white">
+                  <h2 className="font-inter font-light text-3xl md:text-5xl leading-tight text-white">
                     <TypeReveal text={headline} shown={headlineShown} />
                   </h2>
                 </div>
@@ -190,9 +191,9 @@ export default function ConcreteType({
 
               {/* Subheadlines */}
               <div
-                className="absolute left-0 right-0 flex justify-center pt-15"
+                className="absolute left-0 right-0 flex justify-center pt-55"
                 style={{
-                  top: "50%",
+                  top: "40%",
                   transform: `translateY(calc(-50% + ${subBlockOffsetY}px))`,
                 }}
               >
@@ -201,7 +202,10 @@ export default function ConcreteType({
                 >
                   <div className="space-y-5 text-white/90">
                     {lines.map((t, i) => (
-                      <p key={t + i} className="font-italiana text-base md:text-lg tracking-wide">
+                      <p
+                        key={t + i}
+                        className="font-inter font-extralight text-base md:text-2xl tracking-wide"
+                      >
                         <TypeReveal text={t} shown={linesShown[i] ?? 0} />
                       </p>
                     ))}

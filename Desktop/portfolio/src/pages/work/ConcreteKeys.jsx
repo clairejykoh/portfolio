@@ -18,6 +18,8 @@ import progress05 from "../../assets/concrete_keys/progress05.jpg";
 import progress06 from "../../assets/concrete_keys/progress06.jpg";
 import progress07 from "../../assets/concrete_keys/progress07.jpg";
 
+import axon from "../../assets/concrete_keys/axon.jpg";
+
 import architecture01 from "../../assets/concrete_keys/architecture01.jpg";
 import architecture02 from "../../assets/concrete_keys/architecture02.jpg";
 import architecture03 from "../../assets/concrete_keys/architecture03.jpg";
@@ -31,6 +33,13 @@ import architecture10 from "../../assets/concrete_keys/architecture10.jpg";
 import architecture11 from "../../assets/concrete_keys/architecture11.jpg";
 import architecture12 from "../../assets/concrete_keys/architecture12.jpg";
 import architecture13 from "../../assets/concrete_keys/architecture13.jpg";
+import architecture14 from "../../assets/concrete_keys/architecture14.jpg";
+import architecture15 from "../../assets/concrete_keys/architecture15.jpg";
+import architecture16 from "../../assets/concrete_keys/architecture16.jpg";
+import architecture17 from "../../assets/concrete_keys/architecture17.jpg";
+import architecture18 from "../../assets/concrete_keys/architecture18.jpg";
+import architecture19 from "../../assets/concrete_keys/architecture19.jpg";
+import architecture20 from "../../assets/concrete_keys/architecture20.jpg";
 
 import cover from "../../assets/concrete_keys/samples.jpg";
 import concretekeycaps from "../../assets/concrete_keys/concretekeycaps.jpg";
@@ -52,6 +61,13 @@ const architecture = [
   architecture11,
   architecture12,
   architecture13,
+  architecture14,
+  architecture15,
+  architecture16,
+  architecture17,
+  architecture18,
+  architecture19,
+  architecture20,
 ];
 
 const ConcreteKeys = () => {
@@ -86,23 +102,24 @@ const ConcreteKeys = () => {
           typeRestSpan={0.12}
         />
 
-        <div className="w-full h-200 bg-[#010101]">
-          <div className="flex flex-center items-center">
-            <div className="max-w-[1600px]">
-              <TypeAnimationMultiline
-                lines={[
-                  "That's why I wanted to try this unconventional material to give keycaps the new look, sound and feel,",
-                  "and to let us experience the beauty of raw material, and expand how we interact with everyday object.",
-                ]}
-                className="font-italiana text-2xl w-full text-[#f5f5f5] pt-100"
-                justify="center"
-                typeMs={70}
-                scrollBoostMax={6}
-              />
-            </div>
+        <TypeAnimationMultiline
+          text="That's why I wanted to try this unconventional material - to give keycaps the new look, sound and feel, and to let us experience the beauty of raw material, and expand it to an everyday object."
+          panelClassName="w-full h-auto bg-[#010101] flex flex-center px-5 md:px-0"
+          textClassName="text-3xl md:text-2xl font-extralight tracking-tight text-[#f5f5f5] max-w-[1000px]"
+          startAt={0}
+          endAt={0.9}
+        />
+
+        <div className="w-full h-auto bg-[#010101] flex flex-center">
+          <div className="max-w-[1000px]">
+            <p className="font-inter mb-5 text-2xl text-[#f5f5f5]">
+              The Vision
+            </p>
+            <img src={axon} />
           </div>
         </div>
-        <div className="w-full h-100 mb-20 bg-linear-to-b from-[rgb(1,1,1)] to-[#f5f5f5]"></div>
+
+        <div className="w-full h-200 mb-20 bg-linear-to-b from-[rgb(1,1,1)] to-[#f5f5f5]"></div>
         <ScrollAutoplayVideo
           src="/portfolio/videos/sequence1.mp4"
           muted={true}
@@ -115,19 +132,14 @@ const ConcreteKeys = () => {
         muted={true}
         className="w-full h-auto mix blend-multiply brightness-130"
       />
-      <div className="flex flex-center items-center">
-        <div className="max-w-[700px]">
-          <p className="font-italiana mt-35 mb-5 text-xl">Finished Product</p>
-          <Gallery images={finishes} className="mb-15" />
-        </div>
-      </div>
-      <div className="flex flex-row justify-center">
-        <div className="mx-auto max-w-[700px]">
-          <p className="font-italiana mb-5 text-xl">Process</p>
+
+      <div className="flex flex-row justify-center mt-60">
+        <div className="mx-auto max-w-[1000px]">
+          <p className="font-inter mb-5 text-2xl">The Process</p>
           <div className="grid grid-cols-4 items-center">
             <Gallery images={[progress01]} className="col-span-2" />
             <div className="ml-10 text-xs text-justify col-span-2">
-              <p className="text-xl font-italiana">
+              <p className="text-xl font-inter">
                 1
                 <br />
               </p>
@@ -137,21 +149,21 @@ const ConcreteKeys = () => {
             </div>
             <Gallery images={[progress02]} className="col-span-2" />
             <div className="ml-10 text-xs text-justify col-span-2">
-              <p className="text-xl font-italiana">2</p>
+              <p className="text-xl font-inter">2</p>
               <br />
               <br />
               Import the model to 3D printing program.
             </div>
             <Gallery images={[progress03]} className="col-span-2" />
             <div className="ml-10 text-xs text-justify col-span-2">
-              <p className="text-xl font-italiana">3</p>
+              <p className="text-xl font-inter">3</p>
               <br />
               <br />
               3D print the stems.
             </div>
             <Gallery images={[progress04]} className="col-span-2" />
             <div className="ml-10 text-xs text-justify col-span-2">
-              <p className="text-xl font-italiana">4</p>
+              <p className="text-xl font-inter">4</p>
               <br />
               <br />
               Pour the cement into mold with the stems fixed on the center and
@@ -159,12 +171,19 @@ const ConcreteKeys = () => {
             </div>
             <Gallery images={[progress05]} className="col-span-2" />
             <div className="ml-10 text-xs text-justify col-span-2">
-              <p className="text-xl font-italiana">5</p>
+              <p className="text-xl font-inter">5</p>
               <br />
               <br />
               Experiment with the texture.
             </div>
           </div>
+        </div>
+      </div>
+
+      <div className="flex flex-center items-center">
+        <div className="max-w-[1000px]">
+          <p className="font-inter mt-35 mb-5 text-2xl">Finished Product</p>
+          <Gallery images={finishes} className="mb-15" />
         </div>
       </div>
     </>

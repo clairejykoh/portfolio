@@ -1,8 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Italiana&family=Prata&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Antic+Didone&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Italiana&display=swap");
+
 @import "tailwindcss";
 
 @theme {
   --font-italiana: "Italiana", "sans-serif";
+  --font-inter: "Inter", "sans-serif";
+  --font-antic-didone: "Antic Didone", "serif";
 }
 
 @layer base {
@@ -34,8 +37,9 @@ html {
 }
 
 body {
-  color: rgb(30, 30, 30);
-  font-family: "Segoe UI", sans-serif;
+  color: rgb(60, 60, 60);
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
   width: 100dvw;
   overflow-x: hidden;
   height: 100%;
@@ -87,9 +91,21 @@ body.hero-page .navbar {
   max-width: 1120px;
 }
 
+.antic-didone-regular {
+  font-family: "Antic Didone", serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.inter-regular {
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
 .italiana-regular {
   font-family: "Italiana", sans-serif;
-  font-weight: 400;
+  font-weight: 600;
   font-style: normal;
 }
 

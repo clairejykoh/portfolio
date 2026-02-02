@@ -34,7 +34,7 @@ export default function ConcreteIntro({
 
   useLayoutEffect(() => {
     const TYPE_START_PROGRESS = 0.45; // 0–1, higher = later start
-    
+
     const ctx = gsap.context(() => {
       // Initial masks:
       // Upper reveals FROM RIGHT (right 10% visible)
@@ -55,9 +55,9 @@ export default function ConcreteIntro({
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top top",
-          end: `+=${pinDistance}`,     // pin releases when timeline ends
+          end: `+=${pinDistance}`, // pin releases when timeline ends
           scrub: true,
-          pin: pinRef.current,         // keeps the viewport sticky
+          pin: pinRef.current, // keeps the viewport sticky
           pinSpacing: true,
           anticipatePin: 1,
           invalidateOnRefresh: true,
@@ -69,13 +69,13 @@ export default function ConcreteIntro({
       tl.to(
         topWrapRef.current,
         { clipPath: "inset(0% 0% 0% 0%)", duration: 1 },
-        0
+        0,
       );
 
       tl.to(
         bottomWrapRef.current,
         { clipPath: "inset(0% 0% 0% 0%)", duration: 1 },
-        0 // slight delay so it feels sequential; set to 0 for perfectly in-sync
+        0, // slight delay so it feels sequential; set to 0 for perfectly in-sync
       );
 
       // Scrubbed typing tied to timeline progress (no separate ScrollTrigger).
@@ -83,19 +83,19 @@ export default function ConcreteIntro({
       tl.eventCallback("onUpdate", () => {
         const st = tl.scrollTrigger;
         if (!st) return;
-        
-const p = st.progress;
 
-if (p <= TYPE_START_PROGRESS) {
-  setCharCount(0);
-  return;
-}
+        const p = st.progress;
 
-const localProgress =
-  (p - TYPE_START_PROGRESS) / (1 - TYPE_START_PROGRESS);
+        if (p <= TYPE_START_PROGRESS) {
+          setCharCount(0);
+          return;
+        }
 
-const n = Math.round(localProgress * totalChars);
-setCharCount((prev) => (prev === n ? prev : n));
+        const localProgress =
+          (p - TYPE_START_PROGRESS) / (1 - TYPE_START_PROGRESS);
+
+        const n = Math.round(localProgress * totalChars);
+        setCharCount((prev) => (prev === n ? prev : n));
       });
 
       ScrollTrigger.refresh();
@@ -109,7 +109,7 @@ setCharCount((prev) => (prev === n ? prev : n));
     if (!showCaret) return;
     const id = window.setInterval(
       () => setCaretOn((v) => !v),
-      Math.max(120, caretBlinkMs)
+      Math.max(120, caretBlinkMs),
     );
     return () => window.clearInterval(id);
   }, [showCaret, caretBlinkMs]);
@@ -147,35 +147,38 @@ setCharCount((prev) => (prev === n ? prev : n));
             />
           </div>
 
-          <div className="pointer-events-none absolute inset-0 flex items-center justify-center pb-7">
-          <div
-            className="relative inline-block font-italiana text-5xl leading-none text-black"
-            aria-label={title}
-          >
-            <span>{visibleText}</span>
-
-            <span
-              ref={textMeasureRef}
-              className="absolute left-0 top-0 opacity-0 pointer-events-none whitespace-pre"
-              aria-hidden="true"
+          <div className="pointer-events-none absolute inset-0 flex items-center justify-center pb-11">
+            <div
+              className="relative inline-block font-inter text-6xl font-light leading-none text-black"
+              aria-label={title}
             >
-              {visibleText}
-            </span>
+              <span>{visibleText}</span>
+
+              <span
+                ref={textMeasureRef}
+                className="absolute left-0 top-0 opacity-0 pointer-events-none whitespace-pre"
+                aria-hidden="true"
+              >
+                {visibleText}
+              </span>
 
               {showCaret && (
-            <span
-              aria-hidden="true"
-              className="absolute"
-              style={{
-                left: caretX,
-                top: "50%",
-                transform: "translateY(-50%)",
-                width: caretWidth,
-                opacity: caretOn && (charCount > 0 || visibleText.length === 0) ? 1 : 0,
-              }}
-            >
-              {caret}
-            </span>
+                <span
+                  aria-hidden="true"
+                  className="absolute"
+                  style={{
+                    left: caretX,
+                    top: "50%",
+                    transform: "translateY(-50%)",
+                    width: caretWidth,
+                    opacity:
+                      caretOn && (charCount > 0 || visibleText.length === 0)
+                        ? 1
+                        : 0,
+                  }}
+                >
+                  {caret}
+                </span>
               )}
             </div>
           </div>

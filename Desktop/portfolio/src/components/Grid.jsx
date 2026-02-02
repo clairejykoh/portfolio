@@ -18,6 +18,7 @@ import shape from "../assets/shape.gif";
 import language from "../assets/lla.jpg";
 import gymnastics from "../assets/gymnastics.jpg";
 import lightandshadow from "../assets/light_and_shadow.png";
+import harlem from "../assets/harlem.png";
 
 const items = [
   {
@@ -39,7 +40,7 @@ const items = [
   {
     image: shape,
     title: "Play (p5.js)",
-    subtitle: "Creative Coding using p5.js",
+    subtitle: "Creative Coding Using p5.js",
     keywords: "Academic, Programming, Javascript, p5.js",
     path: "/work/p5js",
   },
@@ -53,11 +54,12 @@ const items = [
   },
 
   {
-    image: east_liberty,
-    title: "Porous City",
-    subtitle: "Building Design Based on Pedestrian Traffic and User Flow",
+    image: harlem,
+    title: "Harlem 148th Station ADA Upgrade",
+    subtitle: "Accessibility Upgrade in Harlem 148th Station, Manhattan",
     keywords:
-      "Academic, Urban Planning, Architecture, Rhino 3D, Enscape, Digital Collage, Three.js",
+      "Professional, Infrastructure, Transit, Architecture, Rendering, 3D Modeling, ADA, Design-Build",
+    path: "/work/harlem",
   },
 
   {
@@ -78,7 +80,6 @@ const items = [
 
   {
     image: penn,
-    penn,
     title: "Penn Station Reconstruction",
     subtitle: "Redesigning the Busiest Station in the World",
     keywords:
@@ -116,7 +117,7 @@ const items = [
     title: "Huguenot Station ADA Upgrade",
     subtitle: "Accessibility Upgrade in Huguenot Station, Staten Island",
     keywords:
-      "Professional, Infrastructure, Transit, Architecture, ADA, Design-Build",
+      "Professional, Infrastructure, Transit, Architecture, Rendering, 3D Modeling, ADA, Design-Build",
     path: "/work/huguenot",
   },
   {

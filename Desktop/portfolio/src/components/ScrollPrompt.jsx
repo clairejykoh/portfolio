@@ -29,7 +29,7 @@ export default function ScrollPrompt({
         -translate-x-1/2
         z-[100]
         transition-opacity
-        ${visible ? "opacity-70" : "opacity-0"}
+        ${visible ? "opacity-60" : "opacity-0"}
         ${className}
       `}
       style={{ transitionDuration: `${fadeMs}ms` }}
@@ -41,7 +41,7 @@ export default function ScrollPrompt({
           viewBox="0 0 24 24"
           fill="none"
           stroke="black"
-          strokeWidth="1.5"
+          strokeWidth="1.3"
           strokeLinecap="round"
           strokeLinejoin="round"
         >

@@ -1,138 +1,134 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 
-function hashStringToUint32(str) {
-  let h = 2166136261;
-  for (let i = 0; i < str.length; i++) {
-    h ^= str.charCodeAt(i);
-    h = Math.imul(h, 16777619);
-  }
-  return h >>> 0;
-}
-
-function mulberry32(seed) {
-  return function () {
-    let t = (seed += 0x6d2b79f5);
-    t = Math.imul(t ^ (t >>> 15), t | 1);
-    t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
-    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
-  };
-}
-
-function shuffledIndices(length, seed) {
-  const idx = Array.from({ length }, (_, i) => i);
-  const rand = mulberry32(seed);
-  for (let i = idx.length - 1; i > 0; i--) {
-    const j = Math.floor(rand() * (i + 1));
-    [idx[i], idx[j]] = [idx[j], idx[i]];
-  }
-  return idx;
-}
-
+/**
+ * StickyFixedGridPopulate
+ * - 3 columns
+ * - rows = ceil(images.length / columns)
+ * - sticky viewport is ALWAYS 100vh (prevents jump when sticky engages)
+ * - NO fade: images "appear" by switching visibility (layout stays fixed, no shifting)
+ * - pinned image is always visible (even before enter) but does NOT change array order
+ * - overlay appears after all images are visible + overlayDelayPx
+ * - images are fit (object-fit: contain), not cropped
+ */
 export default function PopulateGallery({
   images = [],
 
-  // width control
   width = "100%",
   maxWidth = null,
   align = "left",
 
-  // masonry controls
-  columns = 2,
-  columnGap = 16,
-  itemGap = 16,
+  columns = 3,
+  gap = 16,
 
-  // reveal controls
   pxPerItem = 140,
-  startAfterEnterPx = 0, // <-- 0 = start exactly when component top crosses viewport bottom
+  startAfterEnterPx = 140,
   initiallyVisible = 0,
 
-  // randomization controls
-  randomSeed = "default-seed",
+  // pinned image
+  pinnedIndex = 1, // <-- add back pinned image (always visible)
+
+  // preload
+  preload = true,
+
+  // final overlay
+  finalOverlaySrc = null,
+  finalOverlayAlt = "final overlay",
+  overlayDelayPx = 380,
+
+  // cell bg behind contain letterboxing
+  cellBg = "transparent",
 
   className = "",
 }) {
   const rootRef = useRef(null);
   const rafRef = useRef(null);
+
+  const [entered, setEntered] = useState(false);
   const [visibleCount, setVisibleCount] = useState(initiallyVisible);
+  const [overlayShown, setOverlayShown] = useState(false);
 
   const normalized = useMemo(
     () =>
       (images || []).map((img, i) =>
-        typeof img === "string" ? { src: img, alt: `image-${i + 1}` } : img
+        typeof img === "string" ? { src: img, alt: `image-${i + 1}` } : img,
       ),
-    [images]
+    [images],
   );
 
-  const revealOrder = useMemo(() => {
-    const seed = hashStringToUint32(`${randomSeed}::${normalized.length}`);
-    return shuffledIndices(normalized.length, seed);
-  }, [normalized.length, randomSeed]);
+  const total = normalized.length;
+  const pinnedIsValid = pinnedIndex >= 0 && pinnedIndex < total;
 
-  const revealRankByIndex = useMemo(() => {
-    const rank = new Array(normalized.length).fill(Infinity);
-    for (let r = 0; r < revealOrder.length; r++) rank[revealOrder[r]] = r;
-    return rank;
-  }, [normalized.length, revealOrder]);
+  const rows = Math.max(1, Math.ceil(total / columns));
 
-  const getScrollParent = (node) => {
-    if (!node) return window;
-    let el = node.parentElement;
-    while (el) {
-      const style = window.getComputedStyle(el);
-      const oy = style.overflowY;
-      const isScrollableY =
-        (oy === "auto" || oy === "scroll" || oy === "overlay") &&
-        el.scrollHeight > el.clientHeight;
-      if (isScrollableY) return el;
-      el = el.parentElement;
-    }
-    return window;
-  };
+  const revealScrollLen = Math.max(1, total * pxPerItem);
+  const spacerLen = revealScrollLen + (finalOverlaySrc ? overlayDelayPx : 0);
 
+  const marginLeft =
+    align === "center" ? "auto" : align === "right" ? "auto" : 0;
+  const marginRight =
+    align === "center" ? "auto" : align === "right" ? 0 : "auto";
+
+  // Optional preload
   useEffect(() => {
-    const el = rootRef.current;
-    if (!el) return;
+    if (!preload) return;
+    const srcs = normalized.map((i) => i?.src).filter(Boolean);
+    if (!srcs.length) return;
 
-    const total = normalized.length;
-    const clamp = (n, a, b) => Math.max(a, Math.min(b, n));
+    let cancelled = false;
+    Promise.all(
+      srcs.map(
+        (src) =>
+          new Promise((res) => {
+            const im = new Image();
+            im.onload = () => res(true);
+            im.onerror = () => res(false);
+            im.src = src;
+          }),
+      ),
+    ).then(() => {
+      if (cancelled) return;
+    });
 
-    let scrollParent = getScrollParent(el);
-    const isWindow = (sp) => sp === window;
-
-    const getScrollTop = (sp) =>
-      isWindow(sp) ? window.scrollY || window.pageYOffset || 0 : sp.scrollTop || 0;
-
-    const getViewportHeight = (sp) =>
-      isWindow(sp) ? window.innerHeight || 1 : sp.clientHeight || 1;
-
-    const getElementTopInScrollSpace = (sp) => {
-      const rect = el.getBoundingClientRect();
-      if (isWindow(sp)) {
-        return rect.top + getScrollTop(sp);
-      }
-      const spRect = sp.getBoundingClientRect();
-      return rect.top - spRect.top + getScrollTop(sp);
+    return () => {
+      cancelled = true;
     };
+  }, [normalized, preload]);
+
+  // Scroll -> reveal (array order)
+  useEffect(() => {
+    const root = rootRef.current;
+    if (!root) return;
+
+    const clamp = (n, a, b) => Math.max(a, Math.min(b, n));
+    const getScrollY = () => window.scrollY || window.pageYOffset || 0;
+    const getVH = () => window.innerHeight || 1;
 
     let startTop = 0;
 
-    const recompute = () => {
-      // Start when: component top crosses viewport bottom
-      // -> in scroll space, that happens at (componentTop - viewportHeight)
-      startTop =
-        getElementTopInScrollSpace(scrollParent) -
-        getViewportHeight(scrollParent) +
-        startAfterEnterPx;
+    const recomputeStart = () => {
+      const rect = root.getBoundingClientRect();
+      startTop = rect.top + getScrollY() - getVH() + startAfterEnterPx;
     };
 
     const update = () => {
       rafRef.current = null;
 
-      const progressedPx = getScrollTop(scrollParent) - startTop;
-      const base = progressedPx <= 0 ? 0 : Math.floor(progressedPx / pxPerItem);
-      const next = clamp(base + initiallyVisible, 0, total);
+      const y = getScrollY();
+      const progressedPx = y - startTop;
 
-      setVisibleCount((prev) => (prev === next ? prev : next));
+      const hasEntered = progressedPx > 0;
+      setEntered((prev) => (prev === hasEntered ? prev : hasEntered));
+
+      const base = progressedPx <= 0 ? 0 : Math.floor(progressedPx / pxPerItem);
+      const nextVisible = clamp(base + initiallyVisible, 0, total);
+      setVisibleCount((prev) => (prev === nextVisible ? prev : nextVisible));
+
+      if (finalOverlaySrc) {
+        const shouldShow = progressedPx >= revealScrollLen + overlayDelayPx;
+        setOverlayShown((prev) => (prev === shouldShow ? prev : shouldShow));
+      } else {
+        setOverlayShown(false);
+      }
     };
 
     const onScroll = () => {
@@ -140,53 +136,38 @@ export default function PopulateGallery({
       rafRef.current = requestAnimationFrame(update);
     };
 
-    // Keep robust if layout shifts / wrapper changes
-    const ro = new ResizeObserver(() => {
-      const nextSP = getScrollParent(el);
-      if (nextSP !== scrollParent) {
-        if (isWindow(scrollParent)) window.removeEventListener("scroll", onScroll);
-        else scrollParent.removeEventListener("scroll", onScroll);
-
-        scrollParent = nextSP;
-
-        if (isWindow(scrollParent)) window.addEventListener("scroll", onScroll, { passive: true });
-        else scrollParent.addEventListener("scroll", onScroll, { passive: true });
-      }
-
-      recompute();
-      onScroll();
-    });
-
-    recompute();
+    recomputeStart();
     update();
 
-    if (isWindow(scrollParent)) window.addEventListener("scroll", onScroll, { passive: true });
-    else scrollParent.addEventListener("scroll", onScroll, { passive: true });
-
-    const onResize = () => {
-      recompute();
-      onScroll();
-    };
-    window.addEventListener("resize", onResize);
-
-    ro.observe(el);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", recomputeStart);
 
     return () => {
-      ro.disconnect();
-      window.removeEventListener("resize", onResize);
-
-      if (isWindow(scrollParent)) window.removeEventListener("scroll", onScroll);
-      else scrollParent.removeEventListener("scroll", onScroll);
-
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", recomputeStart);
       if (rafRef.current) cancelAnimationFrame(rafRef.current);
     };
-  }, [normalized.length, pxPerItem, startAfterEnterPx, initiallyVisible]);
+  }, [
+    total,
+    pxPerItem,
+    startAfterEnterPx,
+    initiallyVisible,
+    revealScrollLen,
+    finalOverlaySrc,
+    overlayDelayPx,
+  ]);
 
-  const marginLeft = align === "center" ? "auto" : align === "right" ? "auto" : 0;
-  const marginRight = align === "center" ? "auto" : align === "right" ? 0 : "auto";
+  // Visibility rule:
+  // - pinned is always visible (even before entered)
+  // - after entering, items [0..visibleCount-1] are visible (array order)
+  const isVisible = (idx) => {
+    if (pinnedIsValid && idx === pinnedIndex) return true;
+    if (!entered) return false;
+    return idx < visibleCount;
+  };
 
   return (
-    <div
+    <section
       ref={rootRef}
       className={className}
       style={{
@@ -194,40 +175,99 @@ export default function PopulateGallery({
         maxWidth: maxWidth || undefined,
         marginLeft,
         marginRight,
+        position: "relative",
       }}
     >
+      {/* Sticky viewport is ALWAYS 100vh (prevents jump) */}
       <div
         style={{
-          columnCount: columns,
-          columnGap: `${columnGap}px`,
+          position: "sticky",
+          top: 0,
+          height: "100vh",
+          overflow: "hidden", // crop anything beyond 100vh
         }}
       >
-        {normalized.map((img, idx) => {
-          const shown = revealRankByIndex[idx] < visibleCount;
+        <div
+          style={{
+            position: "relative",
+            height: "100%",
+            boxSizing: "border-box",
+            padding: gap,
 
-          return (
+            display: "grid",
+            gridTemplateColumns: `repeat(${columns}, minmax(0, 1fr))`,
+            gridTemplateRows: `repeat(${rows}, minmax(0, 1fr))`,
+            gap: `${gap}px`,
+          }}
+        >
+          {/* Render ALL cells so layout never shifts; toggle visibility for instant "appear" */}
+          {normalized.map((img, idx) => {
+            if (!img?.src) return null;
+
+            const vis = isVisible(idx);
+
+            return (
+              <div
+                key={`${img.src}-${idx}`}
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  background: cellBg,
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  overflow: "hidden",
+
+                  visibility: vis ? "visible" : "hidden",
+                }}
+              >
+                <img
+                  src={img.src}
+                  alt={img.alt || ""}
+                  loading="eager"
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    display: "block",
+                    objectFit: "contain", // fit, no crop
+                    objectPosition: "center",
+                  }}
+                />
+              </div>
+            );
+          })}
+
+          {/* Overlay (delayed) */}
+          {finalOverlaySrc && overlayShown ? (
             <div
-              key={img.src || idx}
               style={{
-                breakInside: "avoid",
-                marginBottom: `${itemGap}px`,
-                opacity: shown ? 1 : 0,
+                pointerEvents: "none",
+                position: "absolute",
+                left: "50%",
+                top: "50%",
+                width: "50%",
+                height: "50%",
+                transform: "translate(-50%, -50%)",
+                zIndex: 50,
               }}
             >
               <img
-                src={img.src}
-                alt={img.alt || ""}
-                loading="lazy"
+                src={finalOverlaySrc}
+                alt={finalOverlayAlt}
                 style={{
                   width: "100%",
-                  height: "auto",
+                  height: "100%",
+                  objectFit: "contain",
                   display: "block",
                 }}
               />
             </div>
-          );
-        })}
+          ) : null}
+        </div>
       </div>
-    </div>
+
+      {/* Spacer drives the reveal timeline while sticky stays pinned */}
+      <div aria-hidden style={{ height: `${spacerLen}px` }} />
+    </section>
   );
 }

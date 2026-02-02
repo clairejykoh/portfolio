@@ -19,6 +19,7 @@ import Interior from "./pages/work/Interior";
 import Penn from "./pages/work/Penn";
 import ConcreteKeys from "./pages/work/ConcreteKeys";
 import LightandShadow from "./pages/work/LightandShadow";
+import Harlem from "./pages/work/Harlem";
 
 const App = () => {
   return (
@@ -46,6 +47,7 @@ const App = () => {
           <Route path="/work/interior" element={<Interior />} />
           <Route path="/work/penn" element={<Penn />} />
           <Route path="work/lightandshadow" element={<LightandShadow />} />"
+          <Route path="work/harlem" element={<Harlem />} />"
         </Routes>
       </Router>
     </main>
