@@ -18,7 +18,7 @@ import progress05 from "../../assets/concrete_keys/progress05.jpg";
 import progress06 from "../../assets/concrete_keys/progress06.jpg";
 import progress07 from "../../assets/concrete_keys/progress07.jpg";
 
-import axon from "../../assets/concrete_keys/axon.jpg";
+import axon from "../../assets/concrete_keys/axon.png";
 
 import architecture01 from "../../assets/concrete_keys/architecture01.jpg";
 import architecture02 from "../../assets/concrete_keys/architecture02.jpg";
@@ -76,7 +76,7 @@ const ConcreteKeys = () => {
       <Gallery
         title="Concrete Keycaps"
         subtitle="Architecture Meets Industrial Design"
-        meta="Personal, 3D Modeling, 3D Printing, Digital Fabrication, Industrial Design, Brand Design, Advertising"
+        meta="Personal, 3D Modeling, 3D Printing, Digital Fabrication, Industrial Design, Motion Graphics, Brand Design, Advertising"
         caption="Making of a concrete keycap, from Concept to Finish."
       />
 
@@ -134,7 +134,7 @@ const ConcreteKeys = () => {
       />
 
       <div className="flex flex-row justify-center mt-60">
-        <div className="mx-auto max-w-[1000px]">
+        <div className="mx-auto max-w-[800px]">
           <p className="font-inter mb-5 text-2xl">The Process</p>
           <div className="grid grid-cols-4 items-center">
             <Gallery images={[progress01]} className="col-span-2" />
@@ -181,7 +181,7 @@ const ConcreteKeys = () => {
       </div>
 
       <div className="flex flex-center items-center">
-        <div className="max-w-[1000px]">
+        <div className="max-w-[800px]">
           <p className="font-inter mt-35 mb-5 text-2xl">Finished Product</p>
           <Gallery images={finishes} className="mb-15" />
         </div>

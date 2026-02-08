@@ -26,7 +26,7 @@ const items = [
     title: "Concrete Keycaps",
     subtitle: "Architecture Meets Industrial Design",
     keywords:
-      "Personal, 3D Modeling, 3D Printing, Digital Fabrication, Industrial Design, Brand Design, Advertising",
+      "Personal, 3D Modeling, 3D Printing, Digital Fabrication, Industrial Design, Motion Graphics, Brand Design, Advertising",
     path: "/work/concretekeys",
   },
   {
@@ -203,7 +203,7 @@ const Grid = () => {
   }, [allLoaded]);
 
   return (
-    <div className="mix-blend-multiply mt-10 mx-40 columns-1 md:columns-2 lg:columns-3 gap-14 space-y-14 px-4">
+    <div className="mix-blend-multiply mt-10 mb-20 mx-40 columns-1 md:columns-2 lg:columns-3 gap-14 space-y-14 px-4">
       {items.map((item, index) => (
         <div
           key={index}

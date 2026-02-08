@@ -147,9 +147,9 @@ export default function ConcreteIntro({
             />
           </div>
 
-          <div className="pointer-events-none absolute inset-0 flex items-center justify-center pb-11">
+          <div className="pointer-events-none absolute inset-0 flex items-center justify-center pb-8">
             <div
-              className="relative inline-block font-inter text-6xl font-light leading-none text-black"
+              className="relative inline-block font-inter text-5xl font-medium leading-none text-black"
               aria-label={title}
             >
               <span>{visibleText}</span>

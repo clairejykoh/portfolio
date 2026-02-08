@@ -35,18 +35,20 @@ export default function ScrollPrompt({
       style={{ transitionDuration: `${fadeMs}ms` }}
     >
       <div className="animate-scroll-float">
+        <p className="text-xs text-black">S C R O L L</p>
         <svg
           width={size}
           height={size}
-          viewBox="0 0 24 24"
+          viewBox="-4 -2 37 20"
           fill="none"
           stroke="black"
-          strokeWidth="1.3"
+          strokeWidth="1.8"
           strokeLinecap="round"
           strokeLinejoin="round"
+          className="flex flex-center justify-centeritems-center"
         >
-          <path d="M4 8 L12 14 L20 8" />
-          <path d="M4 3 L12 9 L20 3" />
+          <path d="M14 7 L23 14 L32 7" />
+          <path d="M14 2 L23 9 L32 2" />
         </svg>
       </div>
     </div>
