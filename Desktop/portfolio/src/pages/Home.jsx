@@ -15,9 +15,9 @@ const Home = () => {
     <>
       <Video
         frameCount={1320} // <-- set this to your actual number of frames
-        pxPerFrame={19} // slower/faster scrub
+        pxPerFrame={16} // slower/faster scrub
         windowSize={100} // preload range
-        friction={0.01} // inertia feel
+        friction={0.005} // inertia feel
         startFrame={0}
       />
 

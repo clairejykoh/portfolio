@@ -134,7 +134,7 @@ const ConcreteKeys = () => {
       />
 
       <div className="flex flex-row justify-center mt-60">
-        <div className="mx-auto max-w-[800px]">
+        <div className="mx-auto max-w-[700px]">
           <p className="font-inter mb-5 text-2xl">The Process</p>
           <div className="grid grid-cols-4 items-center">
             <Gallery images={[progress01]} className="col-span-2" />
@@ -181,7 +181,7 @@ const ConcreteKeys = () => {
       </div>
 
       <div className="flex flex-center items-center">
-        <div className="max-w-[800px]">
+        <div className="max-w-[700px]">
           <p className="font-inter mt-35 mb-5 text-2xl">Finished Product</p>
           <Gallery images={finishes} className="mb-15" />
         </div>
