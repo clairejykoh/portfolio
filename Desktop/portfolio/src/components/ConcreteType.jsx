@@ -183,7 +183,7 @@ export default function ConcreteType({
                 style={{ transform: `translateY(${headlineOffsetY}px)` }}
               >
                 <div className={`flex w-full ${maxWidthClass} ${alignClass}`}>
-                  <h2 className="font-inter font-light text-3xl md:text-5xl leading-tight text-white">
+                  <h2 className="font-inter font-normal text-3xl md:text-5xl leading-tight text-white">
                     <TypeReveal text={headline} shown={headlineShown} />
                   </h2>
                 </div>
@@ -200,11 +200,11 @@ export default function ConcreteType({
                 <div
                   className={`flex w-full ${maxWidthClass} flex-col ${alignClass}`}
                 >
-                  <div className="space-y-5 text-white/90">
+                  <div className="space-y-5 text-white">
                     {lines.map((t, i) => (
                       <p
                         key={t + i}
-                        className="font-inter font-extralight text-base md:text-2xl tracking-wide"
+                        className="font-inter font-light text-base md:text-xl tracking-wide"
                       >
                         <TypeReveal text={t} shown={linesShown[i] ?? 0} />
                       </p>

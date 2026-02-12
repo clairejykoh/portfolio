@@ -84,7 +84,7 @@ const BOX_KEYFRAMES_0BASED = [
   { enter: 723, exit: 850 },
   { enter: 871, exit: 1000 },
   { enter: 1021, exit: 1136 },
-  { enter: 1157, exit: 1199 },
+  { enter: 1147, exit: 1210 },
   { enter: 1220, exit: 1320 },
 ];
 

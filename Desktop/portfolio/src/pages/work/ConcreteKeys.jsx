@@ -105,7 +105,7 @@ const ConcreteKeys = () => {
         <TypeAnimationMultiline
           text="That's why I wanted to try this unconventional material - to give keycaps the new look, sound and feel, and to let us experience the beauty of raw material, and expand it to an everyday object."
           panelClassName="w-full h-auto bg-[#010101] flex flex-center px-5 md:px-0"
-          textClassName="text-3xl md:text-2xl font-extralight tracking-tight text-[#f5f5f5] max-w-[1000px]"
+          textClassName="text-xl font-light tracking-tight text-[#f5f5f5] max-w-[1000px]"
           startAt={0}
           endAt={0.9}
         />
