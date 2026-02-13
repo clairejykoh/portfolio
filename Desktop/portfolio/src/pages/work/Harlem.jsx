@@ -17,7 +17,7 @@ const Harlem = () => {
         title="Harlem 148th Station ADA Upgrade"
         subtitle="Accessibility Upgrade at 148th Street Station, Harlem"
         meta="Professional, Infrastructure, Transit, Architecture, Urban Planning, Rendering, 3D Modeling, ADA, Design-Build"
-        caption="Worked as an architect to deliver design and construction documents of the new ramps to be installed at Huguenot Station in Staten Island, NY.
+        caption="Worked as an architect to deliver design and construction documents of the new ramps to be installed at the Harlem 148th St Station in New York, NY.
         Collaboration with disciplines included but are not limited to: Civil, Geotechnical, Structural, Mechanical, Electrical, Plumbing, Fire Protection, Communication.
         I was responsible for architectural design and drawings, and the following renderings."
         images={images}
