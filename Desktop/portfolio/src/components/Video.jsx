@@ -76,16 +76,16 @@ const messages = [
 
 // 0-based frame windows
 const BOX_KEYFRAMES_0BASED = [
-  { enter: 0, exit: 187 },
-  { enter: 208, exit: 356 },
-  { enter: 377, exit: 488 },
-  { enter: 509, exit: 562 },
-  { enter: 583, exit: 702 },
-  { enter: 723, exit: 850 },
-  { enter: 871, exit: 1000 },
-  { enter: 1021, exit: 1136 },
-  { enter: 1147, exit: 1210 },
-  { enter: 1220, exit: 1320 },
+  { enter: 0, exit: 160 }, // Architecture
+  { enter: 172, exit: 335 }, // Multimedia Design
+  { enter: 347, exit: 440 }, // Architecture + 3D Modeling + Virtual World Building
+  { enter: 452, exit: 540 }, // Fabrication + Industrial Design
+  { enter: 552, exit: 630 }, // Graphic Design, Interaction Design and Programming
+  { enter: 642, exit: 790 }, // Physical Computing
+  { enter: 802, exit: 970 }, // Spiritual and Design/Technical
+  { enter: 982, exit: 1080 }, // Multiple Layers of Expertise
+  { enter: 1092, exit: 1210 }, // Different Types and Layers of Reality in a 3D Space
+  { enter: 1222, exit: 1315 }, // To be continued
 ];
 
 const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));

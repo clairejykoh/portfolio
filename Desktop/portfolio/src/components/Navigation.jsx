@@ -5,7 +5,7 @@ const Navigation = () => {
   const navLists = ["Home", "Work", "About"];
   return (
     <header className="navbar relative flex flex-1 top-0 z-[1000] justify-end max-sm:hidden w-full py-10 sm:px-45 px-5 items-center">
-      <nav className="flex gap-80 my-5 text-md">
+      <nav className="flex gap-[16.6vw] my-5 text-md">
         <NavLink
           to="/portfolio"
           className={({ isActive }) =>

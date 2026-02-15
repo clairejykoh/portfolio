@@ -19,6 +19,7 @@ import language from "../assets/lla.jpg";
 import gymnastics from "../assets/gymnastics.jpg";
 import lightandshadow from "../assets/light_and_shadow.png";
 import harlem from "../assets/harlem.png";
+import patchogue from "../assets/patchogue.png";
 
 const items = [
   {
@@ -112,6 +113,7 @@ const items = [
     keywords:
       "Academic, Geography, Architecture, Landscape Design, Urban Planning, Anthropocene, Settler Colonialism, Museum",
   },
+
   {
     image: huguenot,
     title: "Huguenot Station ADA Upgrade",
@@ -147,7 +149,14 @@ const items = [
       "Academic, Professional, GIS, ArchGIS, QGIS, Architecture, Urban Planning, Infrastructure Design",
     path: "/work/cartography",
   },
-
+  {
+    image: patchogue,
+    title: "Patchogue Station Renovation",
+    subtitle: "Breathing New Life into the Town's Beloved Station",
+    keywords:
+      "Professional, Infrastructure, Transit, Architecture, Rendering, 3D Modeling, Urban Planning, ADA, Design-Build",
+    path: "/work/patchogue",
+  },
   {
     image: woodworking,
     title: "Woodworking",
