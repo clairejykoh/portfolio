@@ -15,7 +15,7 @@ const Patchogue = () => {
     <>
       <Gallery
         title="Patchogue Station Renovation"
-        subtitle="Breathing New Life into the Town's Beloved Station"
+        subtitle="Breathing New Life into the Town's Beloved Station in Patchogue, Long Island"
         meta="Professional, Infrastructure, Transit, Architecture, Rendering, 3D Modeling, Urban Planning, ADA, Design-Build"
         caption="Worked as an architect to deliver proposal graphics to the Patchogue Station Renovation project in Long Island, NY.
         I was responsible for producing the 3D model and renderings from scratch."

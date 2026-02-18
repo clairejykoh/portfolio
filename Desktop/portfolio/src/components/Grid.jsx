@@ -20,6 +20,7 @@ import gymnastics from "../assets/gymnastics.jpg";
 import lightandshadow from "../assets/light_and_shadow.png";
 import harlem from "../assets/harlem.png";
 import patchogue from "../assets/patchogue.png";
+import noir from "../assets/noir.jpg";
 
 const items = [
   {
@@ -38,6 +39,7 @@ const items = [
       "Professional, Freelance, Interior Design, Photorealistic Renderings",
     path: "/work/interior",
   },
+
   {
     image: shape,
     title: "Play (p5.js)",
@@ -45,6 +47,7 @@ const items = [
     keywords: "Academic, Programming, Javascript, p5.js",
     path: "/work/p5js",
   },
+
   {
     image: workstation,
     title: "Workstation",
@@ -107,13 +110,21 @@ const items = [
     path: "/work/lightandshadow",
   },
   {
+    image: steam,
+    title: "Hacking the Steam",
+    subtitle:
+      "Imagining Playful New Possibilities for the Geothermal Infrastructure in Olkaria, Kenya",
+    keywords:
+      "Academic, Renewable Energy, 3D Modeling, Architecture, Virtual Architecture, Storytelling",
+    path: "/work/olkaria",
+  },
+  {
     image: museum,
     title: "Memorials of Forgotten Names",
     subtitle: "Anthropocene Museum 5.0: What is a Museum Anyways?",
     keywords:
       "Academic, Geography, Architecture, Landscape Design, Urban Planning, Anthropocene, Settler Colonialism, Museum",
   },
-
   {
     image: huguenot,
     title: "Huguenot Station ADA Upgrade",
@@ -132,15 +143,13 @@ const items = [
     path: "/work/language",
   },
   {
-    image: steam,
-    title: "Hacking the Steam",
-    subtitle:
-      "Imagining Playful New Possibilities for the Geothermal Infrastructure in Olkaria, Kenya",
+    image: noir,
+    title: "Noir",
+    subtitle: "Render Material Study",
     keywords:
-      "Academic, Renewable Energy, 3D Modeling, Architecture, Virtual Architecture, Storytelling",
-    path: "/work/olkaria",
+      "3D Modeling, Rendering, Photorealism, Motion Graphics, Brand Design",
+    path: "/work/noir",
   },
-
   {
     image: cartography,
     title: "Cartography and GIS",
@@ -149,10 +158,12 @@ const items = [
       "Academic, Professional, GIS, ArchGIS, QGIS, Architecture, Urban Planning, Infrastructure Design",
     path: "/work/cartography",
   },
+
   {
     image: patchogue,
     title: "Patchogue Station Renovation",
-    subtitle: "Breathing New Life into the Town's Beloved Station",
+    subtitle:
+      "Breathing New Life into the Town's Beloved Station in Patchogue, Long Island",
     keywords:
       "Professional, Infrastructure, Transit, Architecture, Rendering, 3D Modeling, Urban Planning, ADA, Design-Build",
     path: "/work/patchogue",

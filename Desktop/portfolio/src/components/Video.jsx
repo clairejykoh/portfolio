@@ -123,6 +123,8 @@ export default function Video({
   damping = 28,
   maxVel = 4.0,
 }) {
+  const bootReadyRef = useRef(false);
+
   const trackRef = useRef(null);
   const canvasRef = useRef(null);
   const stageRef = useRef(null);
@@ -339,33 +341,43 @@ export default function Video({
 
     // intro: slide up first box (intro animation still exists, but after intro we control via applyLetterboxes)
     const runIntro = () => {
-      const box0 = boxesRef.current[0];
-      if (!box0) return;
+      if (bootReadyRef.current) {
+        const box0 = boxesRef.current[0];
+        if (!box0) return;
 
-      boxesRef.current.forEach(
-        (b, i) => b && gsap.set(b, { autoAlpha: i === 0 ? 1 : 0 }),
-      );
-      if (ctaRef.current) gsap.set(ctaRef.current, { autoAlpha: 0 });
+        // Ensure every box is fully hidden before we reveal box0
+        boxesRef.current.forEach((b, i) => {
+          if (!b) return;
+          gsap.set(b, { autoAlpha: 0, y: 0 });
+        });
+        if (ctaRef.current) gsap.set(ctaRef.current, { autoAlpha: 0 });
 
-      const centerY = window.innerHeight / 2 - box0.offsetHeight / 2;
-      gsap.killTweensOf(box0);
-      gsap.fromTo(
-        box0,
-        { y: window.innerHeight + 220, autoAlpha: 1 },
-        { y: centerY, duration: introInSec, ease: "power2.out" },
-      );
+        // Measure AFTER fonts are ready (boot gate ensures this)
+        const centerY = window.innerHeight / 2 - box0.offsetHeight / 2;
 
-      gsap.delayedCall(introInSec + introHoldSec, () => {
-        introDoneRef.current = true;
+        gsap.killTweensOf(box0);
 
-        pRef.current = 0;
-        targetPRef.current = 0;
-        vRef.current = 0;
+        // Start hidden & offscreen (hard set), then animate in
+        gsap.set(box0, { autoAlpha: 1, y: window.innerHeight + 220 });
 
-        renderFrameIdx(0);
-        setProgressBarByP(0);
-        applyLetterboxes(0);
-      });
+        gsap.to(box0, {
+          y: centerY,
+          duration: introInSec,
+          ease: "power2.out",
+        });
+
+        gsap.delayedCall(introInSec + introHoldSec, () => {
+          introDoneRef.current = true;
+
+          pRef.current = 0;
+          targetPRef.current = 0;
+          vRef.current = 0;
+
+          renderFrameIdx(0);
+          setProgressBarByP(0);
+          applyLetterboxes(0);
+        });
+      }
     };
 
     const onScroll = () => {
@@ -386,19 +398,42 @@ export default function Video({
     // init
     setTrackHeight();
 
-    loadFrame(0).then((a) => {
+    loadFrame(0).then(async (a) => {
       if (!a) {
         setLoadError(
           `Could not load ${urlForFrame(0)}. Confirm frames exist at ${imagesBase}/${fileStart}.webp`,
         );
         return;
       }
+
       setLoadError("");
       drawCover(a);
       setReady(true);
       primeWindow(0);
 
-      requestAnimationFrame(runIntro);
+      // 1) Wait for fonts so box0 height is stable (prevents first-jump)
+      if (document.fonts?.ready) {
+        try {
+          await document.fonts.ready;
+        } catch {}
+      }
+
+      // 2) Pre-stage box0 in a guaranteed hidden/offscreen state BEFORE showing it
+      requestAnimationFrame(() => {
+        const box0 = boxesRef.current[0];
+        if (box0) {
+          // hard-set to avoid any 1-frame flash at wrong position
+          gsap.set(box0, { autoAlpha: 0, y: window.innerHeight + 150 });
+        }
+
+        // 3) Now it’s safe to run intro (fonts ready + box staged)
+        bootReadyRef.current = true;
+
+        // double-rAF helps when the DOM needs one more layout pass
+        requestAnimationFrame(() => {
+          runIntro();
+        });
+      });
     });
 
     // RAF: inertia + render
