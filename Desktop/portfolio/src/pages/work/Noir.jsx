@@ -23,7 +23,7 @@ const Noir = () => {
       />
       <div className="bg-[#121212]">
         "
-        <div className="mix-blend-normal mx-70 grid grid-cols-2 gap-10 my-10">
+        <div className="mix-blend-normal mx-80 grid grid-cols-2 gap-10 my-10">
           <img
             src={view1}
             alt="Noir Image 06"
@@ -48,7 +48,7 @@ const Noir = () => {
             className="flex w-full h-auto col-span-1"
           />
         </div>
-        <div className="mx-70">
+        <div className="mx-80">
           <ScrollAutoplayVideo
             src="/portfolio/videos/noir.mp4"
             muted={true}

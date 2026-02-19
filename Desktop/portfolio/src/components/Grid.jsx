@@ -3,24 +3,24 @@ import { Link } from "react-router-dom";
 import { gsap } from "gsap";
 
 import workstation from "../assets/workstation.jpg";
-import concrete_key from "../assets/concrete_key.jpg";
+import concrete_key from "../assets/concrete_key.webp";
 import east_liberty from "../assets/east_liberty.jpg";
-import final_bench from "../assets/final_bench.png";
+import final_bench from "../assets/final_bench.webp";
 import huguenot from "../assets/huguenot.png";
-import interior from "../assets/interior.png";
+import interior from "../assets/interior.webp";
 import museum from "../assets/museum.jpg";
-import penn from "../assets/penn.png";
-import homevideo from "../assets/homevideo.png";
+import penn from "../assets/penn.webp";
+import homevideo from "../assets/homevideo.webp";
 import woodworking from "../assets/woodworking.jpg";
 import steam from "../assets/steam.jpg";
 import cartography from "../assets/cartography.jpg";
 import shape from "../assets/shape.gif";
 import language from "../assets/lla.jpg";
-import gymnastics from "../assets/gymnastics.jpg";
-import lightandshadow from "../assets/light_and_shadow.png";
-import harlem from "../assets/harlem.png";
+import gymnastics from "../assets/gymnastics.webp";
+import lightandshadow from "../assets/light_and_shadow.webp";
+import harlem from "../assets/harlem.webp";
 import patchogue from "../assets/patchogue.png";
-import noir from "../assets/noir.jpg";
+import noir from "../assets/noir.gif";
 
 const items = [
   {
@@ -65,41 +65,6 @@ const items = [
       "Professional, Infrastructure, Transit, Architecture, Rendering, 3D Modeling, ADA, Design-Build",
     path: "/work/harlem",
   },
-
-  {
-    image: final_bench,
-    title: "Dusk",
-    subtitle: "A Relaxing Memory",
-    keywords: "Personal, Rhinoceros 3D, 3DS MAX, Blender, Rendering",
-    path: "/work/dusk",
-  },
-
-  {
-    image: gymnastics,
-    title: "U.S. Gymnastics Development Center",
-    subtitle: "Redesigning the Digital Experience for the Gymnastics Facility",
-    keywords: "Professional, UX/UI, Website, Web Design, Concept Design",
-    path: "/work/gymnastics",
-  },
-
-  {
-    image: penn,
-    title: "Penn Station Reconstruction",
-    subtitle: "Redesigning the Busiest Station in the World",
-    keywords:
-      "Professional, Transit, Infrastructure, Federal Project, NYC, Three.js, Rhino 3D, Grasshopper, Parametric Design",
-    path: "/work/penn",
-  },
-
-  {
-    image: homevideo,
-    title: "Homepage Video",
-    subtitle: "Introducing Myself",
-    keywords:
-      "Personal, 3D Modeling, Rendering, Motion Graphics, Visual Storytelling, After Effects, Premiere Pro, 3DS MAX",
-    path: "/work/homepagevideo",
-  },
-
   {
     image: lightandshadow,
     title: "Light and Shadow",
@@ -110,45 +75,11 @@ const items = [
     path: "/work/lightandshadow",
   },
   {
-    image: steam,
-    title: "Hacking the Steam",
-    subtitle:
-      "Imagining Playful New Possibilities for the Geothermal Infrastructure in Olkaria, Kenya",
-    keywords:
-      "Academic, Renewable Energy, 3D Modeling, Architecture, Virtual Architecture, Storytelling",
-    path: "/work/olkaria",
-  },
-  {
-    image: museum,
-    title: "Memorials of Forgotten Names",
-    subtitle: "Anthropocene Museum 5.0: What is a Museum Anyways?",
-    keywords:
-      "Academic, Geography, Architecture, Landscape Design, Urban Planning, Anthropocene, Settler Colonialism, Museum",
-  },
-  {
-    image: huguenot,
-    title: "Huguenot Station ADA Upgrade",
-    subtitle: "Accessibility Upgrade in Huguenot Station, Staten Island",
-    keywords:
-      "Professional, Infrastructure, Transit, Architecture, Rendering, 3D Modeling, ADA, Design-Build",
-    path: "/work/huguenot",
-  },
-  {
-    image: language,
-    title: "Final Thesis Portfolio",
-    subtitle:
-      "Exploring Three-way Intersetion of Linguistis, Environments and Built Space",
-    keywords:
-      "Academic, Portfolio, Architecture, Planning, PDF, InDesign, Linguistics, Toponym, Storytelling",
-    path: "/work/language",
-  },
-  {
-    image: noir,
-    title: "Noir",
-    subtitle: "Render Material Study",
-    keywords:
-      "3D Modeling, Rendering, Photorealism, Motion Graphics, Brand Design",
-    path: "/work/noir",
+    image: gymnastics,
+    title: "U.S. Gymnastics Development Center",
+    subtitle: "Redesigning the Digital Experience for the Gymnastics Facility",
+    keywords: "Professional, UX/UI, Website, Web Design, Concept Design",
+    path: "/work/gymnastics",
   },
   {
     image: cartography,
@@ -160,13 +91,19 @@ const items = [
   },
 
   {
-    image: patchogue,
-    title: "Patchogue Station Renovation",
-    subtitle:
-      "Breathing New Life into the Town's Beloved Station in Patchogue, Long Island",
+    image: final_bench,
+    title: "Dusk",
+    subtitle: "A Relaxing Memory",
+    keywords: "Personal, Rhinoceros 3D, 3DS MAX, Blender, Rendering",
+    path: "/work/dusk",
+  },
+  {
+    image: homevideo,
+    title: "Homepage Video",
+    subtitle: "Introducing Myself",
     keywords:
-      "Professional, Infrastructure, Transit, Architecture, Rendering, 3D Modeling, Urban Planning, ADA, Design-Build",
-    path: "/work/patchogue",
+      "Personal, 3D Modeling, Rendering, Motion Graphics, Visual Storytelling, After Effects, Premiere Pro, 3DS MAX",
+    path: "/work/homepagevideo",
   },
   {
     image: woodworking,
@@ -175,6 +112,67 @@ const items = [
     keywords:
       "Academic, Personal, Architecture, Fabrication, Modeling, Prototyping",
     path: "/work/woodworking",
+  },
+  {
+    image: huguenot,
+    title: "Huguenot Station ADA Upgrade",
+    subtitle: "Accessibility Upgrade in Huguenot Station, Staten Island",
+    keywords:
+      "Professional, Infrastructure, Transit, Architecture, Rendering, 3D Modeling, ADA, Design-Build",
+    path: "/work/huguenot",
+  },
+
+  {
+    image: noir,
+    title: "Noir",
+    subtitle: "Render Material Study",
+    keywords:
+      "3D Modeling, Rendering, Photorealism, Motion Graphics, Brand Design",
+    path: "/work/noir",
+  },
+  {
+    image: language,
+    title: "Final Thesis Portfolio",
+    subtitle:
+      "Exploring Three-way Intersetion of Linguistis, Environments and Built Space",
+    keywords:
+      "Academic, Portfolio, Architecture, Planning, PDF, InDesign, Linguistics, Toponym, Storytelling",
+    path: "/work/language",
+  },
+  {
+    image: penn,
+    title: "Penn Station Reconstruction",
+    subtitle: "Redesigning the Busiest Station in the World",
+    keywords:
+      "Professional, Transit, Infrastructure, Federal Project, NYC, Three.js, Rhino 3D, Grasshopper, Parametric Design",
+    path: "/work/penn",
+  },
+  {
+    image: steam,
+    title: "Hacking the Steam",
+    subtitle:
+      "Imagining Playful New Possibilities for the Geothermal Infrastructure in Olkaria, Kenya",
+    keywords:
+      "Academic, Renewable Energy, 3D Modeling, Architecture, Virtual Architecture, Storytelling",
+    path: "/work/olkaria",
+  },
+  {
+    image: patchogue,
+    title: "Patchogue Station Renovation",
+    subtitle:
+      "Breathing New Life into the Town's Beloved Station in Patchogue, Long Island",
+    keywords:
+      "Professional, Infrastructure, Transit, Architecture, Rendering, 3D Modeling, Urban Planning, ADA, Design-Build",
+    path: "/work/patchogue",
+  },
+
+  {
+    image: museum,
+    title: "Museum of Forgotten Words",
+    subtitle: "Anthropocene 5.0: What is a Museum in the Age of Extinction?",
+    keywords:
+      "Academic, Personal, Architecture, Fabrication, Modeling, Prototyping",
+    path: "/work/museum",
   },
 ];
 

@@ -346,7 +346,7 @@ export default function Video({
         if (!box0) return;
 
         // Ensure every box is fully hidden before we reveal box0
-        boxesRef.current.forEach((b, i) => {
+        boxesRef.current.forEach((b) => {
           if (!b) return;
           gsap.set(b, { autoAlpha: 0, y: 0 });
         });
@@ -357,13 +357,15 @@ export default function Video({
 
         gsap.killTweensOf(box0);
 
-        // Start hidden & offscreen (hard set), then animate in
-        gsap.set(box0, { autoAlpha: 1, y: window.innerHeight + 220 });
+        // Start hidden & offscreen (hard set), then animate in (fade + slide)
+        gsap.set(box0, { autoAlpha: 0, y: window.innerHeight + 220 });
 
         gsap.to(box0, {
           y: centerY,
+          autoAlpha: 1,
           duration: introInSec,
           ease: "power2.out",
+          overwrite: true,
         });
 
         gsap.delayedCall(introInSec + introHoldSec, () => {

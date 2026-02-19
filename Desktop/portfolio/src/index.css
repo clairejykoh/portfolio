@@ -58,17 +58,11 @@ canvas {
 html.hero-page,
 body.hero-page {
   overflow-x: hidden;
-
-  /* Firefox */
-  scrollbar-width: none;
-
-  /* IE/Edge legacy */
-  -ms-overflow-style: none;
 }
 
 body.hero-page::-webkit-scrollbar {
-  width: 0;
-  height: 0;
+  width: 17;
+  height: 17;
   display: none;
 }
 
@@ -77,10 +71,9 @@ body.hero-page::-webkit-scrollbar {
 }
 
 body.hero-page .navbar {
-  position: fixed; /* or absolute */
+  /* or absolute */
   top: 0;
-  left: 0;
-  width: 100%;
+
   z-index: 1000;
 }
 
