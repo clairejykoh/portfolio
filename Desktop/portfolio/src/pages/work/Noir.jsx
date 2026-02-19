@@ -21,9 +21,9 @@ const Noir = () => {
         meta="3D Modeling, Rendering, Photorealism, Motion Graphics, Brand Design"
         caption="Studying various rendering material textures."
       />
-      <div className="bg-[#121212]">
+      <div className="bg-[#121212] mt-20">
         "
-        <div className="mix-blend-normal mx-80 grid grid-cols-2 gap-10 my-10">
+        <div className="mix-blend-normal mx-80 grid grid-cols-2 gap-10 my-30">
           <img
             src={view1}
             alt="Noir Image 06"
@@ -52,8 +52,9 @@ const Noir = () => {
           <ScrollAutoplayVideo
             src="/portfolio/videos/noir.mp4"
             muted={true}
-            className="flex w-full items-center justify-center mix-blend-normal brightness-120 "
+            className="flex w-full items-center justify-center mix-blend-normal brightness-120 mt-40 mb-20"
           />
+          "
         </div>
       </div>
     </>

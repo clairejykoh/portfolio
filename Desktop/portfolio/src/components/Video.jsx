@@ -115,7 +115,7 @@ export default function Video({
   slideOutPx = 90, // how far (px) the box slides upward by exit
 
   // intro
-  introInSec = 0.75,
+  introInSec = 0.95,
   introHoldSec = 0.35,
 
   // inertia
@@ -366,6 +366,7 @@ export default function Video({
           duration: introInSec,
           ease: "power2.out",
           overwrite: true,
+          delay: 0.07,
         });
 
         gsap.delayedCall(introInSec + introHoldSec, () => {

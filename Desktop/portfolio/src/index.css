@@ -54,16 +54,12 @@ body {
 canvas {
   touch-action: none;
 }
-
+::-webkit-scrollbar {
+  display: none;
+}
 html.hero-page,
 body.hero-page {
   overflow-x: hidden;
-}
-
-body.hero-page::-webkit-scrollbar {
-  width: 17;
-  height: 17;
-  display: none;
 }
 
 .navbar {
@@ -71,9 +67,8 @@ body.hero-page::-webkit-scrollbar {
 }
 
 body.hero-page .navbar {
-  /* or absolute */
+  position: fixed; /* ;or absolute */
   top: 0;
-
   z-index: 1000;
 }
 
