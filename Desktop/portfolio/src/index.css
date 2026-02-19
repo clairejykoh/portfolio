@@ -49,17 +49,22 @@ body {
   background-position: 85% 65%;
   border-color: #3b3b3b;
   user-select: none;
+  overflow-y: scroll;
 }
 
 canvas {
   touch-action: none;
 }
-::-webkit-scrollbar {
-  display: none;
+
+.hero-page::-webkit-scrollbar {
+  background: transparent;
 }
+
 html.hero-page,
 body.hero-page {
   overflow-x: hidden;
+
+  -ms-overflow-style: none;
 }
 
 .navbar {
