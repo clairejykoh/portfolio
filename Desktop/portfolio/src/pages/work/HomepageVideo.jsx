@@ -1,14 +1,12 @@
-import React from 'react'
-import Gallery from '../../components/Gallery'
-import OverlappingImage from '../../components/OverlappingImage'
+import React from "react";
+import Gallery from "../../components/Gallery";
+import OverlappingImage from "../../components/OverlappingImage";
 
-import homevideoUnderlay from '../../assets/homevideo/homevideo_underlay.png'
-import homevideoOverlay from '../../assets/homevideo/homevideo_overlay.png'
+import homevideoUnderlay from "../../assets/homevideo/homevideo_underlay.png";
+import homevideoOverlay from "../../assets/homevideo/homevideo_overlay.png";
+import workstation from "../../assets/homevideo/Portfolio_Video.mp4";
 
-
-const images = [
-    homevideoUnderlay, homevideoOverlay
-]
+const images = [homevideoUnderlay, homevideoOverlay];
 
 const HomepageVideo = () => {
   return (
@@ -19,12 +17,18 @@ const HomepageVideo = () => {
         meta="Personal, 3D Modeling, Rendering, Motion Graphics, Visual Storytelling, After Effects, Premiere Pro, 3DS MAX"
         caption="Planning and execution of the landing page video."
       />
-      <OverlappingImage
-        images={images}
-        className="items-center mb-20"
-      />  
+      <div className="flex flex-col overflow-hidden items-center justify-center h-auto w-[1300px] my-25 mx-auto">
+        <video
+          src={workstation}
+          type="video/mp4"
+          className="flex flex-col justify-center items-center w-full h-full object-cover mix-blend-multiply"
+          controls
+          playsInline
+        ></video>
+      </div>
+      <OverlappingImage images={images} className="items-center mb-20 mt-10" />
     </>
-  )
-}
+  );
+};
 
-export default HomepageVideo
+export default HomepageVideo;

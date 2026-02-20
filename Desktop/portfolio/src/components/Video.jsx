@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 
 const messages = [
   [
-    { text: "Hi! I'm a ", variant: "base" },
-    { text: "REGISTERED ARCHITECT ", variant: "accent" },
+    { text: "Hi! I'm an ", variant: "base" },
+    { text: "ARCHITECT ", variant: "accent" },
     {
       text: "specializing in Urban Planning and Infrastructure Design",
       variant: "base",
