@@ -1,12 +1,12 @@
 import React from "react";
 import Gallery from "../../components/Gallery";
 
-import view1 from "../../assets/harlem/view01.png";
-import view2 from "../../assets/harlem/view02.png";
-import view3 from "../../assets/harlem/view03.png";
-import view4 from "../../assets/harlem/view04.png";
-import view5 from "../../assets/harlem/view05.png";
-import view6 from "../../assets/harlem/view06.png";
+import view1 from "../../assets/harlem/view01.webp";
+import view2 from "../../assets/harlem/view02.webp";
+import view3 from "../../assets/harlem/view03.webp";
+import view4 from "../../assets/harlem/view04.webp";
+import view5 from "../../assets/harlem/view05.webp";
+import view6 from "../../assets/harlem/view06.webp";
 
 const images = [view1, view2, view3, view4, view5, view6];
 

@@ -1,12 +1,12 @@
 import React from "react";
 import Gallery from "../../components/Gallery";
 
-import image01 from "../../assets/patchogue/view01.png";
-import image02 from "../../assets/patchogue/view02.png";
-import image03 from "../../assets/patchogue/view03.png";
-import image04 from "../../assets/patchogue/view04.png";
-import image05 from "../../assets/patchogue/exterior01.png";
-import image06 from "../../assets/patchogue/exterior02.png";
+import image01 from "../../assets/patchogue/patchogue01.webp";
+import image02 from "../../assets/patchogue/patchogue02.webp";
+import image03 from "../../assets/patchogue/patchogue03.webp";
+import image04 from "../../assets/patchogue/patchogue04.webp";
+import image05 from "../../assets/patchogue/patchogue05.webp";
+import image06 from "../../assets/patchogue/patchogue06.webp";
 
 const images = [image01, image02, image03, image04, image05, image06];
 

@@ -10,13 +10,13 @@ import ScrollGallery from "../../components/ScrollGallery";
 import concrete from "../../assets/concrete_keys/concretewall.jpg";
 import obsidian from "../../assets/concrete_keys/obsidian.jpg";
 
-import progress01 from "../../assets/concrete_keys/progress01.jpg";
-import progress02 from "../../assets/concrete_keys/progress02.jpg";
-import progress03 from "../../assets/concrete_keys/progress03.jpg";
-import progress04 from "../../assets/concrete_keys/progress04.jpg";
-import progress05 from "../../assets/concrete_keys/progress05.jpg";
-import progress06 from "../../assets/concrete_keys/progress06.jpg";
-import progress07 from "../../assets/concrete_keys/progress07.jpg";
+import progress01 from "../../assets/concrete_keys/process01.webp";
+import progress02 from "../../assets/concrete_keys/process02.webp";
+import progress03 from "../../assets/concrete_keys/process03.webp";
+import progress04 from "../../assets/concrete_keys/process04.webp";
+import progress05 from "../../assets/concrete_keys/process05.webp";
+import progress06 from "../../assets/concrete_keys/process06.webp";
+import progress07 from "../../assets/concrete_keys/process07.webp";
 
 import axon from "../../assets/concrete_keys/axon.png";
 
@@ -175,6 +175,20 @@ const ConcreteKeys = () => {
               <br />
               <br />
               Experiment with the texture.
+            </div>
+            <Gallery images={[progress06]} className="col-span-2" />
+            <div className="ml-10 text-xs text-justify col-span-2">
+              <p className="text-xl font-inter">6</p>
+              <br />
+              <br />
+              Sand and apply a waterproofing coat.
+            </div>
+            <Gallery images={[progress07]} className="col-span-2" />
+            <div className="ml-10 text-xs text-justify col-span-2">
+              <p className="text-xl font-inter">7</p>
+              <br />
+              <br />
+              On the keyboard. Next is to align the edges.
             </div>
           </div>
         </div>

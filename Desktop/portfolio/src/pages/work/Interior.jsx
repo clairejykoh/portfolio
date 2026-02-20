@@ -1,23 +1,23 @@
 import React from "react";
 import Gallery from "../../components/Gallery";
 
-import chestnut01 from "../../assets/interior/35chestnut01.png";
-import chestnut02 from "../../assets/interior/35chestnut02.png";
-import chestnut03 from "../../assets/interior/35chestnut03.png";
-import chestnut04 from "../../assets/interior/35chestnut04.png";
+import chestnut01 from "../../assets/interior/35chestnut01.webp";
+import chestnut02 from "../../assets/interior/35chestnut02.webp";
+import chestnut03 from "../../assets/interior/35chestnut03.webp";
+import chestnut04 from "../../assets/interior/35chestnut04.webp";
 
-import ellsworth01 from "../../assets/interior/ellsworth01.png";
-import ellsworth02 from "../../assets/interior/ellsworth02.png";
-import ellsworth03 from "../../assets/interior/ellsworth03.png";
-import ellsworth04 from "../../assets/interior/ellsworth04.png";
+import ellsworth01 from "../../assets/interior/ellsworth01.webp";
+import ellsworth02 from "../../assets/interior/ellsworth02.webp";
+import ellsworth03 from "../../assets/interior/ellsworth03.webp";
+import ellsworth04 from "../../assets/interior/ellsworth04.webp";
 
 import primarybath01 from "../../assets/interior/primarybath01.png";
 import primarybath02 from "../../assets/interior/primarybath02.png";
 import primarybath03 from "../../assets/interior/primarybath03.png";
 
-import maplelane01 from "../../assets/interior/305maplelane01.png";
-import maplelane02 from "../../assets/interior/305maplelane02.png";
-import maplelane03 from "../../assets/interior/305maplelane03.png";
+import maplelane01 from "../../assets/interior/maplelane01.webp";
+import maplelane02 from "../../assets/interior/maplelane02.webp";
+import maplelane03 from "../../assets/interior/maplelane03.webp";
 
 const chestnuts = [chestnut01, chestnut02, chestnut03, chestnut04];
 

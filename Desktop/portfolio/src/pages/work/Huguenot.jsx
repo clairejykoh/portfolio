@@ -1,12 +1,12 @@
 import React from "react";
 import Gallery from "../../components/Gallery";
 
-import view1 from "../../assets/huguenot/view1.png";
-import view2 from "../../assets/huguenot/view2.png";
-import view3 from "../../assets/huguenot/view3.png";
-import view4 from "../../assets/huguenot/view4.png";
-import view5 from "../../assets/huguenot/view5.png";
-import view6 from "../../assets/huguenot/view6.png";
+import view1 from "../../assets/huguenot/view01.webp";
+import view2 from "../../assets/huguenot/view02.webp";
+import view3 from "../../assets/huguenot/view03.webp";
+import view4 from "../../assets/huguenot/view04.webp";
+import view5 from "../../assets/huguenot/view05.webp";
+import view6 from "../../assets/huguenot/view06.webp";
 
 const images = [view1, view2, view3, view4, view5, view6];
 

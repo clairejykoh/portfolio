@@ -116,7 +116,7 @@ export default function Video({
 
   // intro
   introInSec = 0.95,
-  introHoldSec = 0.35,
+  introHoldSec = 0.75,
 
   // inertia
   stiffness = 180,
