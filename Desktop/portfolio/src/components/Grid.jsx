@@ -21,6 +21,7 @@ import lightandshadow from "../assets/light_and_shadow.webp";
 import harlem from "../assets/harlem.webp";
 import patchogue from "../assets/patchogue.png";
 import noir from "../assets/noir.gif";
+import marc from "../assets/marc.png";
 
 const items = [
   {
@@ -47,14 +48,14 @@ const items = [
     keywords: "Academic, Programming, Javascript, p5.js",
     path: "/work/p5js",
   },
-
   {
-    image: workstation,
-    title: "Workstation",
-    subtitle: "My First 3D Animation",
+    image: marc,
+    title: "West Baltimore MARC Station",
+    subtitle:
+      "Federal Project Involving Architectural Design, Visualization and Client Portal",
     keywords:
-      "Academic, 3DS MAX, AutoCAD, 3D Modeling, 3D Animation, Motion Graphics",
-    path: "/work/workstation",
+      "Professional, Infrastructure, Transit, Architecture, Urban Planning, Rendering, 3D Modeling, 3D Visualization, UI Design",
+    path: "/work/marcstation",
   },
 
   {
@@ -65,6 +66,15 @@ const items = [
       "Professional, Infrastructure, Transit, Architecture, Rendering, 3D Modeling, ADA, Design-Build",
     path: "/work/harlem",
   },
+  {
+    image: workstation,
+    title: "Workstation",
+    subtitle: "My First 3D Animation",
+    keywords:
+      "Academic, 3DS MAX, AutoCAD, 3D Modeling, 3D Animation, Motion Graphics",
+    path: "/work/workstation",
+  },
+
   {
     image: lightandshadow,
     title: "Light and Shadow",
@@ -89,14 +99,6 @@ const items = [
       "Academic, Professional, GIS, ArchGIS, QGIS, Architecture, Urban Planning, Infrastructure Design",
     path: "/work/cartography",
   },
-
-  {
-    image: final_bench,
-    title: "Dusk",
-    subtitle: "A Relaxing Memory",
-    keywords: "Personal, Rhinoceros 3D, 3DS MAX, Blender, Rendering",
-    path: "/work/dusk",
-  },
   {
     image: homevideo,
     title: "Homepage Video",
@@ -105,6 +107,14 @@ const items = [
       "Personal, 3D Modeling, Rendering, Motion Graphics, Visual Storytelling, After Effects, Premiere Pro, 3DS MAX",
     path: "/work/homepagevideo",
   },
+  {
+    image: final_bench,
+    title: "Dusk",
+    subtitle: "A Relaxing Memory",
+    keywords: "Personal, Rhinoceros 3D, 3DS MAX, Blender, Rendering",
+    path: "/work/dusk",
+  },
+
   {
     image: woodworking,
     title: "Woodworking",

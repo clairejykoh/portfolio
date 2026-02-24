@@ -4,7 +4,7 @@ import OverlappingImage from "../../components/OverlappingImage";
 
 import homevideoUnderlay from "../../assets/homevideo/homevideo_underlay.png";
 import homevideoOverlay from "../../assets/homevideo/homevideo_overlay.png";
-import workstation from "../../assets/homevideo/Portfolio_Video.mp4";
+import portfoliovideo from "../../assets/homevideo/Portfolio_Video.mp4";
 
 const images = [homevideoUnderlay, homevideoOverlay];
 
@@ -15,13 +15,13 @@ const HomepageVideo = () => {
         title="Homepage Video"
         subtitle="Introducing Myself"
         meta="Personal, 3D Modeling, Rendering, Motion Graphics, Visual Storytelling, After Effects, Premiere Pro, 3DS MAX"
-        caption="Planning and execution of the landing page video."
+        caption="Planning and execution of the landing page video. (Scroll to see video control on Chrome)"
       />
-      <div className="flex flex-col overflow-hidden items-center justify-center h-auto w-[1300px] my-25 mx-auto">
+      <div className="flex flex-col overflow-hidden items-center justify-center h-auto w-full my-25 mx-auto">
         <video
-          src={workstation}
+          src={portfoliovideo}
           type="video/mp4"
-          className="flex flex-col justify-center items-center w-full h-full object-cover mix-blend-multiply"
+          className="flex flex-col justify-center items-center w-[1500px] h-full object-cover mix-blend-multiply"
           controls
           playsInline
         ></video>

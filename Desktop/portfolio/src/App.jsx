@@ -22,6 +22,7 @@ import LightandShadow from "./pages/work/LightandShadow";
 import Harlem from "./pages/work/Harlem";
 import Patchogue from "./pages/work/Patchogue";
 import Noir from "./pages/work/Noir";
+import MarcStation from "./pages/work/MarcStation";
 
 const App = () => {
   return (
@@ -48,10 +49,11 @@ const App = () => {
           <Route path="/work/olkaria" element={<Olkaria />} />
           <Route path="/work/interior" element={<Interior />} />
           <Route path="/work/penn" element={<Penn />} />
-          <Route path="work/lightandshadow" element={<LightandShadow />} />"
-          <Route path="work/harlem" element={<Harlem />} />"
+          <Route path="work/lightandshadow" element={<LightandShadow />} />
+          <Route path="work/harlem" element={<Harlem />} />
           <Route path="work/patchogue" element={<Patchogue />} />
           <Route path="work/noir" element={<Noir />} />
+          <Route path="work/marcstation" element={<MarcStation />} />
         </Routes>
       </Router>
     </main>

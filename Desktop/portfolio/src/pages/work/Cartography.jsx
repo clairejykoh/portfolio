@@ -13,6 +13,10 @@ import image09 from "../../assets/cartography/cambridgebay2.jpg";
 
 import image10 from "../../assets/cartography/siteplan.jpg";
 
+import image11 from "../../assets/cartography/museum-axon1.jpg";
+import image12 from "../../assets/cartography/museum-axon2.jpg";
+import image13 from "../../assets/cartography/site.jpg";
+
 const images = [
   image01,
   image02,
@@ -24,6 +28,9 @@ const images = [
   image08,
   image09,
   image10,
+  image11,
+  image12,
+  image13,
 ];
 
 const Cartography = () => {
