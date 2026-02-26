@@ -48,15 +48,6 @@ const items = [
     keywords: "Academic, Programming, Javascript, p5.js",
     path: "/work/p5js",
   },
-  {
-    image: marc,
-    title: "West Baltimore MARC Station",
-    subtitle:
-      "Federal Project Involving Architectural Design, Visualization and Client Portal",
-    keywords:
-      "Professional, Infrastructure, Transit, Architecture, Urban Planning, Rendering, 3D Modeling, 3D Visualization, UI Design",
-    path: "/work/marcstation",
-  },
 
   {
     image: harlem,
@@ -98,6 +89,14 @@ const items = [
     keywords:
       "Academic, Professional, GIS, ArchGIS, QGIS, Architecture, Urban Planning, Infrastructure Design",
     path: "/work/cartography",
+  },
+  {
+    image: marc,
+    title: "Client Portal & Project Visualization",
+    subtitle: "for West Baltimore MARC Station",
+    keywords:
+      "Professional, Infrastructure, Transit, Architecture, Urban Planning, 3D Modeling, 3D Visualization, UX/UI Design",
+    path: "/work/marcstation",
   },
   {
     image: homevideo,
@@ -174,15 +173,6 @@ const items = [
     keywords:
       "Professional, Infrastructure, Transit, Architecture, Rendering, 3D Modeling, Urban Planning, ADA, Design-Build",
     path: "/work/patchogue",
-  },
-
-  {
-    image: museum,
-    title: "Museum of Forgotten Words",
-    subtitle: "Anthropocene 5.0: What is a Museum in the Age of Extinction?",
-    keywords:
-      "Academic, Personal, Architecture, Fabrication, Modeling, Prototyping",
-    path: "/work/museum",
   },
 ];
 

@@ -1,0 +1,16 @@
+{
+image: east_liberty,
+title: "Porous City",
+subtitle: "Building Design Based on Pedestrian Traffic and User Flow",
+keywords:
+"Academic, Urban Planning, Architecture, Rhino 3D, Enscape, Digital Collage, Three.js",
+},
+
+{
+image: museum,
+title: "Museum of Forgotten Words",
+subtitle: "Anthropocene 5.0: What is a Museum in the Age of Extinction?",
+keywords:
+"Academic, Personal, Architecture, Fabrication, Modeling, Prototyping",
+path: "/work/museum",
+},

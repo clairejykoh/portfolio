@@ -533,7 +533,7 @@ export default function Video({
     <>
       <div ref={trackRef} style={{ height: "300vh" }} />
 
-      <div className="fixed inset-0 overflow-hidden bg-transparent mix-blend-multiply">
+      <div className="fixed inset-0 bg-transparent mix-blend-multiply">
         <div ref={stageRef} className="absolute inset-0 will-change-transform">
           <canvas
             ref={canvasRef}
