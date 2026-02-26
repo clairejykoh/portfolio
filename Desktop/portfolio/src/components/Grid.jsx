@@ -17,7 +17,7 @@ import cartography from "../assets/cartography.jpg";
 import shape from "../assets/shape.gif";
 import language from "../assets/lla.jpg";
 import gymnastics from "../assets/gymnastics.webp";
-import lightandshadow from "../assets/light_and_shadow.webp";
+import lightandshadow from "../assets/lightandshadow.png";
 import harlem from "../assets/harlem.webp";
 import patchogue from "../assets/patchogue.png";
 import noir from "../assets/noir.gif";
@@ -40,7 +40,14 @@ const items = [
       "Professional, Freelance, Interior Design, Photorealistic Renderings",
     path: "/work/interior",
   },
-
+  {
+    image: marc,
+    title: "Client Portal & Project Visualization",
+    subtitle: "for West Baltimore MARC Station",
+    keywords:
+      "Professional, Infrastructure, Transit, Architecture, Urban Planning, 3D Modeling, 3D Visualization, UX/UI Design",
+    path: "/work/marcstation",
+  },
   {
     image: shape,
     title: "Play (p5.js)",
@@ -58,14 +65,39 @@ const items = [
     path: "/work/harlem",
   },
   {
-    image: workstation,
-    title: "Workstation",
-    subtitle: "My First 3D Animation",
+    image: woodworking,
+    title: "Woodworking",
+    subtitle: "Fabricating with the Most Versatile Material",
     keywords:
-      "Academic, 3DS MAX, AutoCAD, 3D Modeling, 3D Animation, Motion Graphics",
-    path: "/work/workstation",
+      "Academic, Personal, Architecture, Fabrication, Modeling, Prototyping",
+    path: "/work/woodworking",
   },
 
+  {
+    image: gymnastics,
+    title: "U.S. Gymnastics Development Center",
+    subtitle: "Redesigning the Digital Experience for the Gymnastics Facility",
+    keywords: "Professional, UX/UI, Website, Web Design, Concept Design",
+    path: "/work/gymnastics",
+  },
+
+  {
+    image: cartography,
+    title: "Cartography and GIS",
+    subtitle: "Spatial Data and Representation",
+    keywords:
+      "Academic, Professional, GIS, ArchGIS, QGIS, Architecture, Urban Planning, Infrastructure Design",
+    path: "/work/cartography",
+  },
+
+  {
+    image: homevideo,
+    title: "Homepage Video",
+    subtitle: "Introducing Myself",
+    keywords:
+      "Personal, 3D Modeling, Rendering, Motion Graphics, Visual Storytelling, After Effects, Premiere Pro, 3DS MAX",
+    path: "/work/homepagevideo",
+  },
   {
     image: lightandshadow,
     title: "Light and Shadow",
@@ -76,37 +108,6 @@ const items = [
     path: "/work/lightandshadow",
   },
   {
-    image: gymnastics,
-    title: "U.S. Gymnastics Development Center",
-    subtitle: "Redesigning the Digital Experience for the Gymnastics Facility",
-    keywords: "Professional, UX/UI, Website, Web Design, Concept Design",
-    path: "/work/gymnastics",
-  },
-  {
-    image: cartography,
-    title: "Cartography and GIS",
-    subtitle: "Spatial Data and Representation",
-    keywords:
-      "Academic, Professional, GIS, ArchGIS, QGIS, Architecture, Urban Planning, Infrastructure Design",
-    path: "/work/cartography",
-  },
-  {
-    image: marc,
-    title: "Client Portal & Project Visualization",
-    subtitle: "for West Baltimore MARC Station",
-    keywords:
-      "Professional, Infrastructure, Transit, Architecture, Urban Planning, 3D Modeling, 3D Visualization, UX/UI Design",
-    path: "/work/marcstation",
-  },
-  {
-    image: homevideo,
-    title: "Homepage Video",
-    subtitle: "Introducing Myself",
-    keywords:
-      "Personal, 3D Modeling, Rendering, Motion Graphics, Visual Storytelling, After Effects, Premiere Pro, 3DS MAX",
-    path: "/work/homepagevideo",
-  },
-  {
     image: final_bench,
     title: "Dusk",
     subtitle: "A Relaxing Memory",
@@ -115,20 +116,12 @@ const items = [
   },
 
   {
-    image: woodworking,
-    title: "Woodworking",
-    subtitle: "Fabricating with the Most Versatile Material",
+    image: workstation,
+    title: "Workstation",
+    subtitle: "My First 3D Animation",
     keywords:
-      "Academic, Personal, Architecture, Fabrication, Modeling, Prototyping",
-    path: "/work/woodworking",
-  },
-  {
-    image: huguenot,
-    title: "Huguenot Station ADA Upgrade",
-    subtitle: "Accessibility Upgrade in Huguenot Station, Staten Island",
-    keywords:
-      "Professional, Infrastructure, Transit, Architecture, Rendering, 3D Modeling, ADA, Design-Build",
-    path: "/work/huguenot",
+      "Academic, 3DS MAX, AutoCAD, 3D Modeling, 3D Animation, Motion Graphics",
+    path: "/work/workstation",
   },
 
   {
@@ -149,6 +142,14 @@ const items = [
     path: "/work/language",
   },
   {
+    image: huguenot,
+    title: "Huguenot Station ADA Upgrade",
+    subtitle: "Accessibility Upgrade in Huguenot Station, Staten Island",
+    keywords:
+      "Professional, Infrastructure, Transit, Architecture, Rendering, 3D Modeling, ADA, Design-Build",
+    path: "/work/huguenot",
+  },
+  {
     image: penn,
     title: "Penn Station Reconstruction",
     subtitle: "Redesigning the Busiest Station in the World",
@@ -156,6 +157,7 @@ const items = [
       "Professional, Transit, Infrastructure, Federal Project, NYC, Three.js, Rhino 3D, Grasshopper, Parametric Design",
     path: "/work/penn",
   },
+
   {
     image: steam,
     title: "Hacking the Steam",
