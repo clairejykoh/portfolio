@@ -111,29 +111,26 @@ const ConcreteKeys = () => {
         />
 
         <div className="w-full h-auto bg-[#010101] flex flex-center">
-          <div className="max-w-[1000px]">
-            <p className="font-inter mb-5 text-2xl text-[#f5f5f5]">
-              The Vision
-            </p>
-            <img src={axon} />
+          <div className="max-w-[600px]">
+            <p className="font-inter text-2xl text-[#f5f5f5]">The Vision</p>
+            <img src={axon} className="mb-20" />
           </div>
         </div>
+      </div>
 
-        <div className="w-full h-200 mb-20 bg-linear-to-b from-[rgb(1,1,1)] to-[#f5f5f5]"></div>
+      <div className="flex items-center justify-center grid-cols-2">
         <ScrollAutoplayVideo
           src="/portfolio/videos/sequence1.mp4"
           muted={true}
-          className="w-[1600px] h-auto items-center mix-blend-multiply brightness-130 mt-10 my-20"
+          className="flex flex-col col-span-1 items-center justify-center mix-blend-multiply brightness-130 overflow-hidden"
+        />
+        <ScrollAutoplayVideo
+          src="/portfolio/videos/sequence2.mp4"
+          muted={true}
+          className="flex flex-col col-span-1 items-center justify-center mix-blend-multiply brightness-130 overflow-hidden"
         />
       </div>
-
-      <ScrollAutoplayVideo
-        src="/portfolio/videos/sequence2.mp4"
-        muted={true}
-        className="w-full h-auto mix blend-multiply brightness-130"
-      />
-
-      <div className="flex flex-row justify-center mt-60">
+      <div className="flex flex-row justify-center mt-40">
         <div className="mx-auto max-w-[700px]">
           <p className="font-inter mb-5 text-2xl">The Process</p>
           <div className="grid grid-cols-4 items-center">
