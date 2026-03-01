@@ -7,7 +7,7 @@ const Navigation = () => {
     <header className="navbar absolute flex flex-1 top-0 z-[1000] justify-end w-full py-10 sm:px-45 px-30 items-center">
       <nav className="flex xl:gap-78 lg:gap-58 md:gap-30 sm: gap-8 my-5 text-md">
         <NavLink
-          to="/portfolio"
+          to="/"
           className={({ isActive }) =>
             `relative inline-block px-1
               ${isActive ? "text-amber-400" : "text-gray-750"}

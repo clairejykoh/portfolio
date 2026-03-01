@@ -27,35 +27,33 @@ import MarcStation from "./pages/work/MarcStation";
 const App = () => {
   return (
     <main>
-      <Router>
-        <ScrollToTop />
-        <Navigation />
-        <Routes>
-          {/* Navigation */}
-          <Route path="/portfolio" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/work" element={<Work />} />
-          {/* Project detail pages */}
-          <Route path="/work/language" element={<Language />} />
-          <Route path="/work/workstation" element={<Workstation />} />
-          <Route path="/work/huguenot" element={<Huguenot />} />
-          <Route path="/work/woodworking" element={<Woodworking />} />
-          <Route path="/work/gymnastics" element={<Gymnastics />} />
-          <Route path="/work/cartography" element={<Cartography />} />
-          <Route path="/work/concretekeys" element={<ConcreteKeys />} />
-          <Route path="/work/dusk" element={<Dusk />} />
-          <Route path="/work/p5js" element={<P5JS />} />
-          <Route path="/work/homepagevideo" element={<HomepageVideo />} />
-          <Route path="/work/olkaria" element={<Olkaria />} />
-          <Route path="/work/interior" element={<Interior />} />
-          <Route path="/work/penn" element={<Penn />} />
-          <Route path="work/lightandshadow" element={<LightandShadow />} />
-          <Route path="work/harlem" element={<Harlem />} />
-          <Route path="work/patchogue" element={<Patchogue />} />
-          <Route path="work/noir" element={<Noir />} />
-          <Route path="work/marcstation" element={<MarcStation />} />
-        </Routes>
-      </Router>
+      <ScrollToTop />
+      <Navigation />
+      <Routes>
+        {/* Navigation */}
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/work" element={<Work />} />
+        {/* Project detail pages */}
+        <Route path="/work/language" element={<Language />} />
+        <Route path="/work/workstation" element={<Workstation />} />
+        <Route path="/work/huguenot" element={<Huguenot />} />
+        <Route path="/work/woodworking" element={<Woodworking />} />
+        <Route path="/work/gymnastics" element={<Gymnastics />} />
+        <Route path="/work/cartography" element={<Cartography />} />
+        <Route path="/work/concretekeys" element={<ConcreteKeys />} />
+        <Route path="/work/dusk" element={<Dusk />} />
+        <Route path="/work/p5js" element={<P5JS />} />
+        <Route path="/work/homepagevideo" element={<HomepageVideo />} />
+        <Route path="/work/olkaria" element={<Olkaria />} />
+        <Route path="/work/interior" element={<Interior />} />
+        <Route path="/work/penn" element={<Penn />} />
+        <Route path="work/lightandshadow" element={<LightandShadow />} />
+        <Route path="work/harlem" element={<Harlem />} />
+        <Route path="work/patchogue" element={<Patchogue />} />
+        <Route path="work/noir" element={<Noir />} />
+        <Route path="work/marcstation" element={<MarcStation />} />
+      </Routes>
     </main>
   );
 };
