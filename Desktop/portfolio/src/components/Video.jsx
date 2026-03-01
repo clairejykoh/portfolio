@@ -93,7 +93,7 @@ const BOX_KEYFRAMES_0BASED = [
   { enter: 802, exit: 970 }, // Spiritual and Design/Technical
   { enter: 982, exit: 1080 }, // Multiple Layers of Expertise
   { enter: 1092, exit: 1210 }, // Different Types and Layers of Reality in a 3D Space
-  { enter: 1222, exit: 1315 }, // To be continued
+  { enter: 1222, exit: 1300 }, // To be continued
 ];
 
 const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));

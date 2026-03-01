@@ -8,6 +8,7 @@ import marc02 from "../../assets/marcclient/marc02.jpg";
 import marc03 from "../../assets/marcclient/marc03.jpg";
 import marc04 from "../../assets/marcclient/marc04.jpg";
 import marc05 from "../../assets/marcclient/marc05.jpg";
+import marc06 from "../../assets/marcclient/marc06.jpg";
 
 import view1 from "../../assets/marc/nb01.jpg";
 import view2 from "../../assets/marc/nb02.jpg";

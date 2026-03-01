@@ -119,16 +119,20 @@ const ConcreteKeys = () => {
       </div>
 
       <div className="flex items-center justify-center grid-cols-2">
-        <ScrollAutoplayVideo
-          src="/portfolio/videos/sequence1.mp4"
-          muted={true}
-          className="flex flex-col col-span-1 items-center justify-center mix-blend-multiply brightness-130 overflow-hidden"
-        />
-        <ScrollAutoplayVideo
-          src="/portfolio/videos/sequence2.mp4"
-          muted={true}
-          className="flex flex-col col-span-1 items-center justify-center mix-blend-multiply brightness-130 overflow-hidden"
-        />
+        <div className="h-[850px] justify-center items-center col-span-1 overflow-hidden">
+          <ScrollAutoplayVideo
+            src="/portfolio/videos/sequence1.mp4"
+            muted={true}
+            className="flex flex-col items-center justify-center w-full h-full mix-blend-multiply brightness-130 object-cover"
+          />
+        </div>
+        <div className="h-[850px] justify-center items-center col-span-1 overflow-hidden">
+          <ScrollAutoplayVideo
+            src="/portfolio/videos/sequence2.mp4"
+            muted={true}
+            className="flex flex-col items-center justify-center w-full h-full mix-blend-multiply brightness-130 object-cover"
+          />
+        </div>
       </div>
       <div className="flex flex-row justify-center mt-40">
         <div className="mx-auto max-w-[700px]">
