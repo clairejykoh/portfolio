@@ -16,7 +16,7 @@ import steam from "../assets/steam.jpg";
 import cartography from "../assets/cartography.jpg";
 import shape from "../assets/shape.gif";
 import language from "../assets/lla.jpg";
-import gymnastics from "../assets/gymnastics.webp";
+import gymnastics from "../assets/gymnastics.jpeg";
 import lightandshadow from "../assets/lightandshadow.png";
 import harlem from "../assets/harlem.webp";
 import patchogue from "../assets/patchogue.png";
