@@ -8,7 +8,16 @@ import view4 from "../../assets/huguenot/view04.webp";
 import view5 from "../../assets/huguenot/view05.webp";
 import view6 from "../../assets/huguenot/view06.webp";
 
+import harlem1 from "../../assets/harlem/view01.webp";
+import harlem2 from "../../assets/harlem/view02.webp";
+import harlem3 from "../../assets/harlem/view03.webp";
+import harlem4 from "../../assets/harlem/view04.webp";
+import harlem5 from "../../assets/harlem/view05.webp";
+import harlem6 from "../../assets/harlem/view06.webp";
+
 const images = [view1, view2, view3, view4, view5, view6];
+
+const harlems = [harlem1, harlem2, harlem3, harlem4, harlem5, harlem6];
 
 const Huguenot = () => {
   return (
@@ -21,6 +30,15 @@ const Huguenot = () => {
         Collaboration with disciplines included but are not limited to: Civil, Geotechnical, Structural, Mechanical, Electrical, Plumbing, Fire Protection, Communication.
         I was responsible for architectural design and drawings, and the following renderings."
         images={images}
+      />
+      <Gallery
+        title="Harlem 148th Station ADA Upgrade"
+        subtitle="Accessibility Upgrade at 148th Street Station, Harlem"
+        meta="Professional, Infrastructure, Transit, Architecture, Urban Planning, Rendering, 3D Modeling, ADA, Design-Build"
+        caption="Worked as an architect to deliver design and construction documents of the new ramps to be installed at the Harlem 148th St Station in New York, NY.
+        Collaboration with disciplines included but are not limited to: Civil, Geotechnical, Structural, Mechanical, Electrical, Plumbing, Fire Protection, Communication.
+        I was responsible for architectural design and drawings, and the following renderings."
+        images={harlems}
       />
     </>
   );

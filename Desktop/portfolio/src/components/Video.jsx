@@ -590,7 +590,7 @@ export default function Video({
         </div>
 
         {/* Progress bar */}
-        <div className="absolute left-0 bottom-0 w-full h-[4px] z-50 pointer-events-none">
+        <div className="absolute left-0 bottom-0 w-full h-[6px] z-50 pointer-events-none">
           <div
             ref={barRef}
             className="h-full w-full bg-black"

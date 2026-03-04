@@ -15,10 +15,10 @@ const images = [
   gymnastics02,
   gymnastics03,
   gymnastics04,
+  gymnastics07,
   gymnastics08,
   gymnastics05,
   gymnastics06,
-  gymnastics07,
 ];
 
 const Gymnastics = () => {

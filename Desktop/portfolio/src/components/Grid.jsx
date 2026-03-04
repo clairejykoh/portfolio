@@ -33,6 +33,14 @@ const items = [
     path: "/work/concretekeys",
   },
   {
+    image: marc,
+    title: "Client Portal & Project Visualization",
+    subtitle: "for West Baltimore MARC Station",
+    keywords:
+      "Professional, Infrastructure, Transit, Architecture, Urban Planning, 3D Visualization, UX/UI Design",
+    path: "/work/marcstation",
+  },
+  {
     image: interior,
     title: "Interior Renderings",
     subtitle: "Helping Designers & Clients Visualize",
@@ -40,14 +48,7 @@ const items = [
       "Professional, Freelance, Interior Design, Photorealistic Renderings",
     path: "/work/interior",
   },
-  {
-    image: marc,
-    title: "Client Portal & Project Visualization",
-    subtitle: "for West Baltimore MARC Station",
-    keywords:
-      "Professional, Infrastructure, Transit, Architecture, Urban Planning, 3D Modeling, 3D Visualization, UX/UI Design",
-    path: "/work/marcstation",
-  },
+
   {
     image: shape,
     title: "Play (p5.js)",
@@ -56,14 +57,6 @@ const items = [
     path: "/work/p5js",
   },
 
-  {
-    image: harlem,
-    title: "Harlem 148th Station ADA Upgrade",
-    subtitle: "Accessibility Upgrade in Harlem 148th Station, Manhattan",
-    keywords:
-      "Professional, Infrastructure, Transit, Architecture, Rendering, 3D Modeling, ADA, Design-Build",
-    path: "/work/harlem",
-  },
   {
     image: woodworking,
     title: "Woodworking",
@@ -86,7 +79,7 @@ const items = [
     title: "Cartography and GIS",
     subtitle: "Spatial Data and Representation",
     keywords:
-      "Academic, Professional, GIS, ArchGIS, QGIS, Architecture, Urban Planning, Infrastructure Design",
+      "Academic, Professional, GIS, ArchGIS, Graphic Design, Architecture, Urban Planning",
     path: "/work/cartography",
   },
 
@@ -108,20 +101,13 @@ const items = [
     path: "/work/lightandshadow",
   },
   {
-    image: final_bench,
-    title: "Dusk",
-    subtitle: "A Relaxing Memory",
-    keywords: "Personal, Rhinoceros 3D, 3DS MAX, Blender, Rendering",
-    path: "/work/dusk",
-  },
-
-  {
-    image: workstation,
-    title: "Workstation",
-    subtitle: "My First 3D Animation",
+    image: patchogue,
+    title: "Patchogue Station Renovation",
+    subtitle:
+      "Breathing New Life into the Town's Beloved Station in Patchogue, Long Island",
     keywords:
-      "Academic, 3DS MAX, AutoCAD, 3D Modeling, 3D Animation, Motion Graphics",
-    path: "/work/workstation",
+      "Professional, Infrastructure, Transit, Architecture, Rendering, 3D Modeling, Urban Planning, ADA, Design-Build",
+    path: "/work/patchogue",
   },
 
   {
@@ -166,15 +152,6 @@ const items = [
     keywords:
       "Academic, Renewable Energy, 3D Modeling, Architecture, Virtual Architecture, Storytelling",
     path: "/work/olkaria",
-  },
-  {
-    image: patchogue,
-    title: "Patchogue Station Renovation",
-    subtitle:
-      "Breathing New Life into the Town's Beloved Station in Patchogue, Long Island",
-    keywords:
-      "Professional, Infrastructure, Transit, Architecture, Rendering, 3D Modeling, Urban Planning, ADA, Design-Build",
-    path: "/work/patchogue",
   },
 ];
 

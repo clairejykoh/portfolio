@@ -8,7 +8,7 @@ import view4 from "../../assets/harlem/view04.webp";
 import view5 from "../../assets/harlem/view05.webp";
 import view6 from "../../assets/harlem/view06.webp";
 
-const images = [view1, view2, view3, view4, view5, view6];
+const harlems = [view1, view2, view3, view4, view5, view6];
 
 const Harlem = () => {
   return (

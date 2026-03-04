@@ -39,7 +39,7 @@ const Cartography = () => {
       <Gallery
         title="Cartography and GIS"
         subtitle="Spatial Data and its Representation"
-        meta="Academic, Professional, GIS, ArchGIS, QGIS, Architecture, Urban Planning, Infrastructure Design"
+        meta="Academic, Professional, GIS, ArchGIS, Graphic Design, Architecture, Urban Planning"
         caption="Include a series of maps produced for both academic and professional work"
         images={images}
       />

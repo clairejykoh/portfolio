@@ -12,5 +12,30 @@ title: "Museum of Forgotten Words",
 subtitle: "Anthropocene 5.0: What is a Museum in the Age of Extinction?",
 keywords:
 "Academic, Personal, Architecture, Fabrication, Modeling, Prototyping",
-path: "/work/museum",
 },
+
+  {
+    image: final_bench,
+    title: "Dusk",
+    subtitle: "A Relaxing Memory",
+    keywords: "Personal, Rhinoceros 3D, 3DS MAX, Blender, Rendering",
+  },
+
+  
+    {
+      image: workstation,
+      title: "Workstation",
+      subtitle: "My First 3D Animation",
+      keywords:
+        "Academic, 3DS MAX, AutoCAD, 3D Modeling, 3D Animation, Motion Graphics",
+      path: "/work/workstation",
+    },
+
+      {
+        image: harlem,
+        title: "Harlem 148th Station ADA Upgrade",
+        subtitle: "Accessibility Upgrade in Harlem 148th Station, Manhattan",
+        keywords:
+          "Professional, Infrastructure, Transit, Architecture, Rendering, 3D Modeling, ADA, Design-Build",
+        path: "/work/harlem",
+      },

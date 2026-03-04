@@ -20,12 +20,12 @@ const AboutMe = () => {
     tl.fromTo(
       imageRef.current,
       { opacity: 0, y: 16 },
-      { opacity: 1, y: 0, duration: 0.8 }
+      { opacity: 1, y: 0, duration: 0.8 },
     ).fromTo(
       textRef.current,
       { opacity: 0, y: 12 },
       { opacity: 1, y: 0, duration: 0.8 },
-      "-=0.65" // starts ~0.25s after image begins
+      "-=0.65", // starts ~0.25s after image begins
     );
 
     return () => tl.kill();
@@ -37,18 +37,18 @@ const AboutMe = () => {
     : "She's probably daydreaming right now...";
 
   return (
-    <div className="flex items-center justify-center mt-25">
-      <div className="flex items-center mix-blend-multiply">
+    <div className="flex items-center justify-center mt-25 ">
+      <div className="flex flex-col lg:flex-row  items-center mix-blend-multiply max-w-[900px]">
         <img
           ref={imageRef}
           src={imageSrc}
-          className="w-120"
+          className="w-1/2"
           alt={isNight ? "Dreaming" : "Daydreaming"}
         />
 
         <p
           ref={textRef}
-          className="flex-auto items-center text-xl font-italiana"
+          className="flex items-center text-xl font-italiana w-1/2 pt-5 lg:pt-0 px-10 lg:pl-0"
         >
           {message}
           <br />

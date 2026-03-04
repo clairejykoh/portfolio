@@ -1,9 +1,9 @@
 import React, { useEffect, useMemo, useState } from "react";
 
 /**
- * Slideshow (crossfade)
- * - Uses stacked images + opacity transitions
- * - Uses inline transitionDuration (no Tailwind dynamic class issues)
+ * Slideshow (crossfade) + mount slide/fade-in
+ * - Crossfades via stacked images + opacity transitions
+ * - Wrapper animates on mount: translateY + opacity
  * - Disables transitions on first paint to prevent “blink”
  */
 export default function Slideshow({
@@ -12,25 +12,54 @@ export default function Slideshow({
   height = 400,
   className = "",
   durationMs = 700,
+
+  // NEW: mount animation
+  slideFadeIn = true,
+  slideFromPx = 24,
+  slideFadeDurationMs = 700,
+  slideFadeDelayMs = 0,
+  slideFadeEasing = "cubic-bezier(0.22, 1, 0.36, 1)", // easeOut-ish
 }) {
   const [index, setIndex] = useState(0);
-  const [ready, setReady] = useState(false);
+  const [ready, setReady] = useState(false); // for crossfade transitions
+  const [entered, setEntered] = useState(false); // for mount slide/fade
 
   const normalized = useMemo(
     () =>
       images.map((img, i) =>
-        typeof img === "string" ? { src: img, alt: `slide-${i + 1}` } : img
+        typeof img === "string" ? { src: img, alt: `slide-${i + 1}` } : img,
       ),
-    [images]
+    [images],
   );
 
   const toCss = (v) => (typeof v === "number" ? `${v}px` : v);
 
   useEffect(() => {
-    // Enable transitions after first paint to avoid initial blink/fade
+    // Enable crossfade transitions after first paint to avoid initial blink/fade
     const id = requestAnimationFrame(() => setReady(true));
     return () => cancelAnimationFrame(id);
   }, []);
+
+  useEffect(() => {
+    if (!slideFadeIn) return;
+
+    // Start mount animation after paint (and optional delay)
+    let raf = 0;
+    let t = 0;
+
+    raf = requestAnimationFrame(() => {
+      if (slideFadeDelayMs > 0) {
+        t = window.setTimeout(() => setEntered(true), slideFadeDelayMs);
+      } else {
+        setEntered(true);
+      }
+    });
+
+    return () => {
+      cancelAnimationFrame(raf);
+      if (t) window.clearTimeout(t);
+    };
+  }, [slideFadeIn, slideFadeDelayMs]);
 
   const prev = () => {
     if (normalized.length <= 1) return;
@@ -44,10 +73,24 @@ export default function Slideshow({
 
   if (!normalized.length) return null;
 
+  const wrapperStyle = slideFadeIn
+    ? {
+        width: toCss(width),
+        height: toCss(height),
+        opacity: entered ? 1 : 0,
+        transform: entered ? "translateY(0px)" : `translateY(${slideFromPx}px)`,
+        transitionProperty: "opacity, transform",
+        transitionDuration: `${slideFadeDurationMs}ms`,
+        transitionTimingFunction: slideFadeEasing,
+        transitionDelay: `${slideFadeDelayMs}ms`,
+        willChange: "opacity, transform",
+      }
+    : { width: toCss(width), height: toCss(height) };
+
   return (
     <div
-      className={`relative overflow-hidden my-10 ${className}`}
-      style={{ width: toCss(width), height: toCss(height) }}
+      className={`relative overflow-hidden mb-15 ${className}`}
+      style={wrapperStyle}
     >
       {/* Slides (stacked) */}
       <div className="relative h-full w-full mix-blend-multiply">
@@ -63,7 +106,9 @@ export default function Slideshow({
               ready ? "transition-opacity ease-out" : "",
               i === index ? "opacity-100" : "opacity-0",
             ].join(" ")}
-            style={ready ? { transitionDuration: `${durationMs}ms` } : undefined}
+            style={
+              ready ? { transitionDuration: `${durationMs}ms` } : undefined
+            }
           />
         ))}
       </div>
@@ -74,7 +119,7 @@ export default function Slideshow({
           <button
             onClick={prev}
             aria-label="Previous image"
-            className="absolute left-0 top-1/2 -translate-y-1/2 px-4 py-1 text-lg hover:bg-black hover:text-white border"
+            className="absolute left-0 top-1/2 -translate-y-1/2 px-4 py-1 text-lg hover:bg-black hover:text-white border "
           >
             ‹
           </button>
@@ -82,7 +127,7 @@ export default function Slideshow({
           <button
             onClick={next}
             aria-label="Next image"
-            className="absolute right-0 top-1/2 -translate-y-1/2 px-4 py-1 text-lg hover:bg-black hover:text-white border"
+            className="absolute right-0 top-1/2 -translate-y-1/2 px-4 py-1 text-lg hover:bg-black hover:text-white border "
           >
             ›
           </button>
