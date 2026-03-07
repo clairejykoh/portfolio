@@ -15,17 +15,17 @@ export default function ScrollAutoplayVideo({
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) { 
+        if (entry.isIntersecting) {
           video.play().catch(() => {});
         } else {
           video.pause();
         }
       },
       {
-        root: null,       // viewport
-        threshold: 0,     // any pixel visible
-        rootMargin: "0px" // DO NOT CHANGE
-      }
+        root: null, // viewport
+        threshold: 0, // any pixel visible
+        rootMargin: "0px", // DO NOT CHANGE
+      },
     );
 
     observer.observe(video);

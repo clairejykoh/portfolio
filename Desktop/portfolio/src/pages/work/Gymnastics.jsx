@@ -40,7 +40,7 @@ const Gymnastics = () => {
         />
       </div>
 
-      <div className="mx-40">
+      <div className="mx-85">
         <ScrollAutoplayVideo
           src={usgym}
           muted={true}
