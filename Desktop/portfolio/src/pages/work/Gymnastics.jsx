@@ -2,7 +2,7 @@ import React from "react";
 import CaseStudy from "../../components/Casestudy";
 import ScrollAutoplayVideo from "../../components/ScrollAutoplayVideo";
 
-import gymnastics01 from "../../assets/gymnastics/gymnastics01.jpg";
+import gymnastics01 from "../../assets/gymnastics/gymnastics.png";
 import gymnastics02 from "../../assets/gymnastics/gymnastics02.jpg";
 import gymnastics03 from "../../assets/gymnastics/gymnastics03.jpg";
 import gymnastics04 from "../../assets/gymnastics/gymnastics04.jpg";
@@ -17,15 +17,9 @@ import rec from "../../assets/gymnastics/rec.mp4";
 import comp from "../../assets/gymnastics/comp.mp4";
 import lastpart from "../../assets/gymnastics/lastpart.mp4";
 
-const images = [
-  gymnastics01,
-  gymnastics02,
-  gymnastics03,
-  gymnastics04,
-  gymnastics07,
-];
+const images = [gymnastics01];
 
-const images2 = [gymnastics05, gymnastics06, gymnastics10];
+const images2 = [gymnastics05, gymnastics06];
 
 const Gymnastics = () => {
   return (
@@ -34,7 +28,7 @@ const Gymnastics = () => {
         <CaseStudy
           title="U.S. Gymnastics Development Center"
           subtitle="Redesigning Digital Experience and Communication System for the Gymnastics Facility"
-          meta="Professional, UX/UI, Website, Web Design, Concept Design"
+          meta="Professional, UX/UI, Website, Web Design, Concept Design, Product Design, Figma"
           caption="Presenting a preliminary web/UI design idea and communication strategy for US Gymnastics Development Center, where I have been a student for the past three years."
           images={images}
         />
@@ -44,7 +38,7 @@ const Gymnastics = () => {
         <ScrollAutoplayVideo
           src={usgym}
           muted={true}
-          className="flex w-full items-center justify-center mix-blend-multiply mt-40"
+          className="flex w-full items-center justify-center mix-blend-multiply mt-10"
         />
         <ScrollAutoplayVideo
           src={aboutus}

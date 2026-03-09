@@ -70,7 +70,8 @@ const items = [
     image: gymnastics,
     title: "U.S. Gymnastics Development Center",
     subtitle: "Redesigning the Digital Experience for the Gymnastics Facility",
-    keywords: "Professional, UX/UI, Website, Web Design, Concept Design",
+    keywords:
+      "Professional, UX/UI, Website, Web Design, Concept Design, Product Design, Figma",
     path: "/work/gymnastics",
   },
 
@@ -129,8 +130,9 @@ const items = [
   },
   {
     image: huguenot,
-    title: "Huguenot Station ADA Upgrade",
-    subtitle: "Accessibility Upgrade in Huguenot Station, Staten Island",
+    title: "Infrastructure Design",
+    subtitle:
+      "Architectural Design and Visualization for Infrastructure/Transit/Urban Planning Projects",
     keywords:
       "Professional, Infrastructure, Transit, Architecture, Rendering, 3D Modeling, ADA, Design-Build",
     path: "/work/huguenot",
