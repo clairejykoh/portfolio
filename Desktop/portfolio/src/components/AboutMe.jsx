@@ -53,7 +53,7 @@ const AboutMe = () => {
           design,
           <br />
           and a multimedia designer proficient in 3D modeling, rendering, and
-          motion grahics.
+          motion graphics.
           <br />I like to combine my knowledge in architecture & 3D modeling to
           challenge the limit of physical world through virtual world building.
           <br />I experiment with building materials through various methods of
