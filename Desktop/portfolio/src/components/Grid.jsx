@@ -34,7 +34,7 @@ const items = [
   },
   {
     image: marc,
-    title: "Client Portal & Project Visualization",
+    title: "Client Site & Project Visualization",
     subtitle: "for West Baltimore MARC Station",
     keywords:
       "Professional, Infrastructure, Transit, Architecture, Urban Planning, 3D Visualization, UX/UI Design",
@@ -69,7 +69,7 @@ const items = [
   {
     image: gymnastics,
     title: "U.S. Gymnastics Development Center",
-    subtitle: "Redesigning the Digital Experience for the Gymnastics Facility",
+    subtitle: "Redesigning Digital Experience for the Gymnastics Facility",
     keywords:
       "Professional, UX/UI, Website, Web Design, Concept Design, Product Design, Figma",
     path: "/work/gymnastics",
@@ -132,7 +132,7 @@ const items = [
     image: huguenot,
     title: "Infrastructure Design",
     subtitle:
-      "Architectural Design and Visualization for Infrastructure/Transit/Urban Planning Projects",
+      "Architectural Design and Visualization for Infrastructure/Transit/Urban Planning",
     keywords:
       "Professional, Infrastructure, Transit, Architecture, Rendering, 3D Modeling, ADA, Design-Build",
     path: "/work/huguenot",
@@ -202,7 +202,7 @@ const Grid = () => {
   }, [allLoaded]);
 
   return (
-    <div className="mix-blend-multiply mt-10 mb-20 mx-40 columns-1 md:columns-2 lg:columns-3 gap-14 space-y-14 px-4">
+    <div className="mix-blend-multiply mt-14 mb-20 mx-40 columns-1 md:columns-2 lg:columns-3 gap-14 space-y-14 px-4">
       {items.map((item, index) => (
         <div
           key={index}
@@ -214,7 +214,7 @@ const Grid = () => {
         >
           {/* Caption above the card */}
           {item.title && (
-            <div className="font-italiana text-3xl mt-1 text-gray-700 px-1">
+            <div className="font-italiana text-[1.8rem] mt-1 text-gray-700">
               {item.title}
             </div>
           )}

@@ -42,8 +42,8 @@ const Interior = () => {
     <>
       <Gallery
         title="Interior Renderings"
-        subtitle="Helping Designers & Clients Visualize"
-        meta="Professional, Freelance, Interior Design, Photorealistic Renderings"
+        subtitle="Helping Designers & Clients Visualize Their Dream Home"
+        meta="Professional, Freelance, Interior Design, 3D Modeling, Photorealistic Renderings"
         caption="Ellsworth Residence Kitchen"
       />
       <div className="flex flex-col justify-center items-center">

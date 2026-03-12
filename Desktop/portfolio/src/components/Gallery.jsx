@@ -86,7 +86,7 @@ export default function Gallery({
         )}
 
         {meta && (
-          <p data-pg-text className="mb-5 text-base text-gray-700">
+          <p data-pg-text className="mb-5 font-light text-[#202020]">
             {meta}
           </p>
         )}
@@ -94,7 +94,7 @@ export default function Gallery({
         {caption && (
           <p
             data-pg-text
-            className="text-justify mt-3 mb-5 text-sm text-gray-700"
+            className="text-justify mt-3 mb-5 text-sm font-light text-[#202020]"
           >
             {caption}
           </p>

@@ -1,11 +1,13 @@
-@import url("https://fonts.googleapis.com/css2?family=Antic+Didone&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Italiana&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Antic+Didone&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Cormorant+Infant:ital,wght@0,300..700;1,300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Italiana&family=Judson:ital,wght@0,400;0,700;1,400&family=Prata&display=swap");
 @import "tailwindcss";
 
 @theme {
-  --font-italiana: "Italiana", "sans-serif";
+  --font-italiana: "Antic Didone", "serif";
   --font-inter: "Inter", "sans-serif";
   --font-antic-didone: "Antic Didone", "serif";
+  --font-judson: "Judson", "serif";
+  --font-cormorant-infant: "Cormorant Infant", "serif";
+  --font-prata: "Prata", "serif";
 }
 
 @layer base {
@@ -98,6 +100,37 @@ body.hero-page .navbar {
 .italiana-regular {
   font-family: "Italiana", sans-serif;
   font-weight: 600;
+  font-style: normal;
+}
+
+.judson-regular {
+  font-family: "Judson", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.judson-bold {
+  font-family: "Judson", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.judson-regular-italic {
+  font-family: "Judson", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.cormorant-infant-regular {
+  font-family: "Cormorant Infant", serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.prata-regular {
+  font-family: "Prata", serif;
+  font-weight: 400;
   font-style: normal;
 }
 

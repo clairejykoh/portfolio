@@ -17,11 +17,11 @@ const HomepageVideo = () => {
         meta="Personal, 3D Modeling, Rendering, Motion Graphics, Visual Storytelling, After Effects, Premiere Pro, 3DS MAX"
         caption="Planning and execution of the landing page video. (Scroll to see video control on Chrome)"
       />
-      <div className="flex flex-col overflow-hidden items-center justify-center h-auto w-full my-25 mx-auto">
+      <div className="flex flex-col overflow-hidden items-center justify-center h-auto w-[1500px] my-25 mx-auto shadow-card">
         <video
           src={portfoliovideo}
           type="video/mp4"
-          className="flex flex-col justify-center items-center w-[1500px] h-full object-cover mix-blend-multiply border"
+          className="flex flex-col justify-center items-center w-[1500px] h-full object-cover"
           controls
           playsInline
         ></video>

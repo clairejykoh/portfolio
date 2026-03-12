@@ -26,7 +26,7 @@ const messages = [
     { text: "and ", variant: "base" },
     { text: "3D MODELING ", variant: "accent" },
     {
-      text: "and challenge the limit of physical world through \n",
+      text: "to challenge the limit of physical world through \n",
       variant: "base",
     },
     { text: "VIRTUAL WORLD BUILDING ", variant: "accent" },
@@ -75,7 +75,7 @@ const messages = [
   ],
   [
     {
-      text: "My goal is to design interactions with different types and layers of reality in a 3D space",
+      text: "My goal is to design interactions with different types and layers of interaction in a 3D space",
       variant: "base",
     },
   ],
@@ -582,8 +582,7 @@ export default function Video({
                 to="/Work"
                 className="pointer-events-auto cursor-pointer underline-offset-4 hover:underline transition-all"
               >
-                Explore Work{" "}
-                <span className="inline-block ml-2">------&gt;</span>
+                Explore Work <span className="inline-block ml-2">—&gt;</span>
               </Link>
             </p>
           </div>

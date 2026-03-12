@@ -3,13 +3,8 @@ import CaseStudy from "../../components/Casestudy";
 import ScrollAutoplayVideo from "../../components/ScrollAutoplayVideo";
 
 import gymnastics01 from "../../assets/gymnastics/gymnastics.png";
-import gymnastics02 from "../../assets/gymnastics/gymnastics02.jpg";
-import gymnastics03 from "../../assets/gymnastics/gymnastics03.jpg";
-import gymnastics04 from "../../assets/gymnastics/gymnastics04.jpg";
 import gymnastics05 from "../../assets/gymnastics/gymnastics05.jpg";
 import gymnastics06 from "../../assets/gymnastics/gymnastics06.jpg";
-import gymnastics07 from "../../assets/gymnastics/gymnastics07.jpg";
-import gymnastics10 from "../../assets/gymnastics/gymnastics10.jpg";
 
 import usgym from "../../assets/gymnastics/usgym.mp4";
 import aboutus from "../../assets/gymnastics/aboutUs.mp4";

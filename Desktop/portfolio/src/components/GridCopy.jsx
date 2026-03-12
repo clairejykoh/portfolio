@@ -30,11 +30,11 @@ const FILTERS = [
   { id: "all", label: "ALL" },
   {
     id: "product_visual",
-    label: "ARE YOU LOOKING FOR A PRODUCT DESIGNER?",
+    label: "PRODUCT DESIGNER",
   },
-  { id: "artist_3d", label: "ARE YOU LOOKING FOR A 3D ARTIST?" },
-  { id: "motion", label: "ARE YOU LOOKING FOR A MOTION DESIGNER?" },
-  { id: "architect", label: "ARE YOU LOOKING FOR AN ARCHITECT?" },
+  { id: "artist_3d", label: "3D ARTIST" },
+  { id: "motion", label: "MOTION DESIGNER" },
+  { id: "architect", label: "ARCHITECT" },
 ];
 
 const items = [
@@ -225,9 +225,9 @@ export default function GridCopy() {
       gsap.to(sorted, {
         y: 0,
         autoAlpha: 1,
-        duration: 1,
+        duration: 0.55,
         ease: "power3.out",
-        stagger: 0.08,
+        stagger: 0.04,
         overwrite: true,
       });
     }, wrapRef);
@@ -261,17 +261,17 @@ export default function GridCopy() {
       const inSorted = getVisualSorted(nextVisible);
 
       // timings (tune here)
-      const FADE_OUT_DUR = 0.28;
-      const FADE_IN_DUR = 0.85;
+      const FADE_OUT_DUR = 0.18;
+      const FADE_IN_DUR = 0.4;
 
       // cap fade-out total so it doesn't feel like dead time
-      const OUT_TOTAL = 0.55;
+      const OUT_TOTAL = 0.24;
       const OUT_STAGGER =
         outSorted.length > 1
-          ? Math.min(0.04, OUT_TOTAL / (outSorted.length - 1))
+          ? Math.min(0.02, OUT_TOTAL / (outSorted.length - 1))
           : 0;
 
-      const IN_STAGGER = inSorted.length > 1 ? 0.08 : 0;
+      const IN_STAGGER = inSorted.length > 1 ? 0.03 : 0;
 
       const ctx = gsap.context(() => {
         gsap.killTweensOf(cardRefs.current.filter(Boolean));
@@ -407,3 +407,4 @@ export default function GridCopy() {
     </div>
   );
 }
+

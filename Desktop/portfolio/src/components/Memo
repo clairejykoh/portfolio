@@ -39,3 +39,17 @@ keywords:
           "Professional, Infrastructure, Transit, Architecture, Rendering, 3D Modeling, ADA, Design-Build",
         path: "/work/harlem",
       },
+
+                      className={[
+                  "px-4 py-2 text-md",
+                  "transition-colors duration-200 hover:cursor-pointer",
+                  isActive
+                    ? " text-black border-black shadow-card"
+                    : " text-gray-750 border-gray-300 hover:border-gray-750 ",
+                ].join(" ")}
+
+
+
+                        <div className="justify-center flex flex-1 my-20">
+          <Slideshow images={visualizations} width={1400} height={600} />
+        </div>
