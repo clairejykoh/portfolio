@@ -1,8 +1,9 @@
 import React from "react";
-import CaseStudy from "../../components/Casestudy";
+import CaseStudy from "../../components/CaseStudy";
 import ScrollAutoplayVideo from "../../components/ScrollAutoplayVideo";
 
-import gymnastics01 from "../../assets/gymnastics/gymnastics.png";
+import gymnastics00 from "../../assets/gymnastics/gymnastics00.png";
+import gymnastics01 from "../../assets/gymnastics/gymnastics01.png";
 import gymnastics05 from "../../assets/gymnastics/gymnastics05.jpg";
 import gymnastics06 from "../../assets/gymnastics/gymnastics06.jpg";
 
@@ -12,7 +13,7 @@ import rec from "../../assets/gymnastics/rec.mp4";
 import comp from "../../assets/gymnastics/comp.mp4";
 import lastpart from "../../assets/gymnastics/lastpart.mp4";
 
-const images = [gymnastics01];
+const images = [gymnastics00, gymnastics01];
 
 const images2 = [gymnastics05, gymnastics06];
 
