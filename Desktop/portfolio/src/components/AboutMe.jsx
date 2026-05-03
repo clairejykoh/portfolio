@@ -33,8 +33,8 @@ const AboutMe = () => {
 
   const imageSrc = isNight ? dreaming : daydreaming;
   const message = isNight
-    ? "She's probably dreaming right now..."
-    : "She's probably daydreaming right now...";
+    ? "I'm probably dreaming right now..."
+    : "I'm probably daydreaming right now...";
 
   return (
     <div className="flex items-center justify-center mt-25 ">

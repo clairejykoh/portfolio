@@ -1,28 +1,23 @@
 import React, { useEffect, useMemo, useState } from "react";
 
-/**
- * Slideshow (crossfade) + mount slide/fade-in
- * - Crossfades via stacked images + opacity transitions
- * - Wrapper animates on mount: translateY + opacity
- * - Disables transitions on first paint to prevent “blink”
- */
 export default function Slideshow({
   images = [],
-  width = 600,
-  height = 400,
   className = "",
   durationMs = 700,
 
-  // NEW: mount animation
   slideFadeIn = true,
   slideFromPx = 24,
   slideFadeDurationMs = 700,
   slideFadeDelayMs = 0,
-  slideFadeEasing = "cubic-bezier(0.22, 1, 0.36, 1)", // easeOut-ish
+  slideFadeEasing = "cubic-bezier(0.22, 1, 0.36, 1)",
+
+  thumbnailHeight = 56,
+  thumbnailGap = 0,
+  arrowOffset = 100,
 }) {
   const [index, setIndex] = useState(0);
-  const [ready, setReady] = useState(false); // for crossfade transitions
-  const [entered, setEntered] = useState(false); // for mount slide/fade
+  const [ready, setReady] = useState(false);
+  const [entered, setEntered] = useState(false);
 
   const normalized = useMemo(
     () =>
@@ -35,7 +30,6 @@ export default function Slideshow({
   const toCss = (v) => (typeof v === "number" ? `${v}px` : v);
 
   useEffect(() => {
-    // Enable crossfade transitions after first paint to avoid initial blink/fade
     const id = requestAnimationFrame(() => setReady(true));
     return () => cancelAnimationFrame(id);
   }, []);
@@ -43,7 +37,6 @@ export default function Slideshow({
   useEffect(() => {
     if (!slideFadeIn) return;
 
-    // Start mount animation after paint (and optional delay)
     let raf = 0;
     let t = 0;
 
@@ -75,63 +68,102 @@ export default function Slideshow({
 
   const wrapperStyle = slideFadeIn
     ? {
-        width: toCss(width),
-        height: toCss(height),
+        width: "100%",
         opacity: entered ? 1 : 0,
         transform: entered ? "translateY(0px)" : `translateY(${slideFromPx}px)`,
         transitionProperty: "opacity, transform",
         transitionDuration: `${slideFadeDurationMs}ms`,
         transitionTimingFunction: slideFadeEasing,
         transitionDelay: `${slideFadeDelayMs}ms`,
-        willChange: "opacity, transform",
       }
-    : { width: toCss(width), height: toCss(height) };
+    : {
+        width: "100%",
+      };
 
   return (
-    <div
-      className={`relative overflow-hidden mb-15 ${className}`}
-      style={wrapperStyle}
-    >
-      {/* Slides (stacked) */}
-      <div className="relative h-full w-full mix-blend-multiply">
-        {normalized.map(({ src, alt }, i) => (
-          <img
-            key={i}
-            src={src}
-            alt={alt}
-            draggable={false}
-            className={[
-              "absolute inset-0 h-full w-full object-contain",
-              "select-none pointer-events-none",
-              ready ? "transition-opacity ease-out" : "",
-              i === index ? "opacity-100" : "opacity-0",
-            ].join(" ")}
-            style={
-              ready ? { transitionDuration: `${durationMs}ms` } : undefined
-            }
-          />
-        ))}
+    <div className={`w-full mb-15 ${className}`} style={wrapperStyle}>
+      {/* SLIDESHOW CONTAINER */}
+      <div className="relative w-full overflow-visible image-column">
+        {/* Invisible first image controls slideshow width/height ratio */}
+        <img
+          src={normalized[0].src}
+          alt=""
+          aria-hidden="true"
+          draggable={false}
+          className="block w-full h-auto invisible select-none pointer-events-none"
+        />
+
+        {/* Visible stacked slides */}
+        <div className="absolute inset-0 w-full h-full mix-blend-multiply overflow-hidden">
+          {normalized.map(({ src, alt }, i) => (
+            <img
+              key={i}
+              src={src}
+              alt={alt}
+              draggable={false}
+              className={[
+                "absolute inset-0 w-full h-full object-contain",
+                "select-none pointer-events-none",
+                ready ? "transition-opacity ease-out" : "",
+                i === index ? "opacity-100" : "opacity-0",
+              ].join(" ")}
+              style={
+                ready ? { transitionDuration: `${durationMs}ms` } : undefined
+              }
+            />
+          ))}
+        </div>
+
+        {/* ARROWS: 20px outside slideshow edges */}
+        {normalized.length > 1 && (
+          <>
+            <button
+              onClick={prev}
+              aria-label="Previous image"
+              className="absolute top-1/2 -translate-y-1/2 px-4 py-1 text-lg border hover:bg-black hover:text-white"
+              style={{ left: `-${toCss(arrowOffset)}` }}
+            >
+              ‹
+            </button>
+
+            <button
+              onClick={next}
+              aria-label="Next image"
+              className="absolute top-1/2 -translate-y-1/2 px-4 py-1 text-lg border hover:bg-black hover:text-white"
+              style={{ right: `-${toCss(arrowOffset)}` }}
+            >
+              ›
+            </button>
+          </>
+        )}
       </div>
 
-      {/* Controls */}
+      {/* THUMBNAILS */}
       {normalized.length > 1 && (
-        <>
-          <button
-            onClick={prev}
-            aria-label="Previous image"
-            className="absolute left-0 top-1/2 -translate-y-1/2 px-4 py-1 text-lg hover:bg-black hover:text-white border "
-          >
-            ‹
-          </button>
-
-          <button
-            onClick={next}
-            aria-label="Next image"
-            className="absolute right-0 top-1/2 -translate-y-1/2 px-4 py-1 text-lg hover:bg-black hover:text-white border "
-          >
-            ›
-          </button>
-        </>
+        <div
+          className="mt-3 flex w-full justify-center overflow-x-auto"
+          style={{ gap: toCss(thumbnailGap) }}
+        >
+          {normalized.map(({ src, alt }, i) => (
+            <button
+              key={i}
+              onClick={() => setIndex(i)}
+              aria-label={`Show image ${i + 1}`}
+              className={[
+                "shrink-0 overflow-hidden transition-opacity duration-300",
+                i === index ? "opacity-100" : "opacity-40 hover:opacity-70",
+              ].join(" ")}
+              style={{ height: toCss(thumbnailHeight) }}
+            >
+              <img
+                src={src}
+                alt={alt}
+                draggable={false}
+                className="h-full w-auto object-cover select-none pointer-events-none"
+              />
+            </button>
+          ))}
+        </div>
       )}
     </div>
   );
