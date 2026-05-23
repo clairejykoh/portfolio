@@ -1,6 +1,7 @@
 import React from "react";
 import Gallery from "../../components/Gallery";
 import ScrollAutoplayVideo from "../../components/ScrollAutoplayVideo";
+import ProjectNav from "../../components/ProjectNav";
 
 import view1 from "../../assets/noir/image01.jpg";
 import view2 from "../../assets/noir/image02.jpg";
@@ -57,6 +58,11 @@ const Noir = () => {
           "
         </div>
       </div>
+
+      <ProjectNav
+        prev={{ path: "/work/patchogue", label: "New Southbank Theatre" }}
+        next={{ path: "/work/language", label: "Final Thesis Portfolio" }}
+      />
     </>
   );
 };

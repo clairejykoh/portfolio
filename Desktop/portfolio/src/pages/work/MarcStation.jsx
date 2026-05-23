@@ -2,6 +2,7 @@ import React from "react";
 
 import CaseStudy from "../../components/CaseStudy";
 import Slideshow from "../../components/Slideshow";
+import ProjectNav from "../../components/ProjectNav";
 
 import marc01 from "../../assets/marcclient/marcCaseStudy.png";
 import marc02 from "../../assets/marcclient/marcCaseStudyTitle.png";
@@ -60,6 +61,10 @@ const MarcStation = () => {
           images={images}
         />
       </div>
+      <ProjectNav
+        prev={{ path: "/work/concretekeys", label: "Concrete Keycaps" }}
+        next={{ path: "/work/interior", label: "Interior Renderings" }}
+      />
     </>
   );
 };

@@ -1,5 +1,6 @@
 import React from "react";
 import Gallery from "../../components/Gallery";
+import ProjectNav from "../../components/ProjectNav";
 
 import image01 from "../../assets/patchogue/patchogue01.webp";
 import image02 from "../../assets/patchogue/patchogue02.webp";

@@ -2,6 +2,7 @@ import React, { useRef, useState, useLayoutEffect, useCallback } from "react";
 import { gsap } from "gsap";
 
 import Gallery from "../../components/Gallery";
+import ProjectNav from "../../components/ProjectNav";
 
 import AAD1 from "../../assets/lla/AAD-1.jpg";
 import AAD2 from "../../assets/lla/AAD-2.jpg";
@@ -123,6 +124,14 @@ const Language = () => {
         subtitle="Exploring Three-Way Intersection of Linguistics, Environments, and Built Space"
         meta="Academic, Portfolio, Architecture, Planning, InDesign, Linguistics, Toponym, Storytelling"
         images={images}
+      />
+
+      <ProjectNav
+        prev={{
+          path: "/work/noir",
+          label: "Noir",
+        }}
+        next={{ path: "/work/huguenot", label: "Infrastructure Design" }}
       />
     </>
   );

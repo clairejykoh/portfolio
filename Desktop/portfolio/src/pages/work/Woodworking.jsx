@@ -1,6 +1,7 @@
 import React from "react";
 import Gallery from "../../components/Gallery";
 import ScrollGallery from "../../components/ScrollGallery";
+import ProjectNav from "../../components/ProjectNav";
 
 import cubehouse1 from "../../assets/woodworking/1.jpg";
 import cubehouse2 from "../../assets/woodworking/2.jpg";
@@ -25,12 +26,24 @@ const images = [
 
 const Woodworking = () => {
   return (
-    <Gallery
-      title="Woodworking"
-      subtitle="Fabricating with the Most Versatile Material"
-      meta="Academic, Personal, Architecture, Fabrication, Modeling, Prototyping"
-      images={images}
-    />
+    <>
+      <Gallery
+        title="Woodworking"
+        subtitle="Fabricating with the Most Versatile Material"
+        meta="Academic, Personal, Architecture, Fabrication, Modeling, Prototyping"
+        images={images}
+      />
+      <ProjectNav
+        prev={{
+          path: "/work/p5js",
+          label: "Play (p5.js)",
+        }}
+        next={{
+          path: "/work/gymnastics",
+          label: "U.S. Gymnastics Development Center",
+        }}
+      />
+    </>
   );
 };
 

@@ -4,6 +4,7 @@ import ModelOrbitCanvas from "../../components/ModelOrbitCanvas";
 import Gallery from "../../components/Gallery";
 import Reveal from "../../components/Reveal";
 import PopulateGallery from "../../components/PopulateGallery";
+import ProjectNav from "../../components/ProjectNav";
 
 import pennlogo from "../../assets/penn_station/pennlogo-01.jpg";
 import nyt from "../../assets/penn_station/nyt.jpg";
@@ -44,6 +45,14 @@ const Penn = ({ frames }) => {
         pxPerItem={140}
         finalOverlaySrc={nyt}
         className="mix-blend-multiply mt-10 mb-40"
+      />
+
+      <ProjectNav
+        prev={{
+          path: "/work/huguenot",
+          label: "Infrastructure Design",
+        }}
+        next={{ path: "/work/olkaria", label: "Hacking the Steam" }}
       />
     </>
   );

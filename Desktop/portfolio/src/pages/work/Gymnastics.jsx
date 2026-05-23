@@ -1,6 +1,7 @@
 import React from "react";
 import CaseStudy from "../../components/CaseStudy";
 import ScrollAutoplayVideo from "../../components/ScrollAutoplayVideo";
+import ProjectNav from "../../components/ProjectNav";
 
 import gymnastics00 from "../../assets/gymnastics/gymnastics00.png";
 import gymnastics01 from "../../assets/gymnastics/gymnastics01.png";
@@ -61,6 +62,14 @@ const Gymnastics = () => {
       <div>
         <CaseStudy images={images2} className="mb-20" />
       </div>
+
+      <ProjectNav
+        prev={{
+          path: "/work/woodworking",
+          label: "Woodworking",
+        }}
+        next={{ path: "/work/cartography", label: "Cartography" }}
+      />
     </>
   );
 };

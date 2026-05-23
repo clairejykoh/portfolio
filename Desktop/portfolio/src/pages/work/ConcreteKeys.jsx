@@ -4,6 +4,7 @@ import ScrollAutoplayVideo from "../../components/ScrollAutoplayVideo";
 import ConcreteIntro from "../../components/ConcreteIntro";
 import TypeAnimation from "../../components/TypeAnimation";
 import TypeAnimationMultiline from "../../components/TypeAnimationMultiline";
+import ProjectNav from "../../components/ProjectNav";
 
 import ScrollGallery from "../../components/ScrollGallery";
 
@@ -201,6 +202,14 @@ const ConcreteKeys = () => {
           <Gallery images={finishes} className="mb-15" />
         </div>
       </div>
+
+      <ProjectNav
+        prev={{ path: "/work/olkaria", label: "Hacking the Steam" }}
+        next={{
+          path: "/work/marcstation",
+          label: "Client Site & Project Visualization",
+        }}
+      />
     </>
   );
 };

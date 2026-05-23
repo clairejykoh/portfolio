@@ -1,5 +1,7 @@
 import React from "react";
 import Gallery from "../../components/Gallery";
+import ProjectNav from "../../components/ProjectNav";
+
 import lightandshadow from "../../assets/light_and_shadow/lightandshadow.mp4";
 
 import ls01 from "../../assets/light_and_shadow/ls01.jpg";

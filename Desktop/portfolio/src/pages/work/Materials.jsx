@@ -1,5 +1,6 @@
 import React from "react";
 import Gallery from "../../components/Gallery";
+import ProjectNav from "../../components/ProjectNav";
 
 import view1 from "../../assets/dusk/dusk01.png";
 import view2 from "../../assets/dusk/dusk02.png";

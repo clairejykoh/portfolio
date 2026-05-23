@@ -62,7 +62,7 @@ export default function CaseStudy({
           duration: 1,
           stagger: 0.1,
         },
-        "-=0.85"
+        "-=0.85",
       );
     }, rootRef);
 
@@ -86,13 +86,16 @@ export default function CaseStudy({
         )}
 
         {meta && (
-          <p data-pg-text className="mb-5 text-base text-gray-700">
+          <p data-pg-text className="mb-5 text-base font-light text-[#202020]">
             {meta}
           </p>
         )}
 
         {caption && (
-          <p data-pg-text className="mt-3 mb-5 text-sm text-gray-700">
+          <p
+            data-pg-text
+            className="mt-3 mb-5 text-sm font-light text-[#202020]"
+          >
             {caption}
           </p>
         )}

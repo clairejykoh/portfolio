@@ -24,6 +24,22 @@ import patchogue04 from "../../assets/patchogue/patchogue04.webp";
 import patchogue05 from "../../assets/patchogue/patchogue05.webp";
 import patchogue06 from "../../assets/patchogue/patchogue06.webp";
 
+import marc01 from "../../assets/marc/ext01.png";
+import marc02 from "../../assets/marc/ext02.png";
+import marc03 from "../../assets/marc/ext03.png";
+import marc04 from "../../assets/marc/ext04.png";
+import marc05 from "../../assets/marc/ext05.png";
+import marc06 from "../../assets/marc/ext06.png";
+import marc07 from "../../assets/marc/nb01.jpg";
+import marc08 from "../../assets/marc/nb02.jpg";
+import marc09 from "../../assets/marc/sb01.jpg";
+import marc10 from "../../assets/marc/sb02.jpg";
+
+import marclight01 from "../../assets/marc/light-nb01.webp";
+import marclight02 from "../../assets/marc/light-nb02.webp";
+import marclight03 from "../../assets/marc/light-sb01.webp";
+import marclight04 from "../../assets/marc/light-sb02.webp";
+
 const patchogues = [
   patchogue01,
   patchogue02,
@@ -36,6 +52,21 @@ const patchogues = [
 const images = [view1, view2, view3, view4, view5, view6];
 
 const harlems = [harlem1, harlem2, harlem3, harlem4, harlem5, harlem6];
+
+const marc = [
+  marc01,
+  marc02,
+  marc03,
+  marc04,
+  marc05,
+  marc06,
+  marc07,
+  marc08,
+  marc09,
+  marc10,
+];
+
+const marclights = [marclight01, marclight02, marclight03, marclight04];
 
 const Huguenot = () => {
   return (
@@ -74,6 +105,21 @@ const Huguenot = () => {
       />
       <div className="flex flex-col justify-center items-center">
         <Slideshow images={patchogues} />
+      </div>
+
+      <Gallery
+        title="West Baltimore MARC Station"
+        subtitle="Breathing A New Life Into the Oceanside Town's Beloved Train Station"
+        meta="Professional, Infrastructure, Transit, Architecture, Rendering, 3D Modeling, Urban Planning, ADA, Design-Build"
+        caption="Worked as an architect to deliver proposal graphics to the Patchogue Station Renovation project in Long Island, NY.
+              I was responsible for producing the 3D model and renderings from scratch."
+      />
+      <div className="flex flex-col justify-center items-center">
+        <Slideshow images={marc} />
+      </div>
+
+      <div className="flex flex-col justify-center items-center">
+        <Slideshow images={marclights} />
       </div>
 
       <ProjectNav

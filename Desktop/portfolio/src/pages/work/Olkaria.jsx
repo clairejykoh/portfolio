@@ -5,6 +5,7 @@ import Marquee from "../../components/Marquee";
 import FlexGallery from "../../components/FlexGallery";
 import CaptionGallery from "../../components/CaptionGallery";
 import Title from "../../components/Title";
+import ProjectNav from "../../components/ProjectNav";
 
 import bookcover01 from "../../assets/olkaria/bookcover1.jpg";
 import bookcover02 from "../../assets/olkaria/bookcover2.jpg";

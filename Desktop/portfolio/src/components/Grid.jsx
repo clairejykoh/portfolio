@@ -6,12 +6,12 @@ import workstation from "../assets/workstation.jpg";
 import concrete_key from "../assets/concrete_key.webp";
 import east_liberty from "../assets/east_liberty.jpg";
 import final_bench from "../assets/final_bench.webp";
-import huguenot from "../assets/huguenot.png";
+import infrastructure from "../assets/huguenot.png";
 import interior from "../assets/interior.webp";
 import museum from "../assets/museum.jpg";
 import penn from "../assets/penn.webp";
 import homevideo from "../assets/homevideo.webp";
-import woodworking from "../assets/woodworking.jpg";
+import photography from "../assets/robertagif.gif";
 import steam from "../assets/steam.jpg";
 import cartography from "../assets/cartography.jpg";
 import shape from "../assets/shape.gif";
@@ -22,6 +22,7 @@ import harlem from "../assets/harlem.webp";
 import patchogue from "../assets/patchogue.png";
 import noir from "../assets/noir.gif";
 import marc from "../assets/marc.png";
+import southbank from "../assets/southbank.png";
 
 const items = [
   {
@@ -35,7 +36,8 @@ const items = [
   {
     image: marc,
     title: "Client Site & Project Visualization",
-    subtitle: "for West Baltimore MARC Station",
+    subtitle:
+      "Facilitating Project Management and Documentation for MARC Station",
     keywords:
       "Professional, Infrastructure, Transit, Architecture, Urban Planning, 3D Visualization, UX/UI Design",
     path: "/work/marcstation",
@@ -45,25 +47,24 @@ const items = [
     title: "Interior Renderings",
     subtitle: "Helping Designers & Clients Visualize",
     keywords:
-      "Professional, Freelance, Interior Design, Photorealistic Renderings",
+      "Professional, Interior Design, 3D Modeling, Photorealistic Renderings",
     path: "/work/interior",
   },
-
   {
-    image: shape,
-    title: "Play (p5.js)",
-    subtitle: "Creative Coding Using p5.js",
-    keywords: "Academic, Programming, Javascript, p5.js",
-    path: "/work/p5js",
-  },
-
-  {
-    image: woodworking,
-    title: "Woodworking",
-    subtitle: "Fabricating with the Most Versatile Material",
+    image: photography,
+    title: "Roberta Mascotto Photography",
+    subtitle: "Website for a Phogotgrapher",
     keywords:
-      "Academic, Personal, Architecture, Fabrication, Modeling, Prototyping",
-    path: "/work/woodworking",
+      "Professional, Web Design, UX/UI Design, Brand Design, Product Design, Design Portfolio, Photography, Videography",
+  },
+  {
+    image: steam,
+    title: "Hacking the Steam",
+    subtitle:
+      "Imagining Playful New Possibilities for the Geothermal Infrastructure in Olkaria, Kenya",
+    keywords:
+      "Academic, Renewable Energy, 3D Modeling, Architecture, Virtual Architecture, Storytelling",
+    path: "/work/olkaria",
   },
 
   {
@@ -83,7 +84,6 @@ const items = [
       "Academic, Professional, GIS, ArchGIS, Graphic Design, Architecture, Urban Planning",
     path: "/work/cartography",
   },
-
   {
     image: homevideo,
     title: "Homepage Video",
@@ -93,22 +93,20 @@ const items = [
     path: "/work/homepagevideo",
   },
   {
-    image: lightandshadow,
-    title: "Light and Shadow",
-    subtitle:
-      "Questioning the Limit of Architecture in Virtual Realtiy Using Unreal Engine",
-    keywords:
-      "Academic, Unreal Engine, 3D Design, Game Design, Level Design, Virtual Architecture, World Building, Optics, Caustics, Dramatic",
-    path: "/work/lightandshadow",
+    image: shape,
+    title: "Play (p5.js)",
+    subtitle: "Creative Coding Using p5.js",
+    keywords: "Academic, Programming, Javascript, p5.js",
+    path: "/work/p5js",
   },
+
   {
-    image: patchogue,
-    title: "Patchogue Station Renovation",
+    image: southbank,
+    title: "New Southbank Theatre",
     subtitle:
       "Breathing New Life into the Town's Beloved Station in Patchogue, Long Island",
     keywords:
       "Professional, Infrastructure, Transit, Architecture, Rendering, 3D Modeling, Urban Planning, ADA, Design-Build",
-    path: "/work/patchogue",
   },
 
   {
@@ -129,7 +127,7 @@ const items = [
     path: "/work/language",
   },
   {
-    image: huguenot,
+    image: infrastructure,
     title: "Infrastructure Design",
     subtitle:
       "Architectural Design and Visualization for Infrastructure/Transit/Urban Planning",
@@ -138,22 +136,20 @@ const items = [
     path: "/work/huguenot",
   },
   {
+    image: lightandshadow,
+    title: "Light and Shadow",
+    subtitle:
+      "Questioning the Limit of Architecture in Virtual Realtiy Using Unreal Engine",
+    keywords:
+      "Academic, Unreal Engine, 3D Design, Game Design, Level Design, Virtual Architecture, World Building, Optics, Caustics, Dramatic",
+    path: "/work/lightandshadow",
+  },
+  {
     image: penn,
     title: "Penn Station Reconstruction",
     subtitle: "Redesigning the Busiest Station in the World",
     keywords:
       "Professional, Transit, Infrastructure, Federal Project, NYC, Three.js, Rhino 3D, Grasshopper, Parametric Design",
-    path: "/work/penn",
-  },
-
-  {
-    image: steam,
-    title: "Hacking the Steam",
-    subtitle:
-      "Imagining Playful New Possibilities for the Geothermal Infrastructure in Olkaria, Kenya",
-    keywords:
-      "Academic, Renewable Energy, 3D Modeling, Architecture, Virtual Architecture, Storytelling",
-    path: "/work/olkaria",
   },
 ];
 
@@ -231,7 +227,7 @@ const Grid = () => {
               />
 
               {/* Dark overlay */}
-              <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
+              <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
 
               {/* Subtitle + keywords */}
               {(item.subtitle || item.keywords) && (

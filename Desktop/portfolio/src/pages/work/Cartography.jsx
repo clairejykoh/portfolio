@@ -1,5 +1,6 @@
 import React from "react";
 import Gallery from "../../components/Gallery";
+import ProjectNav from "../../components/ProjectNav";
 
 import image01 from "../../assets/cartography/canada-relief.jpg";
 import image02 from "../../assets/cartography/canada-landcover.jpg";
@@ -42,6 +43,14 @@ const Cartography = () => {
         meta="Academic, Professional, GIS, ArchGIS, Graphic Design, Architecture, Urban Planning"
         caption="Include a series of maps produced for both academic and professional work"
         images={images}
+      />
+
+      <ProjectNav
+        prev={{
+          path: "/work/gymnastics",
+          label: "U.S. Gymnastics Development Center",
+        }}
+        next={{ path: "/work/homepagevideo", label: "Homepage Video" }}
       />
     </>
   );

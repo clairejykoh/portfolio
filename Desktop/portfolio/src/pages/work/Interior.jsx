@@ -1,6 +1,7 @@
 import React from "react";
 import Gallery from "../../components/Gallery";
 import Slideshow from "../../components/Slideshow";
+import ProjectNav from "../../components/ProjectNav";
 
 import chestnut01 from "../../assets/interior/35chestnut01.webp";
 import chestnut02 from "../../assets/interior/35chestnut02.webp";
@@ -35,7 +36,7 @@ const primarybaths = [primarybath01, primarybath02, primarybath03];
 
 const maplelanes = [maplelane01, maplelane02, maplelane03];
 
-const dusks = [view2, view1, view6, view3, view4, view5];
+const dusks = [view6, view2, view1, view3, view4, view5];
 
 const Interior = () => {
   return (
@@ -67,6 +68,14 @@ const Interior = () => {
       <div className="flex flex-col justify-center items-center">
         <Slideshow images={dusks} width={1200} height={568} />
       </div>
+
+      <ProjectNav
+        prev={{
+          path: "/work/marcstation",
+          label: "Client Site & Project Visualization",
+        }}
+        next={{ path: "/work/p5js", label: "Play (p5.js)" }}
+      />
     </>
   );
 };

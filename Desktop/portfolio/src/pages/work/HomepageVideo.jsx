@@ -1,6 +1,7 @@
 import React from "react";
 import Gallery from "../../components/Gallery";
 import OverlappingImage from "../../components/OverlappingImage";
+import ProjectNav from "../../components/ProjectNav";
 
 import homevideoUnderlay from "../../assets/homevideo/homevideo_underlay.png";
 import homevideoOverlay from "../../assets/homevideo/homevideo_overlay.png";
