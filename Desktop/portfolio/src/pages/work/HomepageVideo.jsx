@@ -22,7 +22,7 @@ const HomepageVideo = () => {
         <video
           src={portfoliovideo}
           type="video/mp4"
-          className="flex flex-col justify-center items-center w-[1500px] h-full object-cover"
+          className="flex flex-col justify-center items-center w-[1500px] h-full object-cover mix-blend-multiply"
           controls
           playsInline
         ></video>
