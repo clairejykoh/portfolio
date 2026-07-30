@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 export default function ScrollPrompt({
   className = "",
-  size = 44,
+  size = 56,
   fadeMs = 300,
 }) {
   const [visible, setVisible] = useState(
@@ -34,21 +34,26 @@ export default function ScrollPrompt({
       `}
       style={{ transitionDuration: `${fadeMs}ms` }}
     >
-      <div className="animate-scroll-float">
-        <p className="text-xs text-black">S C R O L L</p>
+      <div className="animate-scroll-float text-center">
+        <p className="text-xs text-black justify-center items-center">
+          S C R O L L
+        </p>
+        <p className="text-xs text-black justify-center items-center">
+          or press down
+        </p>
         <svg
           width={size}
           height={size}
-          viewBox="-4 -2 37 20"
+          viewBox="0 -2 38 20"
           fill="none"
           stroke="black"
           strokeWidth="1.8"
           strokeLinecap="round"
           strokeLinejoin="round"
-          className="flex flex-center justify-centeritems-center"
+          className="flex flex-center "
         >
-          <path d="M14 7 L23 14 L32 7" />
-          <path d="M14 2 L23 9 L32 2" />
+          <path d="M18 7 L27 14 L36 7" />
+          <path d="M18 2 L27 9 L36 2" />
         </svg>
       </div>
     </div>
