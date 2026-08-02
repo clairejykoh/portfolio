@@ -104,9 +104,10 @@ const items = [
     image: southbank,
     title: "New Southbank Theatre",
     subtitle:
-      "Breathing New Life into the Town's Beloved Station in Patchogue, Long Island",
+      "English Garden, Landscape, and a Midsummer Night's Dream Lending a Humanizing Touch to Brutalism",
     keywords:
-      "Professional, Infrastructure, Transit, Architecture, Rendering, 3D Modeling, Urban Planning, ADA, Design-Build",
+      "Architecture, Landscape Architecture, Planning, 3D Modeling, Rendering, Storytelling, Proposal",
+    path: "/work/southbanktheatre",
   },
 
   {

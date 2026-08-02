@@ -60,7 +60,10 @@ const Noir = () => {
       </div>
 
       <ProjectNav
-        prev={{ path: "/work/patchogue", label: "New Southbank Theatre" }}
+        prev={{
+          path: "/work/southbanktheatre",
+          label: "New Southbank Theatre",
+        }}
         next={{ path: "/work/language", label: "Final Thesis Portfolio" }}
       />
     </>
